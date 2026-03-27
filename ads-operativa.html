@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LOAM CLUB — Ads, Operativa y Retención</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<style>
+  :root{--olive:#5B6644;--gold:#FDDF59;--black:#1A1A1A;--white:#FFFFFF;--cream:#F7F5F0;--light-olive:#8a9470;--faint-border:rgba(91,102,68,0.12);--red:#C0392B;--green:#27AE60;--blue:#2980B9;--purple:#8E44AD}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Arial Nova',Arial,Helvetica,sans-serif;background:var(--cream);color:var(--black);-webkit-font-smoothing:antialiased}
+  .site-header{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--black);border-bottom:1px solid rgba(255,255,255,0.08)}
+  .header-inner{max-width:1200px;margin:0 auto;padding:0 40px;height:56px;display:flex;align-items:center;justify-content:space-between}
+  .header-logo{font-family:'Playfair Display',Georgia,serif;font-size:16px;color:var(--cream);letter-spacing:0.08em;text-decoration:none}
+  .header-logo i{font-style:italic}
+  .header-nav{display:flex;gap:4px}
+  .header-nav a{font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:rgba(247,245,240,0.5);text-decoration:none;padding:8px 16px;border-radius:8px;transition:all 0.2s}
+  .header-nav a:hover{color:var(--cream);background:rgba(255,255,255,0.06)}
+  .header-nav a.active{color:var(--gold);background:rgba(253,223,89,0.1)}
+  .page{padding:136px 60px 80px;position:relative;border-bottom:1px solid var(--faint-border)}
+  .page-num{position:absolute;top:86px;right:60px;font-size:11px;letter-spacing:3px;color:var(--light-olive);font-weight:700}
+  .label{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--olive);margin-bottom:12px;font-weight:700}
+  h1{font-family:'Playfair Display',Georgia,serif;font-size:48px;font-weight:400;line-height:1.1;margin-bottom:32px}
+  h2{font-family:'Playfair Display',Georgia,serif;font-size:28px;font-weight:400;line-height:1.25;margin-bottom:20px}
+  h3{font-size:18px;font-weight:700;margin-bottom:16px}
+  h4{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;color:var(--olive)}
+  p{font-size:16px;line-height:1.7;max-width:none;margin-bottom:16px}
+  .lead{font-size:20px;line-height:1.6;color:var(--olive);max-width:680px}
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:40px}
+  .grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px;margin-top:40px}
+  .card{background:var(--white);border:1px solid var(--faint-border);border-radius:12px;padding:32px}
+  .card-olive{background:var(--olive);color:var(--cream);border-radius:12px;padding:32px}
+  .card-black{background:var(--black);color:var(--cream);border-radius:12px;padding:32px}
+  .card-gold{background:var(--gold);color:var(--black);border-radius:12px;padding:32px}
+  table{width:100%;border-collapse:collapse;margin:24px 0;font-size:15px}
+  th{text-align:left;padding:14px 16px;border-bottom:2px solid var(--black);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--olive)}
+  td{padding:14px 16px;border-bottom:1px solid var(--faint-border);vertical-align:top}
+  tr:hover td{background:rgba(91,102,68,0.03)}
+  .divider{width:60px;height:2px;background:var(--olive);margin:32px 0;border-radius:2px}
+  .pill{display:inline-block;padding:6px 14px;border-radius:100px;font-size:13px;font-weight:700;margin:4px 4px 4px 0}
+  .pill-olive{background:var(--olive);color:var(--cream)}.pill-gold{background:var(--gold);color:var(--black)}.pill-black{background:var(--black);color:var(--white)}.pill-red{background:rgba(192,57,43,0.1);color:var(--red)}.pill-green{background:rgba(39,174,96,0.1);color:var(--green)}.pill-blue{background:rgba(41,128,185,0.1);color:var(--blue)}.pill-purple{background:rgba(142,68,173,0.1);color:var(--purple)}
+  .fee-highlight{font-size:32px;font-family:'Playfair Display',Georgia,serif;font-weight:600;color:var(--olive)}
+  .fee-sub{font-size:13px;color:var(--light-olive);margin-top:4px}
+  .dm-bubble{padding:20px;background:var(--white);border:1px solid var(--faint-border);border-radius:16px;border-bottom-left-radius:4px;margin:12px 0;font-size:15px;line-height:1.8}
+  .dm-label{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--light-olive);margin-bottom:8px}
+  .timeline{position:relative;padding-left:40px}
+  .timeline::before{content:'';position:absolute;left:14px;top:0;bottom:0;width:2px;background:var(--faint-border)}
+  .timeline-item{position:relative;margin-bottom:40px}
+  .timeline-dot{position:absolute;left:-40px;top:4px;width:28px;height:28px;border-radius:50%;background:var(--olive);color:var(--cream);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700}
+  .timeline-dot.active{background:var(--gold);color:var(--black)}
+  .texture-grain{position:absolute;inset:0;opacity:0.04;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");pointer-events:none;mix-blend-mode:multiply}
+  @media(max-width:768px){.page{padding:104px 24px 48px}h1{font-size:36px}.grid-2,.grid-3{grid-template-columns:1fr}.header-inner{padding:0 16px}.header-nav a{font-size:11px;padding:6px 10px}}
+</style>
+</head>
+<body>
+
+<header class="site-header"><div class="header-inner">
+  <a href="index.html" class="header-logo">LOAM CL<i>U</i>B</a>
+  <nav class="header-nav">
+    <a href="index.html">Análisis Whop</a>
+    <a href="estrategia.html">Estrategia</a>
+    <a href="guiones.html">Guiones</a>
+    <a href="ads-operativa.html" class="active">Ads &amp; Operativa</a>
+  </nav>
+</div></header>
+
+<!-- ======== COVER ======== -->
+<section class="page" style="display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:var(--black);color:var(--cream);min-height:100vh;padding-top:56px;">
+  <div class="texture-grain"></div>
+  <div class="label" style="color:var(--gold);">Ads, operativa y retención</div>
+  <h1 style="font-size:56px;color:var(--cream);max-width:700px;">Cómo, cuándo y<br>con cuánto</h1>
+  <div class="divider" style="background:var(--gold);margin:32px auto;"></div>
+  <p style="color:rgba(247,245,240,0.6);text-align:center;max-width:520px;">Todo lo que necesitamos tener montado y funcionando para que el embudo convierta: anuncios, mensajes automáticos, emails, landing, Stories y retención post-suscripción.</p>
+</section>
+
+<!-- ======== 01 LANDING POR FASE ======== -->
+<section class="page">
+  <div class="page-num">01</div>
+  <div class="label">La web cambia según la fase</div>
+  <h1>loamclub.es no es siempre igual</h1>
+  <p class="lead">Si alguien llega a la web y ve precios antes de los webinars, la revelación se rompe. La landing tiene que evolucionar con el lanzamiento.</p>
+
+  <div class="grid-3" style="margin-top:48px;">
+    <div class="card" style="border-top:4px solid var(--blue);">
+      <span class="pill pill-blue" style="font-size:10px;">Fases 1-2</span>
+      <h3 style="margin-top:12px;">Landing de misterio</h3>
+      <div class="divider" style="background:var(--blue);"></div>
+      <p style="font-size:14px;">Solo muestra la marca LOAM, un mensaje tipo &ldquo;Algo está llegando&rdquo; y el formulario de newsletter.</p>
+      <ul style="font-size:14px;line-height:2;padding-left:16px;">
+        <li>Logo + colores de marca</li>
+        <li>Texto: &ldquo;Deja tu email para ser la primera en saberlo&rdquo;</li>
+        <li>Formulario de email (solo email)</li>
+        <li><strong>Nada más.</strong> Ni planes, ni precios, ni explicación.</li>
+      </ul>
+    </div>
+    <div class="card" style="border-top:4px solid var(--gold);">
+      <span class="pill pill-gold" style="font-size:10px;">Fase 3</span>
+      <h3 style="margin-top:12px;">Página de ventas</h3>
+      <div class="divider" style="background:var(--gold);"></div>
+      <p style="font-size:14px;">Post-webinar. Ahora sí se revela todo.</p>
+      <ul style="font-size:14px;line-height:2;padding-left:16px;">
+        <li>Qué es LOAM Club</li>
+        <li>Para quién es</li>
+        <li>Qué incluye cada plan</li>
+        <li>Precios (Base / Plus)</li>
+        <li>Beta: acceso exclusivo comunidad</li>
+        <li>FAQ de objeciones</li>
+        <li>Botón de compra</li>
+      </ul>
+    </div>
+    <div class="card" style="border-top:4px solid var(--green);">
+      <span class="pill pill-green" style="font-size:10px;">Fase 4+</span>
+      <h3 style="margin-top:12px;">Página + prueba social</h3>
+      <div class="divider" style="background:var(--green);"></div>
+      <p style="font-size:14px;">Misma página de ventas pero con testimonios reales de las testers.</p>
+      <ul style="font-size:14px;line-height:2;padding-left:16px;">
+        <li>Todo lo de Fase 3</li>
+        <li>+ Testimonios de testers</li>
+        <li>+ Resultados concretos</li>
+        <li>+ Precio de lanzamiento si aplica</li>
+        <li>+ Comparativa Base vs Plus visual</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ======== 02 MANYCHAT MESSAGES ======== -->
+<section class="page">
+  <div class="page-num">02</div>
+  <div class="label">Mensajes automáticos</div>
+  <h1>ManyChat: los mensajes exactos</h1>
+  <p class="lead">Cuando alguien comenta &ldquo;LOAM&rdquo; en cualquier post (orgánico o anuncio templado), esto es lo que recibe automáticamente.</p>
+
+  <div style="max-width:560px;margin-top:48px;">
+    <div class="dm-label">DM 1 — Inmediato (al comentar)</div>
+    <div class="dm-bubble">
+      <p>Hola &#129293; Gracias por tu interés. Soy Lorena y estoy preparando algo especial.</p>
+      <p>Te dejo dos cosas:</p>
+      <p><strong>1.</strong> El enlace para unirte a la <strong>comunidad de LOAM Club</strong> en WhatsApp, donde comparto cosas que no publico en redes: <span style="color:var(--blue);">[enlace]</span></p>
+      <p><strong>2.</strong> La web de LOAM Club donde puedes estar al día de todo: <span style="color:var(--blue);">loamclub.es</span></p>
+      <p style="margin:0;">Nos vemos dentro &#129293;</p>
+    </div>
+
+    <div class="dm-label" style="margin-top:32px;">DM 2 — 6 horas después (si no hizo clic)</div>
+    <div class="dm-bubble">
+      <p>Hey, vi que aún no entraste. El enlace sigue aquí por si quieres echarle un vistazo: <span style="color:var(--blue);">[enlace WhatsApp]</span></p>
+      <p style="margin:0;">Sin compromiso, solo valor &#129293;</p>
+    </div>
+
+    <div class="dm-label" style="margin-top:32px;">DM 3 — 24-48h después (si sigue sin clic)</div>
+    <div class="dm-bubble">
+      <p>Última cosa: si prefieres recibir info por email en vez de WhatsApp, déjame tu correo aquí y te añado a la lista &#128140;</p>
+      <p style="margin:0;font-size:13px;color:var(--light-olive);">[ManyChat captura email con campo de texto]</p>
+    </div>
+  </div>
+
+  <div style="margin-top:40px;padding:24px;background:var(--black);border-radius:12px;color:var(--cream);">
+    <h4 style="color:var(--gold);">Configuración técnica</h4>
+    <ul style="font-size:14px;line-height:2.2;padding-left:16px;color:rgba(247,245,240,0.7);">
+      <li><strong style="color:var(--cream);">Trigger:</strong> Palabra &ldquo;LOAM&rdquo; en comentarios (cualquier post, orgánico o ad)</li>
+      <li><strong style="color:var(--cream);">Plataforma:</strong> ManyChat conectado a Instagram</li>
+      <li><strong style="color:var(--cream);">Delay DM 2:</strong> 6 horas si no hay clic en DM 1</li>
+      <li><strong style="color:var(--cream);">Delay DM 3:</strong> 24-48h si no hay clic en DM 2</li>
+      <li><strong style="color:var(--cream);">Emails capturados:</strong> se sincronizan con el CRM de la newsletter</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ======== 03 EMAIL SEQUENCE ======== -->
+<section class="page">
+  <div class="page-num">03</div>
+  <div class="label">Secuencia automática</div>
+  <h1>Los 5 emails de bienvenida</h1>
+  <p class="lead">Se activan automáticamente cuando alguien se suscribe a la newsletter (vía Lead Form o vía la web). El email 5 se adapta según la fase.</p>
+
+  <div style="margin-top:48px;">
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot active">1</div>
+        <div class="card" style="border-left:4px solid var(--olive);">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
+            <h3 style="margin:0;">Bienvenida</h3>
+            <span class="pill pill-olive" style="font-size:10px;">Día 0 — Inmediato</span>
+          </div>
+          <div class="divider"></div>
+          <p style="font-size:14px;"><strong>Asunto:</strong> &ldquo;Bienvenida a LOAM &#129293;&rdquo;</p>
+          <p style="font-size:14px;">Quién es Lorena (breve), por qué creó LOAM, qué va a recibir en esta newsletter (tips de psicología aplicada, ejercicios, novedades antes que nadie). Tono cercano, sin vender nada.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot">2</div>
+        <div class="card" style="border-left:4px solid var(--olive);">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
+            <h3 style="margin:0;">Ejercicio aplicable</h3>
+            <span class="pill pill-olive" style="font-size:10px;">Día 2</span>
+          </div>
+          <div class="divider"></div>
+          <p style="font-size:14px;"><strong>Asunto:</strong> &ldquo;Un ejercicio de 5 minutos que cambia cómo te sientes&rdquo;</p>
+          <p style="font-size:14px;">Lorena da un ejercicio práctico y concreto que se puede hacer hoy. Demuestra que su contenido tiene valor real, no es solo teoría. Es el email más importante: si aquí la persona siente que le sirvió, se queda.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot">3</div>
+        <div class="card" style="border-left:4px solid var(--olive);">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
+            <h3 style="margin:0;">Conexión + autoridad</h3>
+            <span class="pill pill-olive" style="font-size:10px;">Día 5</span>
+          </div>
+          <div class="divider"></div>
+          <p style="font-size:14px;"><strong>Asunto:</strong> &ldquo;Lo que mis 200K seguidoras me piden cada día&rdquo;</p>
+          <p style="font-size:14px;">Lorena comparte los patrones que más se repiten en su comunidad. Conecta la autoridad (200K, psicóloga colegiada, años de experiencia) con los dolores reales de la gente. Sin vender, solo posicionar.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot">4</div>
+        <div class="card" style="border-left:4px solid var(--gold);">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
+            <h3 style="margin:0;">Invitación a la comunidad</h3>
+            <span class="pill pill-gold" style="font-size:10px;">Día 8</span>
+          </div>
+          <div class="divider" style="background:var(--gold);"></div>
+          <p style="font-size:14px;"><strong>Asunto:</strong> &ldquo;Hay un sitio donde cuento cosas que no publico&rdquo;</p>
+          <p style="font-size:14px;">Invita a unirse a la comunidad de WhatsApp. Explica qué van a encontrar ahí (tips exclusivos, primicias, espacio de preguntas). Este email convierte leads de newsletter en miembros de la comunidad <strong>gratis</strong>.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot">5</div>
+        <div class="card" style="border-left:4px solid var(--black);">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
+            <h3 style="margin:0;">Adaptable según fase</h3>
+            <span class="pill pill-black" style="font-size:10px;">Día 12</span>
+          </div>
+          <div class="divider" style="background:var(--black);"></div>
+          <div class="grid-2" style="margin-top:0;gap:16px;">
+            <div style="padding:16px;background:rgba(41,128,185,0.06);border-radius:8px;">
+              <p style="font-size:13px;margin:0;"><strong>Si estamos en fases 1-2:</strong><br>&ldquo;Estoy preparando algo grande. Las de la comunidad de WhatsApp lo sabrán primero.&rdquo; Refuerza la invitación al WhatsApp. No revela nada.</p>
+            </div>
+            <div style="padding:16px;background:rgba(253,223,89,0.08);border-radius:8px;">
+              <p style="font-size:13px;margin:0;"><strong>Si estamos en fases 3-4:</strong><br>Presentación de LOAM Club + enlace a la página de ventas. Este email se cambia manualmente cuando llegue el momento.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== 04 STORIES STRATEGY ======== -->
+<section class="page">
+  <div class="page-num">04</div>
+  <div class="label">Contenido orgánico clave</div>
+  <h1>Estrategia de Stories</h1>
+  <p class="lead">Las Stories de la cuenta de 200K tienen 20-40K views. Es más alcance que cualquier campaña de ads. No podemos dejarlas sin estructura.</p>
+
+  <div class="grid-2" style="margin-top:48px;">
+    <div class="card" style="border-left:4px solid var(--olive);">
+      <h3>@psico.lorenaamadio (200K)</h3>
+      <p style="font-size:14px;color:var(--light-olive);">El motor. No vender, pero sí sembrar.</p>
+      <table style="font-size:14px;margin:16px 0 0;">
+        <tr><td style="width:80px;"><strong>Lunes</strong></td><td>Algo personal + sticker de pregunta (&ldquo;¿Qué os cuesta más gestionar?&rdquo;)</td></tr>
+        <tr><td><strong>Martes</strong></td><td>Responder preguntas del lunes (genera autoridad gratis)</td></tr>
+        <tr><td><strong>Miércoles</strong></td><td>Micro-tip 15 seg (reutilizable como Reel)</td></tr>
+        <tr><td><strong>Jueves</strong></td><td>Mención a @loamclub: &ldquo;Estoy trabajando en algo, las de ahí lo sabrán antes&rdquo;</td></tr>
+        <tr><td><strong>Viernes</strong></td><td>Casual, humana, sin vender nada</td></tr>
+      </table>
+      <div style="margin-top:16px;padding:12px;background:rgba(91,102,68,0.06);border-radius:8px;">
+        <p style="font-size:13px;margin:0;"><strong>En fase 2:</strong> Stories de cuenta atrás para los webinars. Lorena emocionada, nerviosa. Sticker de cuenta atrás.</p>
+      </div>
+    </div>
+    <div class="card" style="border-left:4px solid var(--gold);">
+      <h3>@loamclub</h3>
+      <p style="font-size:14px;color:var(--light-olive);">La vitrina. Más íntima, más directa.</p>
+      <table style="font-size:14px;margin:16px 0 0;">
+        <tr><td style="width:100px;"><strong>2-3x/semana</strong></td><td>Reflexión breve de Lorena a cámara (15-30 seg)</td></tr>
+        <tr><td><strong>Encuestas</strong></td><td>&ldquo;¿Os identificáis más con A o B?&rdquo; (genera datos de avatar)</td></tr>
+        <tr><td><strong>Preguntas</strong></td><td>Sticker: &ldquo;¿Qué necesitáis?&rdquo; (genera contenido + conexión)</td></tr>
+      </table>
+      <div style="margin-top:16px;padding:12px;background:rgba(253,223,89,0.08);border-radius:8px;">
+        <p style="font-size:13px;margin:0;"><strong>En fase 3:</strong> Stories de las testers (mensajes con permiso). Reacciones de Lorena al leer feedback. Cuenta atrás para la apertura pública.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== 05 ADS MASTER PLAN ======== -->
+<section class="page">
+  <div class="page-num">05</div>
+  <div class="label">El plan de anuncios completo</div>
+  <h1>Meta Ads: qué, cuándo,<br>cómo y con cuánto</h1>
+  <p class="lead">Los anuncios amplifican lo orgánico, no lo sustituyen. Con 200K seguidores, lo orgánico hace el trabajo pesado. Los ads llegan donde lo orgánico no llega.</p>
+
+  <!-- ORGANIC vs PAID -->
+  <div style="margin-top:48px;padding:24px;background:var(--olive);border-radius:12px;color:var(--cream);">
+    <h4 style="color:var(--gold);">Regla de oro</h4>
+    <p style="font-size:18px;color:var(--cream);text-align:center;margin:12px 0 0;">
+      <strong style="color:var(--gold);">Orgánico</strong> = siempre palabra clave LOAM (comentar) &ensp;|&ensp;
+      <strong style="color:var(--gold);">Ads fríos</strong> = Lead Form (email) &ensp;|&ensp;
+      <strong style="color:var(--gold);">Ads templados</strong> = palabra LOAM &ensp;|&ensp;
+      <strong style="color:var(--gold);">Ads calientes</strong> = enlace directo
+    </p>
+  </div>
+
+  <!-- PHASE 1 ADS -->
+  <div style="margin-top:48px;">
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot active">1</div>
+        <div class="card-gold" style="padding:40px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+            <div>
+              <span class="pill pill-black" style="font-size:11px;">Fase 1 — Semillas</span>
+              <h2 style="margin-top:8px;">Días 1-30</h2>
+            </div>
+            <div style="font-size:28px;font-family:'Playfair Display',Georgia,serif;font-weight:600;">15-30 &euro;/día</div>
+          </div>
+          <div class="divider" style="background:var(--black);"></div>
+          <p style="font-size:15px;"><strong>Objetivo:</strong> Captar emails y empezar a llenar la newsletter. Todavía no se sabe qué es LOAM. Los ads solo buscan leads fríos.</p>
+
+          <h4 style="margin-top:24px;">Qué se publica como anuncio</h4>
+          <table style="font-size:14px;">
+            <thead><tr><th>Campaña</th><th>Creativos</th><th>CTA</th><th>Destino</th><th>% presupuesto</th></tr></thead>
+            <tbody>
+              <tr>
+                <td><strong>Prospecting frío</strong></td>
+                <td>Los mejores reels orgánicos de @psico.lorenaamadio (los que más alcance tuvieron) + vídeos Extra A/B (&ldquo;Comprender tu mente&rdquo;)</td>
+                <td>Botón &ldquo;Suscribirme&rdquo;</td>
+                <td><strong>Lead Form nativo de Meta</strong><br>Auto-rellena email. Texto: &ldquo;Recibe tips de psicología aplicada cada semana.&rdquo; Tras confirmar: botón a loamclub.es.</td>
+                <td><strong>100%</strong></td>
+              </tr>
+            </tbody>
+          </table>
+          <div style="margin-top:16px;padding:16px;background:rgba(0,0,0,0.06);border-radius:8px;">
+            <p style="font-size:14px;margin:0;"><strong>En esta fase NO hay ads templados ni calientes.</strong> Solo captamos emails. La comunidad de WhatsApp se llena orgánicamente con los posts de @loamclub (palabra LOAM).</p>
+          </div>
+
+          <h4 style="margin-top:24px;">Configuración técnica</h4>
+          <ul style="font-size:14px;line-height:2;padding-left:16px;">
+            <li><strong>Tipo campaña:</strong> Leads (Lead Generation)</li>
+            <li><strong>Público:</strong> Intereses (psicología, bienestar, desarrollo personal, ansiedad) + Lookalike de seguidores de @psico.lorenaamadio</li>
+            <li><strong>Ubicaciones:</strong> IG Feed, IG Reels, IG Stories (automático)</li>
+            <li><strong>Geo:</strong> España primero. LATAM solo si sobra presupuesto y los datos son buenos.</li>
+            <li><strong>Edad:</strong> 22-42 (rango amplio que cubre todos los avatares)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- PHASE 2 ADS -->
+      <div class="timeline-item">
+        <div class="timeline-dot">2</div>
+        <div class="card" style="border-left:4px solid var(--olive);padding:40px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+            <div>
+              <span class="pill pill-olive" style="font-size:11px;">Fase 2 — Calentar</span>
+              <h2 style="margin-top:8px;">Días 31-60</h2>
+            </div>
+            <div style="font-size:28px;font-family:'Playfair Display',Georgia,serif;font-weight:600;color:var(--olive);">30-50 &euro;/día</div>
+          </div>
+          <div class="divider"></div>
+          <p style="font-size:15px;"><strong>Objetivo:</strong> Seguir captando emails + ahora también meter gente en la comunidad de WhatsApp. Los webinars se acercan.</p>
+
+          <table style="font-size:14px;">
+            <thead><tr><th>Campaña</th><th>Creativos</th><th>CTA</th><th>Destino</th><th>% presupuesto</th></tr></thead>
+            <tbody>
+              <tr>
+                <td><strong>Prospecting frío</strong></td>
+                <td>Mismos reels orgánicos ganadores + rotar nuevos si hay</td>
+                <td>Botón &ldquo;Suscribirme&rdquo;</td>
+                <td>Lead Form &rarr; email &rarr; newsletter</td>
+                <td><strong>50%</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Prospecting templado</strong></td>
+                <td>Vídeos de los 5 avatares grabados para @loamclub (1A, 2A, 3A, 4A, 5A &mdash; los &ldquo;A&rdquo; de cada avatar)</td>
+                <td>&ldquo;Comenta LOAM&rdquo;</td>
+                <td>Comentan &rarr; ManyChat &rarr; WhatsApp + web</td>
+                <td><strong>35%</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Retargeting webinar</strong></td>
+                <td>Vídeo de Lorena invitando al webinar (grabar aparte, 15-30 seg)</td>
+                <td>&ldquo;Apúntate gratis&rdquo;</td>
+                <td>Registro al webinar (formulario simple)</td>
+                <td><strong>15%</strong></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div style="margin-top:16px;padding:16px;background:rgba(91,102,68,0.06);border-radius:8px;">
+            <p style="font-size:14px;margin:0;"><strong>Público templado:</strong> Custom Audience de engagers de IG (últimos 90 días) + viewers 50%+ de vídeos + visitantes de loamclub.es.<br><strong>Público retargeting webinar:</strong> Comunidad WhatsApp + newsletter + engagers &mdash; gente que ya nos conoce.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PHASE 3 ADS -->
+      <div class="timeline-item">
+        <div class="timeline-dot">3</div>
+        <div class="card-olive" style="padding:40px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+            <div>
+              <span class="pill pill-gold" style="font-size:11px;">Fase 3 — Revelación</span>
+              <h2 style="margin-top:8px;color:var(--gold);">Días 61-75</h2>
+            </div>
+            <div style="font-size:28px;font-family:'Playfair Display',Georgia,serif;font-weight:600;color:var(--gold);">50-100 &euro;/día</div>
+          </div>
+          <div class="divider" style="background:var(--gold);"></div>
+          <p style="font-size:15px;color:rgba(247,245,240,0.8);"><strong>Objetivo:</strong> Llenar los webinars. Después del webinar, empezar a vender la beta con los vídeos de LOAM Curso.</p>
+
+          <table style="font-size:14px;color:var(--cream);">
+            <thead><tr><th style="color:var(--gold);border-color:rgba(255,255,255,0.2);">Campaña</th><th style="color:var(--gold);border-color:rgba(255,255,255,0.2);">Creativos</th><th style="color:var(--gold);border-color:rgba(255,255,255,0.2);">CTA</th><th style="color:var(--gold);border-color:rgba(255,255,255,0.2);">%</th></tr></thead>
+            <tbody>
+              <tr><td style="border-color:rgba(255,255,255,0.1);">Llenar webinar</td><td style="border-color:rgba(255,255,255,0.1);">Vídeo invitación (15-30 seg) + fragmento orgánico potente</td><td style="border-color:rgba(255,255,255,0.1);">&ldquo;Apúntate gratis&rdquo;</td><td style="border-color:rgba(255,255,255,0.1);"><strong>50%</strong></td></tr>
+              <tr><td style="border-color:rgba(255,255,255,0.1);">Prospecting frío (sigue)</td><td style="border-color:rgba(255,255,255,0.1);">Lead Form con mejores reels</td><td style="border-color:rgba(255,255,255,0.1);">&ldquo;Suscribirme&rdquo;</td><td style="border-color:rgba(255,255,255,0.1);"><strong>25%</strong></td></tr>
+              <tr><td style="border-color:rgba(255,255,255,0.1);">Post-webinar: venta beta</td><td style="border-color:rgba(255,255,255,0.1);">Vídeos L-A y L-B (&ldquo;LOAM Curso&rdquo;) + testimonios testers</td><td style="border-color:rgba(255,255,255,0.1);">Enlace a suscripción</td><td style="border-color:rgba(255,255,255,0.1);"><strong>25%</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- PHASE 4 ADS -->
+      <div class="timeline-item">
+        <div class="timeline-dot">4</div>
+        <div class="card-black" style="padding:40px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+            <div>
+              <span class="pill pill-gold" style="font-size:11px;">Fase 4 — Lanzamiento</span>
+              <h2 style="margin-top:8px;color:var(--gold);">Días 76-90</h2>
+            </div>
+            <div style="font-size:28px;font-family:'Playfair Display',Georgia,serif;font-weight:600;color:var(--gold);">100-200 &euro;/día</div>
+          </div>
+          <div class="divider" style="background:var(--gold);"></div>
+          <p style="font-size:15px;color:rgba(247,245,240,0.8);"><strong>Objetivo:</strong> Máxima conversión. Todo abierto. Testimonios reales. Escalar lo que funciona.</p>
+
+          <table style="font-size:14px;color:var(--cream);">
+            <thead><tr><th style="color:var(--gold);border-color:rgba(255,255,255,0.2);">Campaña</th><th style="color:var(--gold);border-color:rgba(255,255,255,0.2);">Creativos</th><th style="color:var(--gold);border-color:rgba(255,255,255,0.2);">CTA</th><th style="color:var(--gold);border-color:rgba(255,255,255,0.2);">%</th></tr></thead>
+            <tbody>
+              <tr><td style="border-color:rgba(255,255,255,0.1);">Retargeting caliente</td><td style="border-color:rgba(255,255,255,0.1);">Testimonios testers + vídeos LOAM Curso + fragmentos webinar</td><td style="border-color:rgba(255,255,255,0.1);">Enlace directo a suscripción</td><td style="border-color:rgba(255,255,255,0.1);"><strong>40%</strong></td></tr>
+              <tr><td style="border-color:rgba(255,255,255,0.1);">Prospecting frío (escalar ganadores)</td><td style="border-color:rgba(255,255,255,0.1);">Los 2-3 reels que mejor CPL dieron en fases anteriores</td><td style="border-color:rgba(255,255,255,0.1);">Lead Form</td><td style="border-color:rgba(255,255,255,0.1);"><strong>35%</strong></td></tr>
+              <tr><td style="border-color:rgba(255,255,255,0.1);">Prospecting templado</td><td style="border-color:rgba(255,255,255,0.1);">Vídeos avatar ganadores + LOAM Curso</td><td style="border-color:rgba(255,255,255,0.1);">&ldquo;Comenta LOAM&rdquo;</td><td style="border-color:rgba(255,255,255,0.1);"><strong>25%</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BUDGET SUMMARY -->
+  <div style="margin-top:48px;padding:32px;background:var(--gold);border-radius:16px;">
+    <h4 style="color:var(--black);">Resumen de presupuesto</h4>
+    <table style="font-size:15px;margin:16px 0 0;">
+      <thead><tr><th>Fase</th><th>&euro;/día</th><th>Días</th><th>Total estimado</th><th>Foco</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Fase 1</strong></td><td>15-30 &euro;</td><td>30</td><td>450-900 &euro;</td><td>Solo Lead Form (emails)</td></tr>
+        <tr><td><strong>Fase 2</strong></td><td>30-50 &euro;</td><td>30</td><td>900-1.500 &euro;</td><td>Lead Form + templado + webinar</td></tr>
+        <tr><td><strong>Fase 3</strong></td><td>50-100 &euro;</td><td>15</td><td>750-1.500 &euro;</td><td>Webinar + venta beta</td></tr>
+        <tr><td><strong>Fase 4</strong></td><td>100-200 &euro;</td><td>15</td><td>1.500-3.000 &euro;</td><td>Retargeting + escalar ganadores</td></tr>
+        <tr style="background:rgba(0,0,0,0.05);"><td colspan="3"><strong>Total 90 días</strong></td><td><strong>3.600-6.900 &euro;</strong></td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- RULES -->
+  <div style="margin-top:32px;padding:24px;background:var(--white);border:1px solid var(--faint-border);border-radius:12px;">
+    <h4>Reglas de decisión para todos los ads</h4>
+    <div class="grid-2" style="margin-top:12px;gap:16px;">
+      <div>
+        <ul style="font-size:14px;line-height:2.2;padding-left:16px;">
+          <li><strong>Pausar</strong> anuncio si CTR &lt; 0.9% tras 72h</li>
+          <li><strong>Pausar</strong> si coste por lead &gt; 1.5x la media de la campaña</li>
+          <li><strong>Escalar +20%</strong> cada 72h en los ganadores</li>
+        </ul>
+      </div>
+      <div>
+        <ul style="font-size:14px;line-height:2.2;padding-left:16px;">
+          <li><strong>No fragmentar</strong> en demasiadas campañas pequeñas</li>
+          <li><strong>Rotar creativos</strong> cada 2-3 semanas para evitar fatiga</li>
+          <li><strong>No tocar</strong> un ad set que está en learning phase (primeras 50 conversiones)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== 06 WEBINAR STRUCTURE ======== -->
+<section class="page">
+  <div class="page-num">06</div>
+  <div class="label">El evento que vende</div>
+  <h1>Estructura del webinar</h1>
+  <p class="lead">Un webinar que vende tiene una estructura concreta. No es &ldquo;hablar de LOAM durante 1 hora&rdquo;. Es dar valor real y revelar al final.</p>
+
+  <div style="margin-top:48px;">
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot active" style="font-size:10px;">0'</div>
+        <div class="card" style="border-left:4px solid var(--olive);">
+          <h3>Minutos 0-5: Bienvenida</h3>
+          <p style="font-size:14px;">Lorena se presenta brevemente. Agradece. Dice qué van a trabajar hoy (el tema del título, NO &ldquo;LOAM&rdquo;). Genera expectativa: &ldquo;Al final os voy a contar algo que llevo meses preparando.&rdquo;</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot" style="font-size:10px;">5'</div>
+        <div class="card" style="border-left:4px solid var(--olive);">
+          <h3>Minutos 5-20: Contenido puro</h3>
+          <p style="font-size:14px;">Enseña algo real. Si el webinar es &ldquo;Los 3 patrones emocionales que te mantienen atrapada&rdquo;, explica los 3 patrones con ejemplos. La gente tiene que sentir que ha aprendido algo valioso <strong>gratis</strong>. Aquí se demuestra la autoridad de Lorena.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot" style="font-size:10px;">20'</div>
+        <div class="card" style="border-left:4px solid var(--gold);">
+          <h3>Minutos 20-35: Profundizar + puente</h3>
+          <p style="font-size:14px;">Va más profundo. Conecta los patrones con &ldquo;esto es exactamente lo que necesitas trabajar de forma guiada, no solo con un vídeo de 60 segundos&rdquo;. Planta la semilla sin decir aún qué es LOAM. La gente empieza a pensar &ldquo;necesito más de esto&rdquo;.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot active" style="font-size:10px;">35'</div>
+        <div class="card-gold">
+          <h3>Minutos 35-45: La revelación</h3>
+          <p style="font-size:15px;">&ldquo;Todo lo que acabáis de experimentar hoy es una muestra de lo que he construido. Se llama LOAM Club.&rdquo;</p>
+          <ul style="font-size:14px;line-height:2;padding-left:16px;margin-top:12px;">
+            <li>Explica qué es LOAM Club</li>
+            <li>Qué incluye (sin entrar en precios todavía)</li>
+            <li>Para quién es</li>
+            <li><strong>Webinar 1:</strong> anuncia que la beta se abre tras el segundo webinar</li>
+            <li><strong>Webinar 2:</strong> abre la beta del Plan Plus ahí mismo</li>
+          </ul>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot" style="font-size:10px;">45'</div>
+        <div class="card" style="border-left:4px solid var(--olive);">
+          <h3>Minutos 45-60: Preguntas y respuestas</h3>
+          <p style="font-size:14px;">Las preguntas son oro porque resuelven objeciones en público. &ldquo;¿Cuánto cuesta?&rdquo; &ldquo;¿Cuánto tiempo necesito?&rdquo; &ldquo;¿Y si no tengo tiempo?&rdquo; — cada pregunta respondida es una objeción menos para todos los que escuchan.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== 07 RETENTION ======== -->
+<section class="page">
+  <div class="page-num">07</div>
+  <div class="label">Post-suscripción</div>
+  <h1>Retención: que no se vayan</h1>
+  <p class="lead">En una membresía de 90 &euro;/mes, si alguien se va a los 2 meses, el LTV es 180 &euro; y probablemente no cubre el CAC. La retención es tan importante como la captación.</p>
+
+  <div class="grid-2" style="margin-top:48px;">
+    <div class="card" style="border-left:4px solid var(--olive);">
+      <h3>Onboarding (primera semana)</h3>
+      <p style="font-size:14px;">Secuencia de 3 emails automáticos al suscribirse:</p>
+      <ul style="font-size:14px;line-height:2.2;padding-left:16px;">
+        <li><strong>Email 1 (día 0):</strong> Bienvenida + cómo funciona la plataforma + primer paso recomendado</li>
+        <li><strong>Email 2 (día 3):</strong> &ldquo;¿Has empezado? Aquí va tu primer ejercicio recomendado&rdquo;</li>
+        <li><strong>Email 3 (día 7):</strong> &ldquo;Tu primera semana en LOAM: esto es lo que puedes hacer esta semana&rdquo;</li>
+      </ul>
+    </div>
+    <div class="card" style="border-left:4px solid var(--gold);">
+      <h3>Drip content</h3>
+      <p style="font-size:14px;">Los vídeos no están todos disponibles desde el día 1. Se desbloquean semana a semana. Esto genera:</p>
+      <ul style="font-size:14px;line-height:2.2;padding-left:16px;">
+        <li><strong>Razón para quedarse:</strong> &ldquo;La semana que viene se desbloquea X&rdquo;</li>
+        <li><strong>Sensación de progresión:</strong> no es un volcado de contenido</li>
+        <li><strong>Anticipación:</strong> saben que hay más por venir</li>
+      </ul>
+    </div>
+    <div class="card" style="border-left:4px solid var(--green);">
+      <h3>Empujar semestral/anual</h3>
+      <p style="font-size:14px;">Durante el primer mes de cada alumna:</p>
+      <ul style="font-size:14px;line-height:2.2;padding-left:16px;">
+        <li>Email automático día 20: &ldquo;Si te pasas al plan semestral antes de que termine tu primer mes, bloqueas el precio de lanzamiento para siempre&rdquo;</li>
+        <li>El pago adelantado es la mejor herramienta anti-churn</li>
+      </ul>
+    </div>
+    <div class="card" style="border-left:4px solid var(--red);">
+      <h3>Win-back (si cancela)</h3>
+      <p style="font-size:14px;">Email automático cuando alguien cancela:</p>
+      <ul style="font-size:14px;line-height:2.2;padding-left:16px;">
+        <li>&ldquo;Te echamos de menos. Esto es lo que te perdiste esta semana.&rdquo;</li>
+        <li>Mostrar contenido nuevo que se publicó después de la cancelación</li>
+        <li>Ofrecer un mes a precio reducido para volver (solo 1 vez)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ======== 08 SUMMARY ======== -->
+<section class="page" style="min-height:auto;padding-bottom:120px;">
+  <div class="page-num">08</div>
+  <div class="label">Todo junto</div>
+  <h1>Resumen de piezas</h1>
+
+  <table style="margin-top:40px;">
+    <thead><tr><th>Pieza</th><th>Estado</th><th>Cuándo se necesita</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Landing fase 1-2</strong> (misterio + newsletter)</td><td><span class="pill pill-gold" style="font-size:10px;padding:2px 8px;">Hacer</span></td><td>Antes de lanzar ads (día 1)</td></tr>
+      <tr><td><strong>ManyChat configurado</strong> (3 DMs)</td><td><span class="pill pill-gold" style="font-size:10px;padding:2px 8px;">Hacer</span></td><td>Antes de publicar el primer vídeo con CTA</td></tr>
+      <tr><td><strong>Comunidad WhatsApp</strong> abierta</td><td><span class="pill pill-gold" style="font-size:10px;padding:2px 8px;">Hacer</span></td><td>Día 1</td></tr>
+      <tr><td><strong>Secuencia 5 emails</strong> newsletter</td><td><span class="pill pill-gold" style="font-size:10px;padding:2px 8px;">Escribir</span></td><td>Antes de lanzar ads (día 1)</td></tr>
+      <tr><td><strong>10 vídeos pre-revelación</strong> grabados</td><td><span class="pill pill-gold" style="font-size:10px;padding:2px 8px;">Grabar</span></td><td>Día 1 (orgánico) / Día 31 (ads templados)</td></tr>
+      <tr><td><strong>2 vídeos extra ads</strong> grabados</td><td><span class="pill pill-gold" style="font-size:10px;padding:2px 8px;">Grabar</span></td><td>Día 1 (ads fríos)</td></tr>
+      <tr><td><strong>Pixel + CAPI</strong> configurados</td><td><span class="pill pill-gold" style="font-size:10px;padding:2px 8px;">Hacer</span></td><td>Antes de lanzar ads (día 1)</td></tr>
+      <tr><td><strong>Lead Form</strong> en Meta</td><td><span class="pill pill-gold" style="font-size:10px;padding:2px 8px;">Crear</span></td><td>Día 1</td></tr>
+      <tr><td><strong>Campañas Meta Ads</strong> fase 1</td><td><span class="pill pill-gold" style="font-size:10px;padding:2px 8px;">Configurar</span></td><td>Día 1</td></tr>
+      <tr><td><strong>Landing fase 3</strong> (página de ventas)</td><td><span class="pill pill-olive" style="font-size:10px;padding:2px 8px;">Fase 3</span></td><td>Antes del primer webinar (día 61)</td></tr>
+      <tr><td><strong>Vídeo invitación webinar</strong> (15-30 seg)</td><td><span class="pill pill-olive" style="font-size:10px;padding:2px 8px;">Fase 2</span></td><td>2 semanas antes del webinar</td></tr>
+      <tr><td><strong>2 vídeos LOAM Curso</strong></td><td><span class="pill pill-olive" style="font-size:10px;padding:2px 8px;">Fase 3</span></td><td>Después del primer webinar</td></tr>
+      <tr><td><strong>Onboarding 3 emails</strong> alumnas</td><td><span class="pill pill-olive" style="font-size:10px;padding:2px 8px;">Fase 3</span></td><td>Antes de que entren las testers</td></tr>
+      <tr><td><strong>Email win-back</strong></td><td><span class="pill" style="font-size:10px;padding:2px 8px;background:rgba(0,0,0,0.06);">Post-lanzamiento</span></td><td>Después del lanzamiento</td></tr>
+    </tbody>
+  </table>
+</section>
+
+</body>
+</html>
