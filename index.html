@@ -20,8 +20,8 @@
   * { margin:0; padding:0; box-sizing:border-box; }
   body { font-family:'Arial Nova',Arial,Helvetica,sans-serif; background:var(--cream); color:var(--black); -webkit-font-smoothing:antialiased; }
 
-  .page { min-height:100vh; padding:80px 60px; position:relative; border-bottom:1px solid var(--faint-border); }
-  .page-num { position:absolute; top:30px; right:60px; font-size:11px; letter-spacing:3px; color:var(--light-olive); font-weight:700; }
+  .page { min-height:100vh; padding:80px 60px; padding-top:136px; position:relative; border-bottom:1px solid var(--faint-border); }
+  .page-num { position:absolute; top:86px; right:60px; font-size:11px; letter-spacing:3px; color:var(--light-olive); font-weight:700; }
   .label { font-size:11px; letter-spacing:4px; text-transform:uppercase; color:var(--olive); margin-bottom:12px; font-weight:700; }
 
   .logo { font-family:'Playfair Display',Georgia,serif; font-weight:400; letter-spacing:0.06em; }
@@ -83,23 +83,46 @@
   .source-list li a { color:var(--olive); text-decoration:none; font-size:14px; }
   .source-list li a:hover { text-decoration:underline; }
 
+  /* HEADER */
+  .site-header { position:fixed; top:0; left:0; right:0; z-index:100; background:var(--black); border-bottom:1px solid rgba(255,255,255,0.08); }
+  .header-inner { max-width:1200px; margin:0 auto; padding:0 40px; height:56px; display:flex; align-items:center; justify-content:space-between; }
+  .header-logo { font-family:'Playfair Display',Georgia,serif; font-size:16px; color:var(--cream); letter-spacing:0.08em; text-decoration:none; }
+  .header-logo i { font-style:italic; }
+  .header-nav { display:flex; gap:4px; }
+  .header-nav a { font-size:13px; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:rgba(247,245,240,0.5); text-decoration:none; padding:8px 16px; border-radius:8px; transition:all 0.2s; }
+  .header-nav a:hover { color:var(--cream); background:rgba(255,255,255,0.06); }
+  .header-nav a.active { color:var(--gold); background:rgba(253,223,89,0.1); }
+
   .texture-grain { position:absolute; inset:0; opacity:0.04; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E"); pointer-events:none; mix-blend-mode:multiply; }
 
   @media (max-width:768px) {
-    .page { padding:48px 24px; }
+    .page { padding:48px 24px; padding-top:104px; }
     h1 { font-size:36px; }
     h2 { font-size:26px; }
     .grid-2, .grid-3, .vs-grid { grid-template-columns:1fr; }
     .vs-divider { padding:20px 0; }
     table { font-size:13px; }
     td, th { padding:10px 8px; }
+    .header-inner { padding:0 16px; }
+    .header-nav a { font-size:11px; padding:6px 10px; }
   }
 </style>
 </head>
 <body>
 
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="header-logo">LOAM CL<i>U</i>B</a>
+    <nav class="header-nav">
+      <a href="index.html" class="active">Análisis Whop</a>
+      <a href="estrategia.html">Estrategia</a>
+    </nav>
+  </div>
+</header>
+
 <!-- PAGE 1: Cover -->
-<section class="page" style="display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; background:var(--black); color:var(--cream); min-height:100vh;">
+<section class="page" style="display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; background:var(--black); color:var(--cream); min-height:100vh; padding-top:56px;">
   <div class="texture-grain"></div>
   <div class="page-num" style="color:rgba(255,255,255,0.3);">01</div>
   <div class="label" style="color:var(--gold); margin-bottom:24px;">Investigación de plataforma</div>
