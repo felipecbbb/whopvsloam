@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LOAM CLUB — Guiones de Vídeos</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --olive: #5B6644;
+    --gold: #FDDF59;
+    --black: #1A1A1A;
+    --white: #FFFFFF;
+    --cream: #F7F5F0;
+    --light-olive: #8a9470;
+    --faint-border: rgba(91,102,68,0.12);
+    --red: #C0392B;
+    --green: #27AE60;
+    --blue: #2980B9;
+    --purple: #8E44AD;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Arial Nova',Arial,Helvetica,sans-serif; background:var(--cream); color:var(--black); -webkit-font-smoothing:antialiased; }
+  .site-header { position:fixed; top:0; left:0; right:0; z-index:100; background:var(--black); border-bottom:1px solid rgba(255,255,255,0.08); }
+  .header-inner { max-width:1200px; margin:0 auto; padding:0 40px; height:56px; display:flex; align-items:center; justify-content:space-between; }
+  .header-logo { font-family:'Playfair Display',Georgia,serif; font-size:16px; color:var(--cream); letter-spacing:0.08em; text-decoration:none; }
+  .header-logo i { font-style:italic; }
+  .header-nav { display:flex; gap:4px; }
+  .header-nav a { font-size:13px; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:rgba(247,245,240,0.5); text-decoration:none; padding:8px 16px; border-radius:8px; transition:all 0.2s; }
+  .header-nav a:hover { color:var(--cream); background:rgba(255,255,255,0.06); }
+  .header-nav a.active { color:var(--gold); background:rgba(253,223,89,0.1); }
+  .page { padding:136px 60px 80px; position:relative; border-bottom:1px solid var(--faint-border); }
+  .page-num { position:absolute; top:86px; right:60px; font-size:11px; letter-spacing:3px; color:var(--light-olive); font-weight:700; }
+  .label { font-size:11px; letter-spacing:4px; text-transform:uppercase; color:var(--olive); margin-bottom:12px; font-weight:700; }
+  h1 { font-family:'Playfair Display',Georgia,serif; font-size:52px; font-weight:400; line-height:1.1; margin-bottom:32px; }
+  h2 { font-family:'Playfair Display',Georgia,serif; font-size:28px; font-weight:400; line-height:1.25; margin-bottom:16px; }
+  h3 { font-size:18px; font-weight:700; margin-bottom:16px; }
+  h4 { font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:12px; color:var(--olive); }
+  p { font-size:16px; line-height:1.7; max-width:none; margin-bottom:16px; }
+  .lead { font-size:20px; line-height:1.6; color:var(--olive); max-width:680px; }
+  .divider { width:60px; height:2px; background:var(--olive); margin:32px 0; border-radius:2px; }
+  .pill { display:inline-block; padding:6px 14px; border-radius:100px; font-size:13px; font-weight:700; margin:4px 4px 4px 0; }
+  .pill-olive { background:var(--olive); color:var(--cream); }
+  .pill-gold { background:var(--gold); color:var(--black); }
+  .pill-black { background:var(--black); color:var(--white); }
+  .pill-red { background:rgba(192,57,43,0.1); color:var(--red); }
+  .pill-green { background:rgba(39,174,96,0.1); color:var(--green); }
+  .card { background:var(--white); border:1px solid var(--faint-border); border-radius:12px; padding:32px; }
+  .grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:32px; margin-top:32px; }
+  .script-box { padding:24px; background:var(--white); border:1px solid var(--faint-border); border-radius:12px; margin:16px 0; font-size:15px; line-height:1.9; }
+  .script-box .hook { font-size:18px; font-family:'Playfair Display',Georgia,serif; font-weight:600; color:var(--olive); margin-bottom:12px; }
+  .script-box .cta { margin-top:16px; padding:12px 16px; background:rgba(91,102,68,0.06); border-radius:8px; font-weight:700; color:var(--olive); }
+  .avatar-section { margin-top:48px; padding:40px; border-radius:16px; }
+  .texture-grain { position:absolute; inset:0; opacity:0.04; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E"); pointer-events:none; mix-blend-mode:multiply; }
+  @media (max-width:768px) {
+    .page { padding:104px 24px 48px; }
+    h1 { font-size:36px; }
+    .grid-2 { grid-template-columns:1fr; }
+    .header-inner { padding:0 16px; }
+    .header-nav a { font-size:11px; padding:6px 10px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="header-logo">LOAM CL<i>U</i>B</a>
+    <nav class="header-nav">
+      <a href="index.html">Análisis Whop</a>
+      <a href="estrategia.html">Estrategia</a>
+      <a href="guiones.html" class="active">Guiones</a>
+    </nav>
+  </div>
+</header>
+
+<!-- COVER -->
+<section class="page" style="display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; background:var(--black); color:var(--cream); min-height:100vh; padding-top:56px;">
+  <div class="texture-grain"></div>
+  <div class="label" style="color:var(--gold);">Guiones de vídeos</div>
+  <h1 style="font-size:56px; color:var(--cream); max-width:700px;">13 vídeos, 5 avatares<br>+ 3 post-revelación</h1>
+  <div class="divider" style="background:var(--gold); margin:32px auto;"></div>
+  <p style="color:rgba(247,245,240,0.6); text-align:center; max-width:500px;">Todos los guiones listos para grabar. Palabra clave única: <strong style="color:var(--gold);">LOAM</strong>. Los 10 primeros son pre-revelación (fases 1-2). Los 3 últimos son post-revelación (fases 3-4).</p>
+  <div style="display:flex; gap:12px; margin-top:32px; flex-wrap:wrap; justify-content:center;">
+    <span class="pill pill-olive">10 pre-revelación</span>
+    <span class="pill pill-gold">2 post-revelación</span>
+    <span class="pill" style="background:rgba(255,255,255,0.1); color:var(--cream);">1 extra ads</span>
+  </div>
+</section>
+
+<!-- INSTRUCTIONS -->
+<section class="page" style="min-height:auto;">
+  <div class="label">Antes de grabar</div>
+  <h1>Reglas para todos los vídeos</h1>
+  <div class="grid-2">
+    <div class="card" style="border-left:4px solid var(--green);">
+      <h4 style="color:var(--green);">Siempre</h4>
+      <ul style="font-size:15px; line-height:2; padding-left:20px;">
+        <li>Lorena habla directo a cámara</li>
+        <li>Cada vídeo toca UN dolor concreto</li>
+        <li>Da algo útil (no solo teaser)</li>
+        <li>CTA al final: &ldquo;Comenta LOAM&rdquo;</li>
+        <li>Tono cercano, profesional, sin ser vendedora</li>
+      </ul>
+    </div>
+    <div class="card" style="border-left:4px solid var(--red);">
+      <h4 style="color:var(--red);">Nunca (en los 10 primeros)</h4>
+      <ul style="font-size:15px; line-height:2; padding-left:20px;">
+        <li>Decir &ldquo;curso&rdquo;, &ldquo;plataforma&rdquo;, &ldquo;membresía&rdquo;</li>
+        <li>Mencionar precios</li>
+        <li>Decir &ldquo;mis alumnas&rdquo;</li>
+        <li>Explicar qué es LOAM Club como producto</li>
+        <li>Solo dice: &ldquo;te ayudo&rdquo;, &ldquo;te acompaño&rdquo;, &ldquo;te explico&rdquo;</li>
+      </ul>
+    </div>
+  </div>
+  <div style="margin-top:32px; padding:20px; background:var(--black); border-radius:12px; color:var(--cream);">
+    <p style="font-size:15px; margin:0; color:var(--cream);"><strong style="color:var(--gold);">ManyChat:</strong> Una sola palabra clave &mdash; <strong style="color:var(--gold);">LOAM</strong> &mdash; activa el flujo de DM con enlace a la comunidad de WhatsApp + enlace a loamclub.es (newsletter).</p>
+  </div>
+</section>
+
+<!-- ============================== -->
+<!-- AVATAR 1: SENSIBILIDAD -->
+<!-- ============================== -->
+<section class="page">
+  <div class="page-num">01</div>
+  <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+    <div>
+      <span class="pill pill-olive">Avatar 1</span>
+      <span class="pill pill-green" style="font-size:10px;">Pre-revelación</span>
+      <h1 style="margin-top:12px;">Personas introspectivas y sensibles</h1>
+    </div>
+  </div>
+  <p class="lead">Personas que sienten que sienten &ldquo;demasiado&rdquo; en un mundo que les pide endurecerse.</p>
+
+  <div class="grid-2">
+    <div>
+      <h4>Vídeo 1A</h4>
+      <div class="script-box">
+        <div class="hook">¿Alguna vez has sentido que sientes demasiado… en un mundo que siente muy poco?</div>
+        <p>Soy Lorena, psicóloga, y hoy quiero hablarte de algo que muchas personas callan: la sensibilidad profunda. No es debilidad, no es exageración, no es &ldquo;ser demasiado&rdquo;. Es una forma de percibir el mundo con más intensidad, de captar matices que otros no ven.</p>
+        <p>El problema es que muchas veces creces sintiendo que tienes que apagarte, que tienes que endurecerte para encajar, y eso termina generando agotamiento emocional y una sensación constante de no pertenecer.</p>
+        <p>Pero la realidad es que tu sensibilidad, bien entendida, es una fortaleza. Solo necesitas aprender a gestionarla y a no traicionarte.</p>
+        <div class="cta">Si esto resuena contigo, comenta &ldquo;LOAM&rdquo; y te ayudo a entenderte mejor.</div>
+      </div>
+    </div>
+    <div>
+      <h4>Vídeo 1B</h4>
+      <div class="script-box">
+        <div class="hook">Puedes ser fuerte… y sensible al mismo tiempo.</div>
+        <p>Soy Lorena, psicóloga, y hoy quiero hablarte de algo que quizá llevas años sintiendo: que tienes que esconder cómo eres realmente para que los demás te acepten.</p>
+        <p>Las personas sensibles suelen adaptarse mucho, pensar demasiado y sentir muy profundo, pero pocas veces se sienten comprendidas. Y eso acaba generando soledad, inseguridad y desconexión contigo mismo.</p>
+        <p>No necesitas cambiar quién eres, necesitas aprender a sostenerlo con seguridad. Tu sensibilidad no es el problema, es la forma en la que has aprendido a relacionarte con ella.</p>
+        <div class="cta">Si quieres aprender a gestionarlo, escribe &ldquo;LOAM&rdquo; en comentarios.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== -->
+<!-- AVATAR 2: RELACIONES TÓXICAS -->
+<!-- ============================== -->
+<section class="page">
+  <div class="page-num">02</div>
+  <div>
+    <span class="pill pill-gold">Avatar 2</span>
+    <span class="pill pill-green" style="font-size:10px;">Pre-revelación</span>
+    <h1 style="margin-top:12px;">Relaciones tóxicas</h1>
+  </div>
+  <p class="lead">Personas atrapadas en relaciones que desgastan, que dudan de lo que sienten y que no entienden por qué se quedan.</p>
+
+  <div class="grid-2">
+    <div>
+      <h4>Vídeo 2A</h4>
+      <div class="script-box">
+        <div class="hook">Si tienes que dudar constantemente de lo que sientes… probablemente no es amor.</div>
+        <p>Soy Lorena, psicóloga, y hoy quiero hablarte de relaciones que desgastan más de lo que aportan. Relaciones donde te cuestionas, donde te adaptas demasiado y donde poco a poco te vas perdiendo.</p>
+        <p>Muchas veces no es algo evidente, no hay grandes discusiones, pero sí pequeñas dinámicas que te hacen sentir inseguro o insuficiente. Y sin darte cuenta, empiezas a normalizarlo.</p>
+        <p>El problema no es solo la relación, es lo que tú has aprendido a tolerar. Salir de ahí no es solo irte, es entender por qué te quedas.</p>
+        <div class="cta">Si quieres aprender a verlo claro, comenta &ldquo;LOAM&rdquo;.</div>
+      </div>
+    </div>
+    <div>
+      <h4>Vídeo 2B</h4>
+      <div class="script-box">
+        <div class="hook">No es que no puedas dejarlo… es que hay algo que te ata.</div>
+        <p>Soy Lorena, psicóloga, y hoy quiero hablarte del enganche emocional. Ese que te hace volver, justificar o pensar que la otra persona va a cambiar.</p>
+        <p>No es debilidad, es un patrón emocional que muchas veces viene de heridas pasadas. Y cuanto más intentas salir sin entenderlo, más vuelves a caer en lo mismo.</p>
+        <p>Por eso no se trata solo de alejarte, se trata de entender qué necesitas sanar dentro de ti. Cuando lo entiendes, todo cambia.</p>
+        <div class="cta">Si quieres empezar a salir de ese ciclo, comenta &ldquo;LOAM&rdquo;.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== -->
+<!-- AVATAR 3: ANSIEDAD -->
+<!-- ============================== -->
+<section class="page">
+  <div class="page-num">03</div>
+  <div>
+    <span class="pill pill-black">Avatar 3</span>
+    <span class="pill pill-green" style="font-size:10px;">Pre-revelación</span>
+    <h1 style="margin-top:12px;">Ansiedad</h1>
+  </div>
+  <p class="lead">Personas que viven con ansiedad, que intentan controlar todo y que no saben cómo regularla.</p>
+
+  <div class="grid-2">
+    <div>
+      <h4>Vídeo 3A</h4>
+      <div class="script-box">
+        <div class="hook">No, no estás exagerando… tu ansiedad tiene sentido.</div>
+        <p>Soy Lorena, psicóloga, y hoy quiero explicarte algo importante: la ansiedad no aparece porque sí. Es una respuesta de tu cuerpo a algo que no estás gestionando o entendiendo.</p>
+        <p>El problema es que muchas personas intentan ignorarla o hacer que desaparezca, pero la ansiedad no funciona así. Cuanto más la evitas, más crece.</p>
+        <p>Detrás suele haber miedo, sobrecarga emocional o pensamientos que no sabes manejar. Y aprender a regularla no es eliminarla, es entenderla.</p>
+        <div class="cta">Si quieres empezar a hacerlo, comenta &ldquo;LOAM&rdquo; y te ayudo.</div>
+      </div>
+    </div>
+    <div>
+      <h4>Vídeo 3B</h4>
+      <div class="script-box">
+        <div class="hook">Cuanto más intentas controlarlo todo… más ansiedad sientes.</div>
+        <p>Soy Lorena, psicóloga, y hoy quiero hablarte del control. Muchas personas con ansiedad viven intentando anticiparse a todo, evitando errores, buscando seguridad constante. Pero eso no calma, eso agota.</p>
+        <p>La ansiedad muchas veces nace del miedo a perder el control, y la solución no es tener más control, sino aprender a soltarlo de forma segura.</p>
+        <p>Y eso se puede entrenar.</p>
+        <div class="cta">Si quieres aprender cómo hacerlo, escribe &ldquo;LOAM&rdquo; y te explico.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== -->
+<!-- AVATAR 4: DESCONEXIÓN / IDENTIDAD -->
+<!-- ============================== -->
+<section class="page">
+  <div class="page-num">04</div>
+  <div>
+    <span class="pill pill-blue">Avatar 4</span>
+    <span class="pill pill-green" style="font-size:10px;">Pre-revelación</span>
+    <h1 style="margin-top:12px;">Desconexión, identidad y crecimiento</h1>
+  </div>
+  <p class="lead">Personas que sienten que algo no encaja, que se han perdido a sí mismas o que viven para lo que se espera de ellas.</p>
+
+  <div class="grid-2">
+    <div>
+      <h4>Vídeo 4A</h4>
+      <div class="script-box">
+        <div class="hook">¿Te has sentido perdido… incluso cuando todo parece ir bien?</div>
+        <p>Soy Lorena, psicóloga, y hoy quiero hablarte de esa sensación de desconexión interna. Haces lo que &ldquo;deberías&rdquo;, cumples con todo, pero aun así sientes que algo no encaja.</p>
+        <p>Muchas veces no es falta de motivación, es falta de conexión contigo mismo. Has aprendido a vivir según lo que se espera de ti, pero no según lo que realmente necesitas.</p>
+        <p>Y llega un punto en el que ya no sabes qué quieres ni quién eres. El crecimiento personal no es cambiarte, es volver a ti.</p>
+        <div class="cta">Si estás en ese punto, comenta &ldquo;LOAM&rdquo; y te acompaño.</div>
+      </div>
+    </div>
+    <div>
+      <h4>Vídeo 4B</h4>
+      <div class="script-box">
+        <div class="hook">Te exiges tanto… que ya ni disfrutas lo que consigues.</div>
+        <p>Soy Lorena, psicóloga, y hoy quiero hablarte de la autoexigencia. Esa voz interna que siempre quiere más, que nunca es suficiente.</p>
+        <p>Puede parecer que te impulsa, pero en realidad te desgasta, porque nunca te permite parar ni reconocer lo que sí estás haciendo bien.</p>
+        <p>Y detrás de esa exigencia suele haber miedo a no ser suficiente. Aprender a regularla no es conformarse, es empezar a tratarte con equilibrio.</p>
+        <div class="cta">Si quieres salir de ahí, comenta &ldquo;LOAM&rdquo; y te explico cómo hacerlo.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== -->
+<!-- AVATAR 5: BLOQUEO Y FRUSTRACIÓN -->
+<!-- ============================== -->
+<section class="page">
+  <div class="page-num">05</div>
+  <div>
+    <span class="pill pill-purple">Avatar 5</span>
+    <span class="pill pill-green" style="font-size:10px;">Pre-revelación</span>
+    <h1 style="margin-top:12px;">Bloqueo y frustración</h1>
+  </div>
+  <p class="lead">Personas que saben lo que quieren pero no consiguen avanzar. Procrastinan, se comparan y se frustran.</p>
+
+  <div class="grid-2">
+    <div>
+      <h4>Vídeo 5A</h4>
+      <div class="script-box">
+        <div class="hook">¿Sientes que sabes lo que quieres… pero no consigues avanzar?</div>
+        <p>Soy Lorena, psicóloga, y hoy quiero hablarte del bloqueo emocional. Ese que te hace procrastinar, dudar y quedarte en el mismo sitio.</p>
+        <p>Muchas veces no es falta de disciplina, es miedo, autoexigencia o inseguridad disfrazada. Quieres avanzar, pero algo dentro de ti te frena, y eso genera mucha frustración.</p>
+        <p>La clave no es forzarte más, es entender qué hay detrás de ese bloqueo. Cuando lo entiendes, puedes empezar a avanzar de verdad.</p>
+        <div class="cta">Si te identificas, comenta &ldquo;LOAM&rdquo; y te ayudo.</div>
+      </div>
+    </div>
+    <div>
+      <h4>Vídeo 5B</h4>
+      <div class="script-box">
+        <div class="hook">No estás estancado… te estás comparando demasiado.</div>
+        <p>Soy Lorena, psicóloga, y hoy quiero hablarte de algo que bloquea a muchísimas personas: la comparación constante.</p>
+        <p>Ves a otros avanzar y sientes que tú no haces suficiente. Pero no estás viendo todo el contexto, solo una parte. Y cuanto más te comparas, más dudas de ti y menos avanzas.</p>
+        <p>El problema no es tu ritmo, es la presión que te estás poniendo. Necesitas volver a tu propio camino.</p>
+        <div class="cta">Si quieres salir de ese bucle, comenta &ldquo;LOAM&rdquo; y te acompaño.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== -->
+<!-- EXTRA: COMPRENDER TU MENTE -->
+<!-- ============================== -->
+<section class="page" style="background:rgba(91,102,68,0.03);">
+  <div class="page-num">06</div>
+  <div>
+    <span class="pill pill-olive">Extra</span>
+    <span class="pill" style="font-size:10px; background:rgba(41,128,185,0.1); color:var(--blue);">Vídeo para ads</span>
+    <h1 style="margin-top:12px;">Comprender tu mente</h1>
+  </div>
+  <p class="lead">Vídeo transversal que funciona para todos los avatares. Ideal para campañas de Meta Ads en prospecting frío.</p>
+
+  <div class="grid-2">
+    <div>
+      <h4>Vídeo Extra A</h4>
+      <div class="script-box">
+        <div class="hook">Tu mente puede ser tu mayor problema… o tu mayor aliada.</div>
+        <p>Soy Lorena, psicóloga, y hoy quiero hablarte de algo que puede cambiar completamente tu vida: aprender a dirigir tu mente en lugar de dejar que ella te dirija a ti.</p>
+        <p>Muchas personas viven atrapadas en pensamientos negativos, en dudas constantes, en escenarios que ni siquiera han pasado… y todo eso acaba condicionando cómo se sienten y cómo actúan.</p>
+        <p>Pero lo que quizá no sabes es que tu mente se puede entrenar. No se trata de dejar de pensar, se trata de aprender a elegir qué pensamientos alimentar y cuáles cuestionar.</p>
+        <p>Cuando empiezas a hacerlo, dejas de reaccionar y empiezas a decidir. Y ahí es donde todo cambia.</p>
+        <div class="cta">Si esto ha resonado contigo, comenta &ldquo;LOAM&rdquo; y te voy a enviar un enlace para que empieces a entrenar tu mente paso a paso.</div>
+      </div>
+    </div>
+    <div>
+      <h4>Vídeo Extra B</h4>
+      <div class="script-box">
+        <div class="hook">No necesitas cambiar tu vida… necesitas cambiar cómo la interpretas.</div>
+        <p>Soy Lorena, psicóloga, y hoy quiero hablarte del verdadero poder de tu mente. Porque no es lo que te pasa lo que más te afecta, sino cómo lo piensas.</p>
+        <p>Dos personas pueden vivir la misma situación y experimentarla de forma completamente distinta, y eso depende de su diálogo interno.</p>
+        <p>El problema es que la mayoría de ese diálogo es automático y muchas veces negativo, limitante o incluso destructivo. Pero cuando aprendes a tomar conciencia de eso y a reformularlo, empiezas a recuperar el control.</p>
+        <p>Y cuando controlas tu mente, dejas de sentirte atrapado y empiezas a avanzar con claridad.</p>
+        <div class="cta">Si esto ha resonado contigo, comenta &ldquo;LOAM&rdquo; y te envío un enlace para aprender a tomar el control de tu mente desde hoy.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== -->
+<!-- POST-REVEAL: LOAM CURSO -->
+<!-- ============================== -->
+<section class="page" style="background:var(--olive); color:var(--cream);">
+  <div class="page-num" style="color:rgba(255,255,255,0.3);">07</div>
+  <div>
+    <span class="pill pill-gold">Post-revelación</span>
+    <span class="pill" style="font-size:10px; background:rgba(192,57,43,0.2); color:#e74c3c;">Solo fases 3-4</span>
+    <h1 style="margin-top:12px; color:var(--cream);">LOAM Curso &mdash; La revelación</h1>
+  </div>
+  <p style="color:rgba(247,245,240,0.7); font-size:18px; max-width:680px;">Estos vídeos se usan SOLO después de los webinars, cuando LOAM Club ya se ha revelado públicamente. Aquí Lorena habla abiertamente del producto.</p>
+
+  <div style="margin-top:16px; padding:16px; background:rgba(253,223,89,0.1); border-radius:8px;">
+    <p style="font-size:14px; margin:0; color:var(--gold);"><strong>Cuándo usar:</strong> Fase 3 (post-webinar) y Fase 4 (lanzamiento público). En retargeting caliente y en orgánico de @loamclub.</p>
+  </div>
+
+  <div class="grid-2" style="margin-top:32px;">
+    <div>
+      <h4 style="color:var(--gold);">Vídeo LOAM A</h4>
+      <div class="script-box" style="background:rgba(0,0,0,0.2); border-color:rgba(255,255,255,0.1); color:var(--cream);">
+        <div class="hook" style="color:var(--gold);">Hoy en día hay muchísimos cursos que te enseñan a facturar más… pero hay una pregunta que casi nadie se hace.</div>
+        <p>¿De qué te sirve tener todo eso si no eres capaz de disfrutar tu propia vida?</p>
+        <p>Soy Lorena, psicóloga, y hoy quiero hablarte de algo que muchas personas están dejando de lado: su salud mental. Porque puedes tener éxito fuera y sentirte vacío por dentro. Puedes conseguir objetivos y aun así vivir con ansiedad, con bloqueo o con una sensación constante de insatisfacción.</p>
+        <p>Y eso no se soluciona con más dinero, se soluciona aprendiendo a entender tu mente, a regular tus emociones y a vivir con más equilibrio.</p>
+        <p>Por eso creé LOAM, un espacio donde trabajamos todo eso que realmente sostiene tu bienestar.</p>
+        <div class="cta" style="background:rgba(253,223,89,0.15); color:var(--gold);">Si esto ha resonado contigo, comenta &ldquo;LOAM&rdquo; y te mando un enlace para que seas de las primeras personas en formar parte.</div>
+      </div>
+    </div>
+    <div>
+      <h4 style="color:var(--gold);">Vídeo LOAM B</h4>
+      <div class="script-box" style="background:rgba(0,0,0,0.2); border-color:rgba(255,255,255,0.1); color:var(--cream);">
+        <div class="hook" style="color:var(--gold);">Nadie te ha enseñado a vivir tu vida… y ese es el verdadero problema.</div>
+        <p>Soy Lorena, psicóloga, y después de años trabajando en terapia me di cuenta de algo que se repite constantemente: las personas no saben gestionar lo que sienten, no entienden por qué piensan como piensan ni por qué repiten los mismos patrones una y otra vez.</p>
+        <p>Y no es porque no quieran cambiar, es porque nadie se lo ha enseñado.</p>
+        <p>Para mí, muchas de estas cosas son básicas, pero solo porque llevo años formándome, especializándome y trabajando con cientos de casos. Y aun así, me sigue impactando ver cómo algo tan importante como entender tu mente o gestionar tus emociones no se enseña en ningún sitio.</p>
+        <p>Por eso decidí crear LOAM, un curso de vida donde aprendes a entenderte, a tomar las riendas y a empezar a vivir con más claridad y equilibrio.</p>
+        <p>He puesto muchísimo valor dentro, pero también he querido que sea accesible, porque sinceramente creo que esto es algo que todo el mundo debería tener.</p>
+        <div class="cta" style="background:rgba(253,223,89,0.15); color:var(--gold);">Si esto ha resonado contigo, comenta &ldquo;LOAM&rdquo; y te mando un enlace para que puedas ser de las primeras personas en acceder, ya que hay plazas limitadas.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUMMARY -->
+<section class="page" style="min-height:auto; padding-bottom:120px;">
+  <div class="label">Resumen</div>
+  <h1>Inventario de vídeos</h1>
+  <table style="margin-top:32px;">
+    <thead><tr><th>#</th><th>Avatar</th><th>Vídeo</th><th>Fase</th><th>Uso</th></tr></thead>
+    <tbody>
+      <tr><td>1A</td><td>Sensibilidad</td><td>&ldquo;¿Sientes demasiado?&rdquo;</td><td><span class="pill pill-green" style="font-size:10px; padding:2px 8px;">1-2</span></td><td>Orgánico + Ads</td></tr>
+      <tr><td>1B</td><td>Sensibilidad</td><td>&ldquo;Fuerte y sensible&rdquo;</td><td><span class="pill pill-green" style="font-size:10px; padding:2px 8px;">1-2</span></td><td>Orgánico + Ads</td></tr>
+      <tr><td>2A</td><td>Relaciones tóxicas</td><td>&ldquo;Dudar de lo que sientes&rdquo;</td><td><span class="pill pill-green" style="font-size:10px; padding:2px 8px;">1-2</span></td><td>Orgánico + Ads</td></tr>
+      <tr><td>2B</td><td>Relaciones tóxicas</td><td>&ldquo;El enganche emocional&rdquo;</td><td><span class="pill pill-green" style="font-size:10px; padding:2px 8px;">1-2</span></td><td>Orgánico + Ads</td></tr>
+      <tr><td>3A</td><td>Ansiedad</td><td>&ldquo;Tu ansiedad tiene sentido&rdquo;</td><td><span class="pill pill-green" style="font-size:10px; padding:2px 8px;">1-2</span></td><td>Orgánico + Ads</td></tr>
+      <tr><td>3B</td><td>Ansiedad</td><td>&ldquo;El control que agota&rdquo;</td><td><span class="pill pill-green" style="font-size:10px; padding:2px 8px;">1-2</span></td><td>Orgánico + Ads</td></tr>
+      <tr><td>4A</td><td>Desconexión</td><td>&ldquo;Perdido aunque todo va bien&rdquo;</td><td><span class="pill pill-green" style="font-size:10px; padding:2px 8px;">1-2</span></td><td>Orgánico + Ads</td></tr>
+      <tr><td>4B</td><td>Desconexión</td><td>&ldquo;La autoexigencia&rdquo;</td><td><span class="pill pill-green" style="font-size:10px; padding:2px 8px;">1-2</span></td><td>Orgánico + Ads</td></tr>
+      <tr><td>5A</td><td>Bloqueo</td><td>&ldquo;Saber pero no avanzar&rdquo;</td><td><span class="pill pill-green" style="font-size:10px; padding:2px 8px;">1-2</span></td><td>Orgánico + Ads</td></tr>
+      <tr><td>5B</td><td>Bloqueo</td><td>&ldquo;La comparación constante&rdquo;</td><td><span class="pill pill-green" style="font-size:10px; padding:2px 8px;">1-2</span></td><td>Orgánico + Ads</td></tr>
+      <tr style="background:rgba(41,128,185,0.04);"><td>E-A</td><td>Transversal</td><td>&ldquo;Tu mente: aliada o problema&rdquo;</td><td><span class="pill pill-green" style="font-size:10px; padding:2px 8px;">1-2</span></td><td>Ads (prospecting frío)</td></tr>
+      <tr style="background:rgba(41,128,185,0.04);"><td>E-B</td><td>Transversal</td><td>&ldquo;Cambiar cómo interpretas&rdquo;</td><td><span class="pill pill-green" style="font-size:10px; padding:2px 8px;">1-2</span></td><td>Ads (prospecting frío)</td></tr>
+      <tr style="background:rgba(253,223,89,0.08);"><td>L-A</td><td>LOAM Curso</td><td>&ldquo;¿De qué sirve si no disfrutas?&rdquo;</td><td><span class="pill pill-gold" style="font-size:10px; padding:2px 8px;">3-4</span></td><td>Orgánico + Retargeting</td></tr>
+      <tr style="background:rgba(253,223,89,0.08);"><td>L-B</td><td>LOAM Curso</td><td>&ldquo;Nadie te enseñó a vivir&rdquo;</td><td><span class="pill pill-gold" style="font-size:10px; padding:2px 8px;">3-4</span></td><td>Orgánico + Retargeting</td></tr>
+    </tbody>
+  </table>
+</section>
+
+</body>
+</html>
