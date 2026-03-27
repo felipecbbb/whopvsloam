@@ -21,7 +21,6 @@
   }
   * { margin:0; padding:0; box-sizing:border-box; }
   body { font-family:'Arial Nova',Arial,Helvetica,sans-serif; background:var(--cream); color:var(--black); -webkit-font-smoothing:antialiased; }
-
   .site-header { position:fixed; top:0; left:0; right:0; z-index:100; background:var(--black); border-bottom:1px solid rgba(255,255,255,0.08); }
   .header-inner { max-width:1200px; margin:0 auto; padding:0 40px; height:56px; display:flex; align-items:center; justify-content:space-between; }
   .header-logo { font-family:'Playfair Display',Georgia,serif; font-size:16px; color:var(--cream); letter-spacing:0.08em; text-decoration:none; }
@@ -30,70 +29,51 @@
   .header-nav a { font-size:13px; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:rgba(247,245,240,0.5); text-decoration:none; padding:8px 16px; border-radius:8px; transition:all 0.2s; }
   .header-nav a:hover { color:var(--cream); background:rgba(255,255,255,0.06); }
   .header-nav a.active { color:var(--gold); background:rgba(253,223,89,0.1); }
-
   .page { min-height:100vh; padding:136px 60px 80px; position:relative; border-bottom:1px solid var(--faint-border); }
   .page-num { position:absolute; top:86px; right:60px; font-size:11px; letter-spacing:3px; color:var(--light-olive); font-weight:700; }
   .label { font-size:11px; letter-spacing:4px; text-transform:uppercase; color:var(--olive); margin-bottom:12px; font-weight:700; }
-
   h1 { font-family:'Playfair Display',Georgia,serif; font-size:52px; font-weight:400; line-height:1.1; margin-bottom:32px; }
   h2 { font-family:'Playfair Display',Georgia,serif; font-size:32px; font-weight:400; line-height:1.25; margin-bottom:24px; }
   h3 { font-size:18px; font-weight:700; margin-bottom:16px; }
   h4 { font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:12px; color:var(--olive); }
   p { font-size:16px; line-height:1.7; max-width:680px; margin-bottom:16px; }
   .lead { font-size:20px; line-height:1.6; color:var(--olive); }
-
   .grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:40px; margin-top:40px; }
   .grid-3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:32px; margin-top:40px; }
   .grid-4 { display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:24px; margin-top:40px; }
-
   .card { background:var(--white); border:1px solid var(--faint-border); border-radius:12px; padding:32px; }
   .card-olive { background:var(--olive); color:var(--cream); border-radius:12px; padding:32px; }
   .card-black { background:var(--black); color:var(--cream); border-radius:12px; padding:32px; }
   .card-gold { background:var(--gold); color:var(--black); border-radius:12px; padding:32px; }
-
   table { width:100%; border-collapse:collapse; margin:24px 0; font-size:15px; }
   th { text-align:left; padding:14px 16px; border-bottom:2px solid var(--black); font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--olive); }
   td { padding:14px 16px; border-bottom:1px solid var(--faint-border); vertical-align:top; }
   tr:hover td { background:rgba(91,102,68,0.03); }
-
   .divider { width:60px; height:2px; background:var(--olive); margin:32px 0; border-radius:2px; }
-
   .pill { display:inline-block; padding:6px 14px; border-radius:100px; font-size:13px; font-weight:700; margin:4px 4px 4px 0; }
   .pill-olive { background:var(--olive); color:var(--cream); }
   .pill-gold { background:var(--gold); color:var(--black); }
-  .pill-outline { border:1.5px solid var(--olive); color:var(--olive); }
   .pill-black { background:var(--black); color:var(--white); }
   .pill-red { background:rgba(192,57,43,0.1); color:var(--red); }
   .pill-green { background:rgba(39,174,96,0.1); color:var(--green); }
   .pill-blue { background:rgba(41,128,185,0.1); color:var(--blue); }
   .pill-purple { background:rgba(142,68,173,0.1); color:var(--purple); }
-
   .icon { font-size:28px; margin-bottom:16px; display:block; }
   .fee-highlight { font-size:32px; font-family:'Playfair Display',Georgia,serif; font-weight:600; color:var(--olive); }
   .fee-sub { font-size:13px; color:var(--light-olive); margin-top:4px; }
-
-  .progress-bar { height:10px; background:rgba(91,102,68,0.12); border-radius:10px; overflow:hidden; margin:8px 0 20px; }
-  .progress-fill { height:100%; border-radius:10px; background:var(--olive); }
-
   .timeline { position:relative; padding-left:40px; }
   .timeline::before { content:''; position:absolute; left:14px; top:0; bottom:0; width:2px; background:var(--faint-border); }
   .timeline-item { position:relative; margin-bottom:40px; }
   .timeline-dot { position:absolute; left:-40px; top:4px; width:28px; height:28px; border-radius:50%; background:var(--olive); color:var(--cream); display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; }
   .timeline-dot.active { background:var(--gold); color:var(--black); }
-
-  .funnel-step { padding:24px 32px; text-align:center; font-weight:700; font-size:15px; }
-  .funnel-arrow { text-align:center; font-size:20px; color:var(--light-olive); padding:4px 0; }
-
   .hook-bubble { background:var(--white); border:1px solid var(--faint-border); border-radius:16px; padding:20px 24px; font-size:15px; font-style:italic; line-height:1.6; margin:8px 0; position:relative; }
   .hook-bubble::before { content:'\201C'; font-size:40px; font-family:'Playfair Display',Georgia,serif; color:var(--olive); opacity:0.3; position:absolute; top:8px; left:12px; }
   .hook-bubble p { padding-left:24px; margin:0; }
-
   .checklist { list-style:none; padding:0; }
   .checklist li { padding:12px 0; border-bottom:1px solid var(--faint-border); font-size:15px; display:flex; gap:12px; align-items:flex-start; }
   .checklist li::before { content:''; flex-shrink:0; width:20px; height:20px; border:2px solid var(--olive); border-radius:4px; margin-top:2px; }
-
   .texture-grain { position:absolute; inset:0; opacity:0.04; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E"); pointer-events:none; mix-blend-mode:multiply; }
-
+  .phase-label { display:inline-block; padding:4px 12px; border-radius:6px; font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; margin-bottom:8px; }
   @media (max-width:768px) {
     .page { padding:104px 24px 48px; }
     h1 { font-size:36px; }
@@ -118,921 +98,593 @@
   </div>
 </header>
 
-<!-- ============================================ -->
-<!-- 01 COVER -->
-<!-- ============================================ -->
+<!-- ======== 01 COVER ======== -->
 <section class="page" style="display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; background:var(--olive); color:var(--cream); min-height:100vh; padding-top:56px;">
   <div class="texture-grain"></div>
   <div class="page-num" style="color:rgba(255,255,255,0.3);">01</div>
   <div class="label" style="color:var(--gold); margin-bottom:24px;">Estrategia de lanzamiento</div>
-  <h1 style="font-size:64px; color:var(--cream); max-width:700px;">
-    El plan completo<br>paso a paso
-  </h1>
+  <h1 style="font-size:64px; color:var(--cream); max-width:750px;">Revelación progresiva<br>+ lanzamiento</h1>
   <div class="divider" style="background:var(--gold); margin:40px auto;"></div>
-  <p style="color:rgba(247,245,240,0.7); text-align:center; max-width:520px;">
-    Toda la estrategia de lanzamiento de LOAM Club explicada de forma sencilla: qué hacemos, en qué orden, y por qué.
-  </p>
+  <p style="color:rgba(247,245,240,0.7); text-align:center; max-width:560px;">LOAM Club no se anuncia. Se revela. La curiosidad es más potente que cualquier anuncio. Este es el plan completo, paso a paso.</p>
   <div style="display:flex; gap:16px; margin-top:40px; flex-wrap:wrap; justify-content:center;">
     <span class="pill pill-gold">90 días</span>
     <span class="pill" style="background:rgba(255,255,255,0.1); color:var(--cream);">4 fases</span>
     <span class="pill" style="background:rgba(255,255,255,0.1); color:var(--cream);">5 avatares</span>
-    <span class="pill" style="background:rgba(255,255,255,0.1); color:var(--cream);">Modelo evergreen</span>
+    <span class="pill" style="background:rgba(255,255,255,0.1); color:var(--cream);">200K de base orgánica</span>
   </div>
 </section>
 
-<!-- ============================================ -->
-<!-- 02 THE OFFER -->
-<!-- ============================================ -->
+<!-- ======== 02 CONTEXT ======== -->
 <section class="page">
   <div class="page-num">02</div>
-  <div class="label">Lo que vendemos</div>
-  <h1>Dos planes, siempre abiertos</h1>
-  <p class="lead">LOAM Club es una membresía mensual de formación psicológica aplicada. No es un curso cerrado. La suscripción está siempre abierta &mdash; no hay ventanas artificiales de &ldquo;últimas plazas&rdquo;.</p>
+  <div class="label">Punto de partida</div>
+  <h1>No partimos de cero</h1>
+  <p class="lead">LOAM Club nace de una audiencia que ya existe, que ya confía en Lorena, y que ya consume su contenido. Eso cambia toda la estrategia.</p>
+  <div class="grid-3" style="margin-top:48px;">
+    <div class="card" style="text-align:center; border-top:4px solid var(--olive);">
+      <div class="fee-highlight">200K</div>
+      <div class="fee-sub">seguidores entre IG y TikTok</div>
+      <p style="font-size:14px; margin-top:16px;">@psico.lorenaamadio &mdash; contenido de psicología aplicada. 150K ganados en 6 meses.</p>
+    </div>
+    <div class="card" style="text-align:center; border-top:4px solid var(--gold);">
+      <div class="fee-highlight">3K</div>
+      <div class="fee-sub">seguidores en @loamclub en 1 semana</div>
+      <p style="font-size:14px; margin-top:16px;">Cuenta nueva. Crece por efecto rebote de la principal. Contenido más íntimo, Lorena a cámara.</p>
+    </div>
+    <div class="card" style="text-align:center; border-top:4px solid var(--black);">
+      <div class="fee-highlight">0</div>
+      <div class="fee-sub">personas saben que LOAM es una membresía</div>
+      <p style="font-size:14px; margin-top:16px;">LOAM Club no se ha revelado públicamente como plataforma de formación. <strong>Esta es nuestra mayor ventaja.</strong></p>
+    </div>
+  </div>
+  <div style="margin-top:48px; padding:24px; background:var(--olive); border-radius:12px; color:var(--cream);">
+    <h4 style="color:var(--gold);">El principio que guía toda la estrategia</h4>
+    <p style="font-size:18px; color:var(--cream); max-width:none; text-align:center; margin:16px 0 0;">
+      <strong style="color:var(--gold);">La curiosidad vende más que cualquier anuncio.</strong><br>Cuando dices &ldquo;he creado un curso&rdquo;, la gente decide en 2 segundos. Cuando dices &ldquo;estoy preparando algo&rdquo;, la gente <em>necesita</em> saber qué es.
+    </p>
+  </div>
+</section>
 
+<!-- ======== 03 TWO ACCOUNTS ======== -->
+<section class="page">
+  <div class="page-num">03</div>
+  <div class="label">Dos cuentas, dos funciones</div>
+  <h1>Cada cuenta tiene un rol<br>muy diferente</h1>
+  <div class="grid-2" style="margin-top:48px;">
+    <div class="card" style="border:2px solid var(--olive);">
+      <span class="pill pill-olive" style="margin-bottom:16px;">@psico.lorenaamadio</span>
+      <h2 style="font-size:28px;">El motor</h2>
+      <div class="divider"></div>
+      <h4>Función: atraer y educar</h4>
+      <ul style="font-size:15px; line-height:2.2; padding-left:20px;">
+        <li>Contenido de psicología general (lo que ya hace)</li>
+        <li><strong>No cambiar nada.</strong> Está funcionando.</li>
+        <li>150K en 6 meses demuestra que el contenido resuena</li>
+      </ul>
+      <div class="divider"></div>
+      <h4>Menciones a LOAM</h4>
+      <p style="font-size:14px;">Máximo <strong>2 de cada 10 posts</strong>. Nunca &ldquo;compra mi producto&rdquo;. Siempre sutil:</p>
+      <div class="hook-bubble"><p>Estoy trabajando en algo nuevo. Cuando esté listo, las primeras en saberlo serán las que estén en @loamclub.</p></div>
+      <div style="margin-top:16px; padding:16px; background:rgba(192,57,43,0.06); border-radius:8px;">
+        <p style="font-size:13px; margin:0; color:var(--red);"><strong>Lo que NO hacer:</strong> Convertir esta cuenta en un canal de venta de LOAM. Si lo hace, pierde lo que la hizo crecer.</p>
+      </div>
+    </div>
+
+    <div class="card" style="border:2px solid var(--gold);">
+      <span class="pill pill-gold" style="margin-bottom:16px;">@loamclub</span>
+      <h2 style="font-size:28px;">La vitrina</h2>
+      <div class="divider" style="background:var(--gold);"></div>
+      <h4>Función: convertir y generar deseo</h4>
+      <ul style="font-size:15px; line-height:2.2; padding-left:20px;">
+        <li>Lorena a cámara, más personal, más directa</li>
+        <li>Contenido de valor + <strong>misterio sobre lo que viene</strong></li>
+        <li>Cada post tiene un CTA (comentar palabra o link en bio)</li>
+      </ul>
+      <div class="divider" style="background:var(--gold);"></div>
+      <h4>Lo que transmite</h4>
+      <p style="font-size:14px;">&ldquo;Aquí pasa algo diferente. Hay algo detrás de esta cuenta que aún no se ha revelado. Si quieres estar al día, entra en la comunidad.&rdquo;</p>
+      <div style="margin-top:16px; padding:16px; background:rgba(192,57,43,0.06); border-radius:8px;">
+        <p style="font-size:13px; margin:0; color:var(--red);"><strong>Lo que NO decir:</strong> &ldquo;curso&rdquo;, &ldquo;plataforma&rdquo;, &ldquo;membresía&rdquo;, &ldquo;mis alumnas&rdquo;. Solo &ldquo;lo que estoy preparando&rdquo; o &ldquo;algo en lo que llevo tiempo trabajando&rdquo;.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== 04 THE OFFER (hidden until webinars) ======== -->
+<section class="page">
+  <div class="page-num">04</div>
+  <div class="label">Lo que vendemos (se revela en el webinar)</div>
+  <h1>Dos planes, siempre abiertos</h1>
+  <p class="lead">Esto NO se publica hasta los webinars de la fase 3. Aquí lo documentamos para tener claridad interna.</p>
   <div class="grid-2" style="margin-top:48px;">
     <div class="card" style="border:2px solid var(--olive);">
       <span class="pill pill-olive" style="margin-bottom:20px;">Plan Base</span>
-      <div style="font-size:56px; font-family:'Playfair Display',Georgia,serif; font-weight:400; margin:16px 0;">90 &euro;<span style="font-size:18px; color:var(--light-olive);">/mes</span></div>
+      <div style="font-size:56px; font-family:'Playfair Display',Georgia,serif; margin:16px 0;">90 &euro;<span style="font-size:18px; color:var(--light-olive);">/mes</span></div>
       <div class="divider"></div>
       <ul style="list-style:none; padding:0; font-size:16px; line-height:2.4;">
         <li>&#10003;&ensp; Acceso a la plataforma LOAM CLUB</li>
         <li>&#10003;&ensp; 2 vídeos nuevos por semana</li>
         <li>&#10003;&ensp; Ejercicios aplicables</li>
       </ul>
-      <div style="margin-top:24px; padding:16px; background:rgba(91,102,68,0.06); border-radius:8px;">
-        <p style="font-size:14px; margin:0; color:var(--olive);"><strong>Para quién:</strong> Quien quiere avanzar a su ritmo con contenido de calidad.</p>
-      </div>
     </div>
-
     <div class="card-black">
       <span class="pill pill-gold" style="margin-bottom:20px;">Plan Plus</span>
-      <div style="font-size:56px; font-family:'Playfair Display',Georgia,serif; font-weight:400; margin:16px 0; color:var(--cream);">180 &euro;<span style="font-size:18px; color:var(--light-olive);">/mes</span></div>
+      <div style="font-size:56px; font-family:'Playfair Display',Georgia,serif; margin:16px 0; color:var(--cream);">180 &euro;<span style="font-size:18px; color:var(--light-olive);">/mes</span></div>
       <div class="divider" style="background:var(--gold);"></div>
       <ul style="list-style:none; padding:0; font-size:16px; line-height:2.4; color:var(--cream);">
         <li>&#10003;&ensp; Todo lo del Plan Base</li>
         <li>&#10003;&ensp; Sesiones de 30 min con Lorena</li>
         <li>&#10003;&ensp; Acompañamiento 1:1 recurrente</li>
       </ul>
-      <div style="margin-top:24px; padding:16px; background:rgba(253,223,89,0.08); border-radius:8px;">
-        <p style="font-size:14px; margin:0; color:var(--gold);"><strong>Para quién:</strong> Quien además quiere acompañamiento directo con una psicóloga.</p>
-      </div>
       <div style="margin-top:16px; padding:12px 16px; background:rgba(192,57,43,0.15); border-radius:8px;">
-        <p style="font-size:13px; margin:0; color:#e74c3c;"><strong>Plazas limitadas de verdad:</strong> Máximo 20 sesiones/semana según agenda de Lorena. Esta es la única urgencia real.</p>
+        <p style="font-size:13px; margin:0; color:#e74c3c;"><strong>Plazas limitadas de verdad:</strong> Máx. 20 sesiones/semana por agenda de Lorena.</p>
       </div>
     </div>
   </div>
-
-  <div style="margin-top:48px; padding:24px; background:var(--white); border:1px solid var(--faint-border); border-radius:12px;">
-    <h4>Sugerencia: ofrecer pago semestral y anual</h4>
-    <p style="font-size:15px; color:var(--light-olive); margin-bottom:16px;">Dar la opción de pagar por adelantado con un pequeño descuento. Beneficio doble: la alumna ahorra y Lorena asegura ingresos recurrentes con menor churn.</p>
-    <table style="margin:0; font-size:14px;">
-      <thead>
-        <tr>
-          <th>Período</th>
-          <th>Plan Base</th>
-          <th>Plan Plus</th>
-          <th>Ahorro para la alumna</th>
-        </tr>
-      </thead>
+  <div style="margin-top:32px; padding:24px; background:var(--white); border:1px solid var(--faint-border); border-radius:12px;">
+    <h4>Opciones de pago por adelantado</h4>
+    <table style="margin:12px 0 0; font-size:14px;">
+      <thead><tr><th>Período</th><th>Plan Base</th><th>Plan Plus</th><th>Ahorro</th></tr></thead>
       <tbody>
-        <tr>
-          <td><strong>Mensual</strong></td>
-          <td>90 &euro;/mes</td>
-          <td>180 &euro;/mes</td>
-          <td>&mdash;</td>
-        </tr>
-        <tr>
-          <td><strong>Semestral</strong> <span class="pill pill-olive" style="font-size:10px; padding:2px 8px;">-10%</span></td>
-          <td>486 &euro; <span style="color:var(--light-olive);">(81 &euro;/mes)</span></td>
-          <td>972 &euro; <span style="color:var(--light-olive);">(162 &euro;/mes)</span></td>
-          <td>54 &euro; / 108 &euro;</td>
-        </tr>
-        <tr>
-          <td><strong>Anual</strong> <span class="pill pill-gold" style="font-size:10px; padding:2px 8px;">-15%</span></td>
-          <td>918 &euro; <span style="color:var(--light-olive);">(76,50 &euro;/mes)</span></td>
-          <td>1.836 &euro; <span style="color:var(--light-olive);">(153 &euro;/mes)</span></td>
-          <td>162 &euro; / 324 &euro;</td>
-        </tr>
+        <tr><td><strong>Mensual</strong></td><td>90 &euro;/mes</td><td>180 &euro;/mes</td><td>&mdash;</td></tr>
+        <tr><td><strong>Semestral</strong> <span class="pill pill-olive" style="font-size:10px; padding:2px 8px;">-10%</span></td><td>486 &euro; (81 &euro;/mes)</td><td>972 &euro; (162 &euro;/mes)</td><td>54 / 108 &euro;</td></tr>
+        <tr><td><strong>Anual</strong> <span class="pill pill-gold" style="font-size:10px; padding:2px 8px;">-15%</span></td><td>918 &euro; (76,50 &euro;/mes)</td><td>1.836 &euro; (153 &euro;/mes)</td><td>162 / 324 &euro;</td></tr>
       </tbody>
     </table>
-    <div style="margin-top:16px; padding:16px; background:rgba(91,102,68,0.06); border-radius:8px;">
-      <p style="font-size:14px; margin:0;"><strong>Por qué funciona:</strong> No es un descuento agresivo. Es un incentivo real por compromiso. La alumna paga menos por mes, Lorena reduce la tasa de abandono y tiene caja por adelantado. Es estándar en cualquier membresía seria.</p>
-    </div>
-  </div>
-
-  <div style="margin-top:24px; padding:24px; background:var(--white); border:1px solid var(--faint-border); border-radius:12px;">
-    <h4>Reglas de precio</h4>
-    <div class="grid-3" style="margin-top:16px;">
-      <div><p style="font-size:14px;"><strong>Entrada:</strong> Plan Base mensual 90 &euro; como opción de menor fricción.</p></div>
-      <div><p style="font-size:14px;"><strong>Upsell:</strong> Plan Plus 180 &euro; para quien necesita acompañamiento directo.</p></div>
-      <div><p style="font-size:14px;"><strong>Descuentos:</strong> Nunca 50%. El descuento real es el semestral/anual. Promociones puntuales máx. 15-20%.</p></div>
-    </div>
   </div>
 </section>
 
-<!-- ============================================ -->
-<!-- 03 AVATARS -->
-<!-- ============================================ -->
-<section class="page">
-  <div class="page-num">03</div>
-  <div class="label">A quién nos dirigimos</div>
-  <h1>5 avatares, 5 dolores reales</h1>
-  <p class="lead">Cada avatar tiene su dolor, sus vídeos y su palabra clave. Lorena habla directo a cámara en cada uno.</p>
-
-  <!-- Avatar A -->
-  <div class="card" style="margin-top:48px; border-left:4px solid var(--olive); padding:40px;">
-    <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:16px;">
-      <div>
-        <span class="pill pill-olive" style="font-size:11px;">Avatar A</span>
-        <h2 style="margin-top:8px; margin-bottom:4px;">Ansiedad funcional</h2>
-        <p style="font-size:14px; color:var(--light-olive);">Mujer profesional, 25-35 años, alto rendimiento</p>
-      </div>
-      <div style="text-align:right;">
-        <div style="font-size:13px; color:var(--light-olive);">Palabra clave</div>
-        <div style="font-size:28px; font-family:'Playfair Display',Georgia,serif; color:var(--olive);">CALMA</div>
-      </div>
-    </div>
-    <div class="divider"></div>
-    <div class="grid-2" style="margin-top:16px;">
-      <div>
-        <div style="font-size:15px; color:var(--red); font-weight:600; margin-bottom:16px;">Dolor: Mente acelerada, fatiga emocional, no puede desconectar</div>
-        <div style="font-size:15px; color:var(--green); font-weight:600;">Promesa: Protocolo semanal para regular la activación y recuperar el foco</div>
-      </div>
-      <div>
-        <p style="font-size:12px; color:var(--light-olive); margin-bottom:8px; font-weight:700;">HOOKS:</p>
-        <div class="hook-bubble"><p>Tu problema no es falta de disciplina; es sobrecarga del sistema nervioso.</p></div>
-        <div class="hook-bubble"><p>Si rindes fuera pero te rompes por dentro, esto es para ti.</p></div>
-      </div>
-    </div>
-    <div style="margin-top:24px; padding:20px; background:rgba(91,102,68,0.04); border-radius:8px;">
-      <h4>Vídeos para este avatar</h4>
-      <div class="grid-2" style="margin-top:8px; gap:16px;">
-        <div style="padding:16px; background:var(--white); border-radius:8px; border:1px solid var(--faint-border);">
-          <span class="pill pill-olive" style="font-size:10px; padding:3px 10px;">Vídeo 1</span>
-          <p style="font-size:14px; margin:8px 0 0;"><strong>&ldquo;Por qué te cuesta tanto parar&rdquo;</strong> &mdash; Qué pasa en tu cuerpo cuando llevas meses sin desconectar. El sistema nervioso en modo alerta. Confundes productividad con supervivencia.</p>
-        </div>
-        <div style="padding:16px; background:var(--white); border-radius:8px; border:1px solid var(--faint-border);">
-          <span class="pill pill-olive" style="font-size:10px; padding:3px 10px;">Vídeo 2</span>
-          <p style="font-size:14px; margin:8px 0 0;"><strong>&ldquo;El ejercicio de los 90 segundos&rdquo;</strong> &mdash; Técnica rápida para cuando la cabeza no para. Lorena la enseña en directo.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Avatar B -->
-  <div class="card" style="margin-top:32px; border-left:4px solid var(--gold); padding:40px;">
-    <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:16px;">
-      <div>
-        <span class="pill pill-gold" style="font-size:11px;">Avatar B</span>
-        <h2 style="margin-top:8px; margin-bottom:4px;">Límites y relaciones</h2>
-        <p style="font-size:14px; color:var(--light-olive);">Mujer con conflicto por culpa/complacencia, 24-40 años</p>
-      </div>
-      <div style="text-align:right;">
-        <div style="font-size:13px; color:var(--light-olive);">Palabra clave</div>
-        <div style="font-size:28px; font-family:'Playfair Display',Georgia,serif; color:var(--olive);">LÍMITES</div>
-      </div>
-    </div>
-    <div class="divider" style="background:var(--gold);"></div>
-    <div class="grid-2" style="margin-top:16px;">
-      <div>
-        <div style="font-size:15px; color:var(--red); font-weight:600; margin-bottom:16px;">Dolor: No sabe poner límites sin sentirse mala persona</div>
-        <div style="font-size:15px; color:var(--green); font-weight:600;">Promesa: Sistema práctico para decir no sin romper vínculos sanos</div>
-      </div>
-      <div>
-        <p style="font-size:12px; color:var(--light-olive); margin-bottom:8px; font-weight:700;">HOOKS:</p>
-        <div class="hook-bubble"><p>Decir sí por culpa también es abandonarte.</p></div>
-        <div class="hook-bubble"><p>Poner límites no te hace egoísta; te hace estable.</p></div>
-      </div>
-    </div>
-    <div style="margin-top:24px; padding:20px; background:rgba(253,223,89,0.06); border-radius:8px;">
-      <h4>Vídeos para este avatar</h4>
-      <div class="grid-2" style="margin-top:8px; gap:16px;">
-        <div style="padding:16px; background:var(--white); border-radius:8px; border:1px solid var(--faint-border);">
-          <span class="pill pill-gold" style="font-size:10px; padding:3px 10px;">Vídeo 1</span>
-          <p style="font-size:14px; margin:8px 0 0;"><strong>&ldquo;La frase que te ayuda a decir no sin culpa&rdquo;</strong> &mdash; Fórmula concreta para usar hoy con familia, pareja o trabajo.</p>
-        </div>
-        <div style="padding:16px; background:var(--white); border-radius:8px; border:1px solid var(--faint-border);">
-          <span class="pill pill-gold" style="font-size:10px; padding:3px 10px;">Vídeo 2</span>
-          <p style="font-size:14px; margin:8px 0 0;"><strong>&ldquo;Por qué te sientes culpable cuando priorizas&rdquo;</strong> &mdash; El patrón detrás de la complacencia: no es generosidad, es miedo al rechazo.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Avatar C -->
-  <div class="card" style="margin-top:32px; border-left:4px solid var(--black); padding:40px;">
-    <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:16px;">
-      <div>
-        <span class="pill pill-black" style="font-size:11px;">Avatar C</span>
-        <h2 style="margin-top:8px; margin-bottom:4px;">Autoestima y validación</h2>
-        <p style="font-size:14px; color:var(--light-olive);">Mujer autoexigente e insegura, 23-38 años</p>
-      </div>
-      <div style="text-align:right;">
-        <div style="font-size:13px; color:var(--light-olive);">Palabra clave</div>
-        <div style="font-size:28px; font-family:'Playfair Display',Georgia,serif; color:var(--olive);">VALOR</div>
-      </div>
-    </div>
-    <div class="divider" style="background:var(--black);"></div>
-    <div class="grid-2" style="margin-top:16px;">
-      <div>
-        <div style="font-size:15px; color:var(--red); font-weight:600; margin-bottom:16px;">Dolor: Depende de la aprobación externa para sentirse suficiente</div>
-        <div style="font-size:15px; color:var(--green); font-weight:600;">Promesa: Reconstrucción de autoconcepto con ejercicios aplicados</div>
-      </div>
-      <div>
-        <p style="font-size:12px; color:var(--light-olive); margin-bottom:8px; font-weight:700;">HOOKS:</p>
-        <div class="hook-bubble"><p>Tu valor no puede depender del feedback del día.</p></div>
-        <div class="hook-bubble"><p>La autoexigencia a veces no es ambición, es miedo.</p></div>
-      </div>
-    </div>
-    <div style="margin-top:24px; padding:20px; background:rgba(26,26,26,0.03); border-radius:8px;">
-      <h4>Vídeos para este avatar</h4>
-      <div class="grid-2" style="margin-top:8px; gap:16px;">
-        <div style="padding:16px; background:var(--white); border-radius:8px; border:1px solid var(--faint-border);">
-          <span class="pill pill-black" style="font-size:10px; padding:3px 10px;">Vídeo 1</span>
-          <p style="font-size:14px; margin:8px 0 0;"><strong>&ldquo;El día que dejé de necesitar que me dijeran que lo estaba haciendo bien&rdquo;</strong> &mdash; Experiencia personal sobre validación externa.</p>
-        </div>
-        <div style="padding:16px; background:var(--white); border-radius:8px; border:1px solid var(--faint-border);">
-          <span class="pill pill-black" style="font-size:10px; padding:3px 10px;">Vídeo 2</span>
-          <p style="font-size:14px; margin:8px 0 0;"><strong>&ldquo;El test de los 3 espejos&rdquo;</strong> &mdash; Ejercicio rápido para detectar si tu autoestima depende de lo que otros piensan.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Avatar D -->
-  <div class="card" style="margin-top:32px; border-left:4px solid var(--blue); padding:40px;">
-    <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:16px;">
-      <div>
-        <span class="pill pill-blue" style="font-size:11px;">Avatar D</span>
-        <h2 style="margin-top:8px; margin-bottom:4px;">Gestión emocional</h2>
-        <p style="font-size:14px; color:var(--light-olive);">Mujer desbordada por sus emociones, 22-36 años</p>
-      </div>
-      <div style="text-align:right;">
-        <div style="font-size:13px; color:var(--light-olive);">Palabra clave</div>
-        <div style="font-size:28px; font-family:'Playfair Display',Georgia,serif; color:var(--blue);">SENTIR</div>
-      </div>
-    </div>
-    <div class="divider" style="background:var(--blue);"></div>
-    <div class="grid-2" style="margin-top:16px;">
-      <div>
-        <div style="font-size:15px; color:var(--red); font-weight:600; margin-bottom:16px;">Dolor: Reacciona desproporcionadamente, se arrepiente, siente que las emociones la controlan</div>
-        <div style="font-size:15px; color:var(--green); font-weight:600;">Promesa: Aprender a sentir sin que la emoción te secuestre</div>
-      </div>
-      <div>
-        <p style="font-size:12px; color:var(--light-olive); margin-bottom:8px; font-weight:700;">HOOKS:</p>
-        <div class="hook-bubble"><p>No eres &ldquo;demasiado emocional&rdquo;. Nadie te enseñó qué hacer con lo que sientes.</p></div>
-        <div class="hook-bubble"><p>Explotar no es ser intensa. Es no tener herramientas.</p></div>
-      </div>
-    </div>
-    <div style="margin-top:24px; padding:20px; background:rgba(41,128,185,0.04); border-radius:8px;">
-      <h4>Vídeos para este avatar</h4>
-      <div class="grid-2" style="margin-top:8px; gap:16px;">
-        <div style="padding:16px; background:var(--white); border-radius:8px; border:1px solid var(--faint-border);">
-          <span class="pill pill-blue" style="font-size:10px; padding:3px 10px;">Vídeo 1</span>
-          <p style="font-size:14px; margin:8px 0 0;"><strong>&ldquo;Qué pasa en tu cerebro cuando explotas&rdquo;</strong> &mdash; El secuestro amigdalar explicado fácil. Por qué dices cosas que no quieres.</p>
-        </div>
-        <div style="padding:16px; background:var(--white); border-radius:8px; border:1px solid var(--faint-border);">
-          <span class="pill pill-blue" style="font-size:10px; padding:3px 10px;">Vídeo 2</span>
-          <p style="font-size:14px; margin:8px 0 0;"><strong>&ldquo;La técnica RAIN para cuando estás a punto de estallar&rdquo;</strong> &mdash; Reconocer, Aceptar, Investigar, No identificarse. 2 minutos.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Avatar E -->
-  <div class="card" style="margin-top:32px; border-left:4px solid var(--purple); padding:40px;">
-    <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:16px;">
-      <div>
-        <span class="pill pill-purple" style="font-size:11px;">Avatar E</span>
-        <h2 style="margin-top:8px; margin-bottom:4px;">Burnout y autocuidado</h2>
-        <p style="font-size:14px; color:var(--light-olive);">Mujer que cuida de todos menos de sí misma, 28-42 años</p>
-      </div>
-      <div style="text-align:right;">
-        <div style="font-size:13px; color:var(--light-olive);">Palabra clave</div>
-        <div style="font-size:28px; font-family:'Playfair Display',Georgia,serif; color:var(--purple);">CUIDARME</div>
-      </div>
-    </div>
-    <div class="divider" style="background:var(--purple);"></div>
-    <div class="grid-2" style="margin-top:16px;">
-      <div>
-        <div style="font-size:15px; color:var(--red); font-weight:600; margin-bottom:16px;">Dolor: Agotada de ser la fuerte, no se permite parar, no pide ayuda</div>
-        <div style="font-size:15px; color:var(--green); font-weight:600;">Promesa: Permiso y estructura para ponerte primero sin culpa</div>
-      </div>
-      <div>
-        <p style="font-size:12px; color:var(--light-olive); margin-bottom:8px; font-weight:700;">HOOKS:</p>
-        <div class="hook-bubble"><p>Cuidar de todos y olvidarte de ti no es generosidad. Es un patrón que te está rompiendo.</p></div>
-        <div class="hook-bubble"><p>No necesitas un viaje a Bali. Necesitas dejar de ser la última de tu propia lista.</p></div>
-      </div>
-    </div>
-    <div style="margin-top:24px; padding:20px; background:rgba(142,68,173,0.04); border-radius:8px;">
-      <h4>Vídeos para este avatar</h4>
-      <div class="grid-2" style="margin-top:8px; gap:16px;">
-        <div style="padding:16px; background:var(--white); border-radius:8px; border:1px solid var(--faint-border);">
-          <span class="pill pill-purple" style="font-size:10px; padding:3px 10px;">Vídeo 1</span>
-          <p style="font-size:14px; margin:8px 0 0;"><strong>&ldquo;El síndrome de la mujer fuerte&rdquo;</strong> &mdash; Por qué pedir ayuda se siente como debilidad. El coste real de &ldquo;poder con todo&rdquo;.</p>
-        </div>
-        <div style="padding:16px; background:var(--white); border-radius:8px; border:1px solid var(--faint-border);">
-          <span class="pill pill-purple" style="font-size:10px; padding:3px 10px;">Vídeo 2</span>
-          <p style="font-size:14px; margin:8px 0 0;"><strong>&ldquo;5 señales de que necesitas parar ya&rdquo;</strong> &mdash; Señales físicas y emocionales que ignoramos. Lorena las nombra y normaliza parar.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================ -->
-<!-- 04 THE FUNNEL — THE BIG PICTURE -->
-<!-- ============================================ -->
-<section class="page">
-  <div class="page-num">04</div>
-  <div class="label">Cómo funciona todo</div>
-  <h1>El embudo: de desconocida<br>a alumna</h1>
-  <p class="lead">No todo el mundo está en el mismo punto. La persona que te ve por primera vez necesita un paso diferente que la que ya te sigue. Por eso hay <strong>tres tipos de campaña</strong> según la temperatura del público.</p>
-
-  <div class="grid-3" style="margin-top:48px;">
-    <!-- Cold -->
-    <div class="card" style="border-top:4px solid var(--blue);">
-      <div style="text-align:center; margin-bottom:20px;">
-        <div style="font-size:40px;">&#129398;</div>
-        <span class="pill pill-blue" style="font-size:11px;">Público frío</span>
-      </div>
-      <h3>Primera vez que te ve</h3>
-      <p style="font-size:14px;">No te conoce. Pedirle que entre a un grupo de WhatsApp es demasiado. Solo le pedimos su <strong>email</strong>.</p>
-      <div class="divider"></div>
-      <h4>El anuncio</h4>
-      <p style="font-size:14px;">Mismo vídeo de avatar. El botón es <strong>&ldquo;Suscribirme&rdquo;</strong> y abre un <strong>Lead Form nativo de Meta</strong> (formulario dentro de Instagram, sin salir de la app).</p>
-      <h4 style="margin-top:20px;">Qué pasa paso a paso</h4>
-      <ol style="font-size:14px; line-height:2.2; padding-left:20px;">
-        <li>Ve el vídeo del avatar</li>
-        <li>Hace clic en &ldquo;Suscribirme&rdquo;</li>
-        <li>Le sale un formulario <strong>sin salir de Instagram</strong></li>
-        <li>Meta <strong>auto-rellena su email</strong> (un solo toque)</li>
-        <li>Texto del form: &ldquo;Recibe tips de psicología aplicada cada semana&rdquo;</li>
-        <li>Confirma &rarr; pantalla de &ldquo;Gracias&rdquo; con botón a loamclub.es</li>
-        <li>Su email entra automáticamente en la newsletter</li>
-      </ol>
-      <div style="margin-top:16px; padding:12px 16px; background:rgba(41,128,185,0.06); border-radius:8px;">
-        <p style="font-size:13px; margin:0; color:var(--blue);"><strong>Por qué Lead Form y no mandar a la web:</strong> La persona no sale de Instagram. Meta auto-rellena los datos. Cero fricción. El coste por lead es mucho menor que redirigir a una web externa.</p>
-      </div>
-    </div>
-
-    <!-- Warm -->
-    <div class="card" style="border-top:4px solid var(--gold);">
-      <div style="text-align:center; margin-bottom:20px;">
-        <div style="font-size:40px;">&#128293;</div>
-        <span class="pill pill-gold" style="font-size:11px;">Público templado</span>
-      </div>
-      <h3>Ya interactuó contigo</h3>
-      <p style="font-size:14px;">Te sigue, te ha visto, ha dado like. Está lista para un paso más personal: entrar a la <strong>comunidad</strong>.</p>
-      <div class="divider" style="background:var(--gold);"></div>
-      <h4>El anuncio</h4>
-      <p style="font-size:14px;">Mismo vídeo de avatar, pero el CTA es:</p>
-      <div style="padding:16px; background:rgba(253,223,89,0.12); border-radius:8px; font-size:14px; text-align:center;">
-        <strong>&ldquo;Comenta [PALABRA] y te envío el enlace&rdquo;</strong>
-      </div>
-      <h4 style="margin-top:20px;">Qué pasa</h4>
-      <p style="font-size:14px;">Comenta &rarr; ManyChat envía DM con enlace a la <strong>comunidad de WhatsApp</strong> + enlace a la web (newsletter). Doble captura.</p>
-    </div>
-
-    <!-- Hot -->
-    <div class="card" style="border-top:4px solid var(--red);">
-      <div style="text-align:center; margin-bottom:20px;">
-        <div style="font-size:40px;">&#128165;</div>
-        <span class="pill pill-red" style="font-size:11px;">Público caliente</span>
-      </div>
-      <h3>Ya está en la comunidad</h3>
-      <p style="font-size:14px;">Está en WhatsApp o en la newsletter. Ya sabe quién es Lorena. Solo necesita el <strong>empujón final</strong>.</p>
-      <div class="divider" style="background:var(--red);"></div>
-      <h4>El anuncio</h4>
-      <p style="font-size:14px;">Testimonios, resultados, recordatorios:</p>
-      <div style="padding:16px; background:rgba(192,57,43,0.06); border-radius:8px; font-size:14px; text-align:center;">
-        <strong>Enlace directo a la suscripción en loamclub.es</strong>
-      </div>
-      <h4 style="margin-top:20px;">Qué pasa</h4>
-      <p style="font-size:14px;">Ve el anuncio &rarr; hace clic &rarr; llega directamente al <strong>checkout</strong>. Sin pasos intermedios.</p>
-    </div>
-  </div>
-
-  <div style="margin-top:48px; padding:24px; background:var(--olive); border-radius:12px; color:var(--cream);">
-    <h4 style="color:var(--gold);">La lógica es simple</h4>
-    <p style="font-size:18px; color:var(--cream); max-width:none; text-align:center; margin:16px 0 0;">
-      A más frío el público, más suave el CTA. &ensp;
-      <span style="color:var(--gold);">Frío &rarr; email</span> &ensp;|&ensp;
-      <span style="color:var(--gold);">Templado &rarr; comunidad</span> &ensp;|&ensp;
-      <span style="color:var(--gold);">Caliente &rarr; suscripción</span>
-    </p>
-  </div>
-</section>
-
-<!-- ============================================ -->
-<!-- 05 COMMUNITY -->
-<!-- ============================================ -->
+<!-- ======== 05 AVATARS ======== -->
 <section class="page">
   <div class="page-num">05</div>
-  <div class="label">El corazón de la estrategia</div>
-  <h1>La comunidad de WhatsApp</h1>
-  <p class="lead">La comunidad no es una secuencia de 7 días que se acaba. Es un espacio permanente donde la gente entra y se queda. Aquí es donde LOAM Club cobra vida antes de que nadie se suscriba.</p>
+  <div class="label">A quién nos dirigimos</div>
+  <h1>5 avatares, 5 palabras clave</h1>
+  <p class="lead">Cada avatar tiene su dolor, sus vídeos y su palabra clave para ManyChat. Se usan tanto en orgánico como en ads.</p>
 
-  <div class="grid-2" style="margin-top:48px;">
-    <div>
-      <div class="card" style="border-left:4px solid var(--gold); height:100%;">
-        <h3>Qué es la comunidad</h3>
-        <ul style="list-style:none; padding:0; font-size:15px; line-height:2.4;">
-          <li>&#127775;&ensp; <strong>Tips exclusivos</strong> que no se publican en redes</li>
-          <li>&#128227;&ensp; <strong>Primicias</strong> &mdash; todo lo de LOAM sale aquí antes</li>
-          <li>&#129309;&ensp; <strong>Comunidad</strong> entre mujeres con inquietudes similares</li>
-          <li>&#128172;&ensp; <strong>Preguntas</strong> &mdash; pueden preguntar lo que quieran</li>
-          <li>&#127891;&ensp; <strong>Invitaciones</strong> a webinars y eventos</li>
-          <li>&#128176;&ensp; <strong>Acceso a la beta</strong> antes que nadie</li>
-        </ul>
-      </div>
-    </div>
-    <div>
-      <div class="card" style="border-left:4px solid var(--olive); height:100%;">
-        <h3>Cadencia semanal</h3>
-        <p style="font-size:14px; color:var(--light-olive); margin-bottom:16px;">No hay secuencia que se acabe. Esto es continuo:</p>
-        <div style="padding:16px; background:rgba(91,102,68,0.04); border-radius:8px; margin-bottom:12px;">
-          <span class="pill pill-olive" style="font-size:10px; padding:3px 10px;">Lunes</span>
-          <p style="font-size:14px; margin:8px 0 0;">Tip o reflexión corta de Lorena (texto o audio de 1 min)</p>
-        </div>
-        <div style="padding:16px; background:rgba(91,102,68,0.04); border-radius:8px; margin-bottom:12px;">
-          <span class="pill pill-olive" style="font-size:10px; padding:3px 10px;">Miércoles</span>
-          <p style="font-size:14px; margin:8px 0 0;">Adelanto de lo que viene en LOAM Club esa semana (teaser del vídeo)</p>
-        </div>
-        <div style="padding:16px; background:rgba(91,102,68,0.04); border-radius:8px;">
-          <span class="pill pill-gold" style="font-size:10px; padding:3px 10px;">Viernes</span>
-          <p style="font-size:14px; margin:8px 0 0;">Pregunta abierta o ejercicio rápido para el fin de semana</p>
-        </div>
-        <p style="font-size:13px; color:var(--light-olive); margin-top:16px; margin-bottom:0;">+ Invitaciones a webinars, testimonios, recordatorios suaves.</p>
-      </div>
-    </div>
+  <table style="margin-top:40px;">
+    <thead><tr><th>Avatar</th><th>Dolor</th><th>Promesa</th><th>Palabra</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>A &mdash; Ansiedad funcional</strong><br><span style="font-size:12px; color:var(--light-olive);">Mujer profesional, 25-35</span></td>
+        <td>Mente acelerada, fatiga emocional, no puede desconectar</td>
+        <td>Protocolo para regular activación y foco</td>
+        <td><span class="pill pill-olive" style="font-size:11px;">CALMA</span></td>
+      </tr>
+      <tr>
+        <td><strong>B &mdash; Límites y relaciones</strong><br><span style="font-size:12px; color:var(--light-olive);">Mujer con conflicto por culpa, 24-40</span></td>
+        <td>No sabe poner límites sin sentirse mala persona</td>
+        <td>Sistema para decir no sin romper vínculos</td>
+        <td><span class="pill pill-gold" style="font-size:11px;">LÍMITES</span></td>
+      </tr>
+      <tr>
+        <td><strong>C &mdash; Autoestima y validación</strong><br><span style="font-size:12px; color:var(--light-olive);">Mujer autoexigente, 23-38</span></td>
+        <td>Depende de la aprobación externa</td>
+        <td>Reconstrucción de autoconcepto aplicada</td>
+        <td><span class="pill pill-black" style="font-size:11px;">VALOR</span></td>
+      </tr>
+      <tr>
+        <td><strong>D &mdash; Gestión emocional</strong><br><span style="font-size:12px; color:var(--light-olive);">Mujer desbordada, 22-36</span></td>
+        <td>Reacciona desproporcionadamente, se arrepiente después</td>
+        <td>Sentir sin que la emoción te secuestre</td>
+        <td><span class="pill pill-blue" style="font-size:11px;">SENTIR</span></td>
+      </tr>
+      <tr>
+        <td><strong>E &mdash; Burnout y autocuidado</strong><br><span style="font-size:12px; color:var(--light-olive);">Mujer que cuida de todos, 28-42</span></td>
+        <td>Agotada de ser la fuerte, no se permite parar</td>
+        <td>Permiso y estructura para ponerte primero</td>
+        <td><span class="pill pill-purple" style="font-size:11px;">CUIDARME</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div style="margin-top:32px; padding:24px; background:var(--olive); border-radius:12px; color:var(--cream);">
+    <h4 style="color:var(--gold);">Regla para todos los vídeos</h4>
+    <p style="font-size:15px; color:var(--cream); max-width:none;">Lorena habla directo a cámara. Cada vídeo toca UN dolor concreto y da algo útil. Al final, CTA a comentar la palabra clave. Por DM reciben: enlace a la comunidad de WhatsApp + enlace a loamclub.es (newsletter). <strong style="color:var(--gold);">Nunca se menciona que LOAM es una membresía hasta los webinars.</strong></p>
   </div>
 </section>
 
-<!-- ============================================ -->
-<!-- 05b PRE-LAUNCH: WEBINARS + BETA + LAUNCH -->
-<!-- ============================================ -->
+<!-- ======== 06 REVELATION PHASES ======== -->
 <section class="page">
-  <div class="page-num">05b</div>
-  <div class="label">El mes antes del lanzamiento</div>
-  <h1>Webinars, beta y lanzamiento</h1>
-  <p class="lead">Un mes antes de abrir LOAM Club al público, activamos tres pasos que generan expectativa, feedback real y ventaja competitiva.</p>
+  <div class="page-num">06</div>
+  <div class="label">El corazón de la estrategia</div>
+  <h1>Las 4 fases de la<br>revelación progresiva</h1>
+  <p class="lead">LOAM Club no se anuncia. Se va revelando capa a capa. La gente pasa de &ldquo;¿qué es esto?&rdquo; a &ldquo;necesito entrar&rdquo;.</p>
 
-  <!-- VISUAL TIMELINE -->
-  <div style="margin-top:48px;">
-    <div class="timeline">
-      <!-- Step 1: Webinar 1 -->
-      <div class="timeline-item">
-        <div class="timeline-dot active">1</div>
-        <div class="card-gold" style="padding:32px;">
-          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
-            <div>
-              <span class="pill pill-black" style="font-size:11px;">Semana 1</span>
-              <h3 style="margin-top:8px; margin-bottom:4px;">Primer webinar</h3>
-            </div>
-            <div style="font-size:24px; font-family:'Playfair Display',Georgia,serif; font-weight:600;">-30 días</div>
+  <div style="margin-top:48px; margin-bottom:48px; padding:32px; background:var(--black); border-radius:12px; color:var(--cream);">
+    <div style="display:flex; gap:0; text-align:center; flex-wrap:wrap;">
+      <div style="flex:1; min-width:150px; padding:16px; border-right:1px solid rgba(255,255,255,0.1);">
+        <div style="font-size:11px; color:var(--gold); letter-spacing:2px; text-transform:uppercase; margin-bottom:8px;">Fase 1</div>
+        <p style="font-size:14px; color:var(--cream); margin:0;">&ldquo;Algo se está cocinando&rdquo;</p>
+      </div>
+      <div style="flex:1; min-width:150px; padding:16px; border-right:1px solid rgba(255,255,255,0.1);">
+        <div style="font-size:11px; color:var(--gold); letter-spacing:2px; text-transform:uppercase; margin-bottom:8px;">Fase 2</div>
+        <p style="font-size:14px; color:var(--cream); margin:0;">&ldquo;Está muy cerca, os lo cuento todo en un directo&rdquo;</p>
+      </div>
+      <div style="flex:1; min-width:150px; padding:16px; border-right:1px solid rgba(255,255,255,0.1);">
+        <div style="font-size:11px; color:var(--gold); letter-spacing:2px; text-transform:uppercase; margin-bottom:8px;">Fase 3</div>
+        <p style="font-size:14px; color:var(--cream); margin:0;">&ldquo;Esto es LOAM Club. Vosotras primero.&rdquo;</p>
+      </div>
+      <div style="flex:1; min-width:150px; padding:16px;">
+        <div style="font-size:11px; color:var(--gold); letter-spacing:2px; text-transform:uppercase; margin-bottom:8px;">Fase 4</div>
+        <p style="font-size:14px; color:var(--cream); margin:0;">&ldquo;Se abre para todo el mundo&rdquo;</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHASE 1 -->
+  <div class="timeline" style="margin-top:32px;">
+    <div class="timeline-item">
+      <div class="timeline-dot active">1</div>
+      <div class="card-gold" style="padding:40px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+          <div>
+            <span class="phase-label" style="background:var(--black); color:var(--gold);">Fase 1 &mdash; Semillas</span>
+            <h2 style="margin-top:8px;">Algo se está cocinando</h2>
           </div>
-          <div class="divider" style="background:var(--black); margin:16px 0;"></div>
-          <p style="font-size:15px;">Lorena presenta qué es LOAM Club, para quién es y qué va a encontrar dentro. Contenido real de valor durante la sesión (no solo un teaser). <strong>Los últimos minutos son preguntas y respuestas abiertas.</strong></p>
-          <div style="margin-top:16px; padding:16px; background:rgba(0,0,0,0.06); border-radius:8px;">
-            <p style="font-size:14px; margin:0;"><strong>Se anuncia:</strong> la beta del Plan Plus estará disponible <strong>solo para miembros de la comunidad</strong> después del segundo webinar.</p>
+          <div style="font-size:28px; font-family:'Playfair Display',Georgia,serif; font-weight:600;">Días 1-30</div>
+        </div>
+        <p style="font-size:15px;">Nadie sabe qué es LOAM Club. Solo saben que existe la cuenta y que Lorena está preparando algo. <strong>La curiosidad hace el trabajo.</strong></p>
+        <div class="divider" style="background:var(--black);"></div>
+        <div class="grid-2" style="margin-top:0; gap:24px;">
+          <div>
+            <h4>@loamclub dice</h4>
+            <div class="hook-bubble"><p>Llevo meses trabajando en algo que creo que os va a cambiar la forma de entenderos a vosotras mismas. Pronto os lo cuento.</p></div>
+            <div class="hook-bubble"><p>Una de las cosas que más me pedís es poder trabajar esto de forma guiada. He escuchado.</p></div>
+            <p style="font-size:14px; margin-top:12px;">Contenido de valor (vídeos de avatar) + siempre CTA: &ldquo;Comenta [PALABRA] y te envío el enlace para unirte al club.&rdquo;</p>
+          </div>
+          <div>
+            <h4>@psico.lorenaamadio dice</h4>
+            <p style="font-size:14px;">1-2 veces por semana, sutil:</p>
+            <div class="hook-bubble"><p>Estoy preparando algo grande. Las que estéis en @loamclub lo vais a saber antes que nadie.</p></div>
+            <p style="font-size:14px; margin-top:12px;">Stories con sticker de pregunta: &ldquo;¿Qué es lo que más necesitáis de mí que no os puedo dar con vídeos de Instagram?&rdquo; &mdash; genera datos y expectativa.</p>
           </div>
         </div>
-      </div>
-
-      <!-- Step 2: Webinar 2 -->
-      <div class="timeline-item">
-        <div class="timeline-dot active">2</div>
-        <div class="card-gold" style="padding:32px;">
-          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
-            <div>
-              <span class="pill pill-black" style="font-size:11px;">Semana 2-3</span>
-              <h3 style="margin-top:8px; margin-bottom:4px;">Segundo webinar</h3>
-            </div>
-            <div style="font-size:24px; font-family:'Playfair Display',Georgia,serif; font-weight:600;">-20 días</div>
-          </div>
-          <div class="divider" style="background:var(--black); margin:16px 0;"></div>
-          <p style="font-size:15px;">Diferente día y hora que el primero, para que quien no pudo asistir al primero pueda estar en este. Mismo concepto: valor real + Q&amp;A al final.</p>
-          <div style="margin-top:16px; padding:16px; background:rgba(0,0,0,0.06); border-radius:8px;">
-            <p style="font-size:14px; margin:0;"><strong>Al final del webinar:</strong> se abre la <strong>beta del Plan Plus</strong> &mdash; plazas limitadas, solo comunidad.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Step 3: Beta -->
-      <div class="timeline-item">
-        <div class="timeline-dot">3</div>
-        <div class="card-olive" style="padding:32px;">
-          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
-            <div>
-              <span class="pill pill-gold" style="font-size:11px;">Semana 3-4</span>
-              <h3 style="margin-top:8px; margin-bottom:4px; color:var(--gold);">Beta del Plan Plus</h3>
-            </div>
-            <div style="font-size:24px; font-family:'Playfair Display',Georgia,serif; font-weight:600; color:var(--gold);">-15 días</div>
-          </div>
-          <div class="divider" style="background:var(--gold);"></div>
-          <p style="font-size:15px; color:var(--cream);">Las primeras alumnas entran a la plataforma con el Plan Plus. Acceden al contenido + sesiones 1:1 con Lorena. Son las <strong style="color:var(--gold);">testers</strong>.</p>
-          <div class="grid-2" style="margin-top:16px; gap:16px;">
-            <div style="padding:16px; background:rgba(253,223,89,0.1); border-radius:8px;">
-              <p style="font-size:14px; margin:0; color:var(--gold);"><strong>Lo que nos dan:</strong><br>Feedback real sobre la plataforma, el contenido y las sesiones. Testimonios para usar en el lanzamiento.</p>
-            </div>
-            <div style="padding:16px; background:rgba(253,223,89,0.1); border-radius:8px;">
-              <p style="font-size:14px; margin:0; color:var(--gold);"><strong>Lo que reciben:</strong><br>Estatus de <strong>Miembro Fundadora</strong>. El precio al que entran se les queda <strong>para siempre</strong>, aunque suba después.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Step 4: Launch -->
-      <div class="timeline-item">
-        <div class="timeline-dot">4</div>
-        <div class="card-black" style="padding:32px;">
-          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
-            <div>
-              <span class="pill pill-gold" style="font-size:11px;">Día D</span>
-              <h3 style="margin-top:8px; margin-bottom:4px; color:var(--gold);">Lanzamiento público</h3>
-            </div>
-            <div style="font-size:24px; font-family:'Playfair Display',Georgia,serif; font-weight:600; color:var(--gold);">Día 0</div>
-          </div>
-          <div class="divider" style="background:var(--gold);"></div>
-          <p style="font-size:15px; color:var(--cream);">Se abren <strong style="color:var(--gold);">ambos planes</strong> (Base y Plus) para todo el mundo. Ya tenemos:</p>
-          <ul style="list-style:none; padding:0; font-size:15px; line-height:2.2; color:var(--cream);">
-            <li>&#9989;&ensp; Feedback real de las testers &rarr; plataforma mejorada</li>
-            <li>&#9989;&ensp; Testimonios reales para usar en anuncios y web</li>
-            <li>&#9989;&ensp; Prueba social: &ldquo;ya hay alumnas dentro&rdquo;</li>
-            <li>&#9989;&ensp; Comunidad caliente esperando la apertura</li>
-            <li>&#9989;&ensp; Newsletter con leads acumulados</li>
+        <div style="margin-top:24px;">
+          <h4>Objetivos de esta fase</h4>
+          <ul class="checklist">
+            <li>Llenar la comunidad de WhatsApp con gente que quiere saber qué viene</li>
+            <li>Llenar la newsletter de loamclub.es</li>
+            <li>Que la cuenta de @loamclub llegue a 10-15K orgánicamente</li>
           </ul>
         </div>
+      </div>
+    </div>
+
+    <!-- PHASE 2 -->
+    <div class="timeline-item">
+      <div class="timeline-dot">2</div>
+      <div class="card" style="border-left:4px solid var(--olive); padding:40px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+          <div>
+            <span class="phase-label" style="background:var(--olive); color:var(--cream);">Fase 2 &mdash; Calentar</span>
+            <h2 style="margin-top:8px;">Os lo voy a contar todo</h2>
+          </div>
+          <div style="font-size:28px; font-family:'Playfair Display',Georgia,serif; font-weight:600; color:var(--olive);">Días 31-60</div>
+        </div>
+        <p style="font-size:15px;">El tono cambia. Ya no es &ldquo;algo viene&rdquo;. Ahora es &ldquo;está muy cerca y lo voy a contar en un directo&rdquo;. Se anuncia el webinar.</p>
+        <div class="divider"></div>
+        <div class="grid-2" style="margin-top:0; gap:24px;">
+          <div>
+            <h4>@loamclub dice</h4>
+            <div class="hook-bubble"><p>En dos semanas voy a hacer un directo donde os voy a contar todo lo que he estado preparando. Todo.</p></div>
+            <p style="font-size:14px;">El contenido de valor sigue, pero ahora cada post conecta con la cuenta atrás: &ldquo;Esto que os acabo de explicar es exactamente una de las cosas que vamos a trabajar en lo que viene.&rdquo;</p>
+          </div>
+          <div>
+            <h4>@psico.lorenaamadio dice</h4>
+            <p style="font-size:14px;">Sube la intensidad: 2-3 menciones/semana.</p>
+            <div class="hook-bubble"><p>El [fecha] voy a hacer un directo en @loamclub que llevo preparando mucho tiempo. Os quiero contar algo importante.</p></div>
+            <p style="font-size:14px;">Stories: Lorena puede mostrarse emocionada, nerviosa, ilusionada. Eso es auténtico y genera conexión.</p>
+          </div>
+        </div>
+        <div style="margin-top:24px; padding:20px; background:rgba(91,102,68,0.06); border-radius:8px;">
+          <h4>Los webinars se anuncian con un título que venda por sí solo</h4>
+          <div class="grid-2" style="margin-top:8px; gap:16px;">
+            <div style="padding:16px; background:var(--white); border-radius:8px; border-left:3px solid var(--red);">
+              <p style="font-size:13px; color:var(--red); margin:0 0 4px; font-weight:700;">MAL</p>
+              <p style="font-size:14px; margin:0;">&ldquo;Te presento LOAM Club&rdquo;</p>
+            </div>
+            <div style="padding:16px; background:var(--white); border-radius:8px; border-left:3px solid var(--green);">
+              <p style="font-size:13px; color:var(--green); margin:0 0 4px; font-weight:700;">BIEN</p>
+              <p style="font-size:14px; margin:0;">&ldquo;Los 3 patrones emocionales que te mantienen atrapada (y lo que voy a hacer al respecto)&rdquo;</p>
+            </div>
+          </div>
+          <p style="font-size:13px; color:var(--light-olive); margin:12px 0 0;">El título vende la asistencia. El contenido del webinar vende LOAM Club.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PHASE 3 -->
+    <div class="timeline-item">
+      <div class="timeline-dot">3</div>
+      <div class="card-olive" style="padding:40px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+          <div>
+            <span class="phase-label" style="background:var(--gold); color:var(--black);">Fase 3 &mdash; Revelación</span>
+            <h2 style="margin-top:8px; color:var(--gold);">Webinars + Beta exclusiva</h2>
+          </div>
+          <div style="font-size:28px; font-family:'Playfair Display',Georgia,serif; font-weight:600; color:var(--gold);">Días 61-75</div>
+        </div>
+        <p style="font-size:15px; color:rgba(247,245,240,0.8);">Aquí es donde se revela qué es LOAM Club. La gente por fin descubre lo que Lorena ha estado preparando.</p>
+        <div class="divider" style="background:var(--gold);"></div>
+
+        <div style="margin-top:16px;">
+          <h4 style="color:var(--gold);">Webinar 1 &mdash; La revelación</h4>
+          <div style="padding:20px; background:rgba(0,0,0,0.2); border-radius:8px; margin:12px 0 24px;">
+            <ul style="list-style:none; padding:0; font-size:14px; line-height:2.2; color:var(--cream);">
+              <li>&#127891;&ensp; 40-45 min de contenido real de psicología aplicada</li>
+              <li>&#128161;&ensp; Últimos 15 min: &ldquo;Esto que acabáis de experimentar es exactamente lo que he construido. Se llama LOAM Club.&rdquo;</li>
+              <li>&#128227;&ensp; Anuncia: la beta del Plan Plus estará disponible <strong>solo para la comunidad</strong> tras el segundo webinar</li>
+              <li>&#128172;&ensp; Q&amp;A para resolver dudas</li>
+            </ul>
+          </div>
+
+          <h4 style="color:var(--gold);">Webinar 2 &mdash; Apertura de la beta</h4>
+          <div style="padding:20px; background:rgba(0,0,0,0.2); border-radius:8px; margin:12px 0 24px;">
+            <ul style="list-style:none; padding:0; font-size:14px; line-height:2.2; color:var(--cream);">
+              <li>&#128197;&ensp; Diferente día y hora que el primero</li>
+              <li>&#127891;&ensp; Otro tema, misma estructura: valor real + Q&amp;A</li>
+              <li>&#128293;&ensp; Al final: <strong>se abre la beta del Plan Plus</strong> — solo comunidad, plazas limitadas</li>
+            </ul>
+          </div>
+
+          <h4 style="color:var(--gold);">Beta del Plan Plus</h4>
+          <div style="padding:20px; background:rgba(253,223,89,0.1); border-radius:8px;">
+            <div class="grid-2" style="margin-top:0; gap:16px;">
+              <div>
+                <p style="font-size:14px; color:var(--cream); margin:0;"><strong style="color:var(--gold);">Lo que nos dan:</strong><br>Feedback real sobre plataforma, contenido y sesiones. Testimonios para el lanzamiento.</p>
+              </div>
+              <div>
+                <p style="font-size:14px; color:var(--cream); margin:0;"><strong style="color:var(--gold);">Lo que reciben:</strong><br>Estatus <strong>Miembro Fundadora</strong>. El precio al que entran se queda <strong>para siempre</strong>, aunque suba.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:24px;">
+          <h4 style="color:var(--gold);">Ahora sí puede decir en @loamclub</h4>
+          <div class="hook-bubble" style="background:rgba(0,0,0,0.2); border-color:rgba(255,255,255,0.1);"><p style="color:var(--cream);">Ya hay personas dentro trabajando conmigo. Esto es lo que me están diciendo...</p></div>
+          <p style="font-size:13px; color:rgba(247,245,240,0.5); margin-top:8px;">Mensajes anónimos o con permiso de las testers. Prueba social real.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PHASE 4 -->
+    <div class="timeline-item">
+      <div class="timeline-dot">4</div>
+      <div class="card-black" style="padding:40px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+          <div>
+            <span class="phase-label" style="background:var(--gold); color:var(--black);">Fase 4 &mdash; Lanzamiento público</span>
+            <h2 style="margin-top:8px; color:var(--gold);">Se abre para todo el mundo</h2>
+          </div>
+          <div style="font-size:28px; font-family:'Playfair Display',Georgia,serif; font-weight:600; color:var(--gold);">Días 76-90</div>
+        </div>
+        <p style="font-size:15px; color:rgba(247,245,240,0.8);">Ambos planes abiertos. Ya tenemos feedback, testimonios y prueba social. La máquina está probada.</p>
+        <div class="divider" style="background:var(--gold);"></div>
+        <ul style="list-style:none; padding:0; font-size:15px; line-height:2.2; color:var(--cream);">
+          <li>&#9989;&ensp; Comunidad tiene acceso anticipado 48h + precio de lanzamiento</li>
+          <li>&#9989;&ensp; Apertura pública: Plan Base + Plan Plus para todos</li>
+          <li>&#9989;&ensp; Testimonios reales de las testers en anuncios y web</li>
+          <li>&#9989;&ensp; Escalar anuncios ganadores</li>
+          <li>&#9989;&ensp; Activar partnerships</li>
+        </ul>
       </div>
     </div>
   </div>
 
   <!-- PRIVILEGE -->
-  <div style="margin-top:48px; padding:32px; background:var(--gold); border-radius:16px;">
-    <h4 style="color:var(--black);">El privilegio de estar desde el principio</h4>
-    <h2 style="color:var(--black); margin-bottom:16px;">Miembro Fundadora</h2>
-    <div class="grid-2" style="margin-top:16px; gap:24px;">
-      <div>
-        <h3>Testers de la beta (Plan Plus)</h3>
-        <ul style="font-size:15px; line-height:2; padding-left:20px;">
-          <li><strong>Precio bloqueado para siempre</strong> &mdash; aunque el Plan Plus suba de precio en el futuro, ellas mantienen el precio al que entraron</li>
-          <li><strong>Estatus &ldquo;Fundadora&rdquo;</strong> visible en la plataforma</li>
-          <li><strong>Acceso anticipado</strong> a todo contenido y funcionalidad nueva</li>
+  <div style="margin-top:24px; padding:32px; background:var(--gold); border-radius:16px;">
+    <h4 style="color:var(--black);">Jerarquía de privilegio</h4>
+    <h2 style="color:var(--black); margin-bottom:16px;">Cuanto antes confíes, mejor trato</h2>
+    <div class="grid-3" style="margin-top:16px; gap:24px;">
+      <div style="padding:20px; background:rgba(0,0,0,0.08); border-radius:8px;">
+        <span class="pill pill-black" style="font-size:10px;">Nivel 1</span>
+        <h3 style="margin-top:8px;">Testers (beta)</h3>
+        <ul style="font-size:14px; line-height:1.8; padding-left:16px;">
+          <li>Precio bloqueado para siempre</li>
+          <li>Estatus &ldquo;Fundadora&rdquo;</li>
+          <li>Acceso anticipado a todo</li>
         </ul>
       </div>
-      <div>
-        <h3>Miembros de la comunidad (no testers)</h3>
-        <ul style="font-size:15px; line-height:2; padding-left:20px;">
-          <li><strong>Acceso anticipado 48h</strong> antes de la apertura pública</li>
-          <li><strong>Precio de lanzamiento</strong> durante las primeras 48h (antes de que suba al precio definitivo)</li>
+      <div style="padding:20px; background:rgba(0,0,0,0.05); border-radius:8px;">
+        <span class="pill pill-olive" style="font-size:10px;">Nivel 2</span>
+        <h3 style="margin-top:8px;">Comunidad</h3>
+        <ul style="font-size:14px; line-height:1.8; padding-left:16px;">
+          <li>Acceso anticipado 48h</li>
+          <li>Precio de lanzamiento</li>
         </ul>
-        <div style="margin-top:16px; padding:16px; background:rgba(0,0,0,0.08); border-radius:8px;">
-          <p style="font-size:14px; margin:0;"><strong>La lógica:</strong> cuanto antes confíes en LOAM, mejor precio te llevas. Las testers tienen el mejor trato. La comunidad tiene ventaja sobre el público general. Todos ganan.</p>
-        </div>
+      </div>
+      <div style="padding:20px; background:rgba(0,0,0,0.03); border-radius:8px;">
+        <span class="pill" style="font-size:10px; background:rgba(0,0,0,0.1);">Nivel 3</span>
+        <h3 style="margin-top:8px;">Público general</h3>
+        <ul style="font-size:14px; line-height:1.8; padding-left:16px;">
+          <li>Precio normal</li>
+          <li>Sin ventajas extra</li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============================================ -->
-<!-- 06 META ADS -->
-<!-- ============================================ -->
-<section class="page">
-  <div class="page-num">06</div>
-  <div class="label">Publicidad de pago</div>
-  <h1>Meta Ads: cómo repartimos<br>el presupuesto</h1>
-  <p class="lead">Anuncios en Instagram y Facebook. Los mismos 10 vídeos (5 avatares &times; 2) se usan en las tres capas de temperatura.</p>
-
-  <div class="grid-3" style="margin-top:40px;">
-    <div class="card" style="border-top:4px solid var(--blue);">
-      <h4 style="color:var(--blue);">Prospecting frío</h4>
-      <div style="font-size:40px; font-family:'Playfair Display',Georgia,serif; color:var(--olive); margin:12px 0;">50%</div>
-      <p style="font-size:13px; color:var(--light-olive);">del presupuesto</p>
-      <div class="divider" style="background:var(--blue);"></div>
-      <ul style="font-size:13px; line-height:2; padding-left:16px;">
-        <li>5 conjuntos (1 por avatar)</li>
-        <li>2 anuncios por conjunto</li>
-        <li>CTA: &ldquo;Link en bio&rdquo; &rarr; newsletter</li>
-        <li>Público: intereses amplios, lookalikes</li>
-      </ul>
-    </div>
-    <div class="card" style="border-top:4px solid var(--gold);">
-      <h4 style="color:var(--olive);">Prospecting templado</h4>
-      <div style="font-size:40px; font-family:'Playfair Display',Georgia,serif; color:var(--olive); margin:12px 0;">30%</div>
-      <p style="font-size:13px; color:var(--light-olive);">del presupuesto</p>
-      <div class="divider" style="background:var(--gold);"></div>
-      <ul style="font-size:13px; line-height:2; padding-left:16px;">
-        <li>Mismos vídeos, diferente CTA</li>
-        <li>CTA: &ldquo;Comenta [PALABRA]&rdquo;</li>
-        <li>Público: engagers IG, viewers 50%+</li>
-        <li>Objetivo: comunidad WhatsApp</li>
-      </ul>
-    </div>
-    <div class="card" style="border-top:4px solid var(--red);">
-      <h4 style="color:var(--red);">Retargeting caliente</h4>
-      <div style="font-size:40px; font-family:'Playfair Display',Georgia,serif; color:var(--olive); margin:12px 0;">20%</div>
-      <p style="font-size:13px; color:var(--light-olive);">del presupuesto</p>
-      <div class="divider" style="background:var(--red);"></div>
-      <ul style="font-size:13px; line-height:2; padding-left:16px;">
-        <li>Testimonios + resultados</li>
-        <li>CTA: enlace directo a suscripción</li>
-        <li>Público: comunidad, newsletter, visitantes web</li>
-        <li>Objetivo: conversión directa</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="card" style="margin-top:40px; border-left:4px solid var(--olive);">
-    <h4>Presupuesto y reglas</h4>
-    <div class="grid-2" style="margin-top:16px;">
-      <div>
-        <div class="fee-highlight">50-150 &euro;/día</div>
-        <div class="fee-sub">Presupuesto inicial total</div>
-      </div>
-      <div>
-        <ul style="font-size:14px; line-height:2.2; padding-left:16px;">
-          <li><strong>Pausar</strong> si el CTR &lt; 0.9% tras 72 horas</li>
-          <li><strong>Pausar</strong> si el coste por lead supera 1.5x la media</li>
-          <li><strong>Escalar +20%</strong> cada 72h en los que funcionan</li>
-          <li><strong>No fragmentar</strong> en demasiadas campañas pequeñas</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <div style="margin-top:40px; padding:24px; background:var(--black); border-radius:12px; color:var(--cream);">
-    <h4 style="color:var(--gold);">Palabras clave en ManyChat</h4>
-    <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:16px;">
-      <span class="pill pill-olive">CALMA</span>
-      <span class="pill pill-gold">LÍMITES</span>
-      <span class="pill" style="background:var(--white); color:var(--black);">VALOR</span>
-      <span class="pill pill-blue">SENTIR</span>
-      <span class="pill pill-purple">CUIDARME</span>
-    </div>
-    <p style="font-size:13px; color:rgba(247,245,240,0.5); margin-top:12px; margin-bottom:0;">Todas activan el mismo flujo de DM (enlace WhatsApp + enlace web). La palabra nos dice qué avatar engancha más.</p>
-  </div>
-</section>
-
-<!-- ============================================ -->
-<!-- 07 TIMELINE 90 DAYS -->
-<!-- ============================================ -->
+<!-- ======== 07 COMMUNITY ======== -->
 <section class="page">
   <div class="page-num">07</div>
-  <div class="label">El calendario</div>
-  <h1>Plan de 90 días</h1>
-  <p class="lead">Todo el lanzamiento en 4 fases. Cada fase tiene un objetivo claro y tareas concretas.</p>
-
-  <div style="margin-top:48px;">
-    <div class="timeline">
-      <!-- Phase 1 -->
-      <div class="timeline-item">
-        <div class="timeline-dot active">1</div>
-        <div class="card-gold" style="margin-bottom:8px;">
-          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
-            <div>
-              <span class="pill pill-black" style="font-size:11px;">Fase 1</span>
-              <h3 style="margin-top:8px; margin-bottom:4px;">Montar la base</h3>
-            </div>
-            <div style="font-size:32px; font-family:'Playfair Display',Georgia,serif; font-weight:600;">Días 1-15</div>
-          </div>
-          <p style="font-size:14px; margin:8px 0 16px;">Objetivo: tener todo listo para empezar a captar. Nada de improvisar después.</p>
-          <div class="divider" style="background:var(--black); margin:16px 0;"></div>
-          <ul class="checklist">
-            <li>Landing loamclub.es con newsletter activa</li>
-            <li>Pixel + tracking configurados</li>
-            <li>ManyChat con 5 palabras clave configuradas</li>
-            <li>Comunidad de WhatsApp abierta (permanente)</li>
-            <li>10 creativos grabados (5 avatares &times; 2 vídeos)</li>
-            <li>3 campañas de Meta Ads configuradas (fría, templada, caliente)</li>
-            <li>Primer directo programado</li>
-            <li>Segundo directo programado (diferente día/hora)</li>
-            <li>Cupo mensual del Plan Plus definido</li>
-          </ul>
-        </div>
+  <div class="label">La comunidad</div>
+  <h1>WhatsApp + Newsletter</h1>
+  <p class="lead">Dos canales de captación permanentes. La comunidad de WhatsApp es el espacio íntimo. La newsletter es el canal masivo.</p>
+  <div class="grid-2" style="margin-top:48px;">
+    <div class="card" style="border-left:4px solid var(--gold);">
+      <h3>Comunidad de WhatsApp</h3>
+      <p style="font-size:14px; color:var(--light-olive);">Permanente. La gente entra y se queda.</p>
+      <ul style="list-style:none; padding:0; font-size:15px; line-height:2.2; margin-top:16px;">
+        <li>&#127775;&ensp; Tips exclusivos que no salen en redes</li>
+        <li>&#128227;&ensp; Primicias &mdash; todo sale aquí antes</li>
+        <li>&#128172;&ensp; Preguntas abiertas a Lorena</li>
+        <li>&#127891;&ensp; Invitaciones a webinars</li>
+        <li>&#128176;&ensp; Acceso a la beta antes que nadie</li>
+      </ul>
+      <div style="margin-top:16px;">
+        <h4>Cadencia semanal</h4>
+        <p style="font-size:14px;"><strong>Lunes:</strong> Tip o reflexión (texto/audio 1 min)<br><strong>Miércoles:</strong> Teaser de contenido<br><strong>Viernes:</strong> Pregunta o ejercicio rápido</p>
       </div>
-
-      <!-- Phase 2 -->
-      <div class="timeline-item">
-        <div class="timeline-dot">2</div>
-        <div class="card" style="border-left:4px solid var(--olive);">
-          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
-            <div>
-              <span class="pill pill-olive" style="font-size:11px;">Fase 2</span>
-              <h3 style="margin-top:8px; margin-bottom:4px;">Captar y validar</h3>
-            </div>
-            <div style="font-size:32px; font-family:'Playfair Display',Georgia,serif; font-weight:600; color:var(--olive);">Días 16-45</div>
-          </div>
-          <p style="font-size:14px; margin:8px 0 16px;">Objetivo: meter gente en la comunidad y en la newsletter. Ver qué avatar funciona mejor. Primeras ventas.</p>
-          <div class="divider"></div>
-          <ul class="checklist">
-            <li>Anuncios activos en las 3 capas (frío, templado, caliente)</li>
-            <li>Contenido orgánico diario en Instagram</li>
-            <li>2 directos realizados</li>
-            <li>Cadencia semanal de la comunidad WhatsApp activa (L-M-V)</li>
-            <li>Primeras suscripciones reales</li>
-            <li>Medir: qué avatar engancha más, qué CTA convierte mejor</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Phase 3 -->
-      <div class="timeline-item">
-        <div class="timeline-dot">3</div>
-        <div class="card" style="border-left:4px solid var(--gold);">
-          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
-            <div>
-              <span class="pill pill-gold" style="font-size:11px;">Fase 3</span>
-              <h3 style="margin-top:8px; margin-bottom:4px;">Webinars + Beta</h3>
-            </div>
-            <div style="font-size:32px; font-family:'Playfair Display',Georgia,serif; font-weight:600; color:var(--olive);">Días 46-75</div>
-          </div>
-          <p style="font-size:14px; margin:8px 0 16px;">Objetivo: anunciar LOAM Club, abrir la beta del Plan Plus solo para la comunidad, capturar feedback y testimonios.</p>
-          <div class="divider" style="background:var(--gold);"></div>
-          <ul class="checklist">
-            <li>Webinar 1: Lorena presenta LOAM Club + Q&amp;A (anuncia la beta)</li>
-            <li>Webinar 2: diferente día/hora + Q&amp;A (se abre la beta al final)</li>
-            <li>Beta del Plan Plus: solo miembros de la comunidad, plazas limitadas</li>
-            <li>Testers dan feedback real sobre plataforma, contenido y sesiones</li>
-            <li>Captura de testimonios para usar en el lanzamiento</li>
-            <li>Ajustar lo que haga falta según el feedback</li>
-            <li>Testers reciben estatus &ldquo;Miembro Fundadora&rdquo; + precio bloqueado para siempre</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Phase 4 -->
-      <div class="timeline-item">
-        <div class="timeline-dot">4</div>
-        <div class="card-olive">
-          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
-            <div>
-              <span class="pill pill-gold" style="font-size:11px;">Fase 4</span>
-              <h3 style="margin-top:8px; margin-bottom:4px; color:var(--gold);">Lanzamiento público</h3>
-            </div>
-            <div style="font-size:32px; font-family:'Playfair Display',Georgia,serif; font-weight:600; color:var(--gold);">Días 76-90</div>
-          </div>
-          <p style="font-size:14px; color:rgba(247,245,240,0.7); margin:8px 0 16px;">Objetivo: abrir ambos planes a todo el mundo. Ya tenemos feedback, testimonios y prueba social.</p>
-          <div class="divider" style="background:var(--gold);"></div>
-          <ul style="list-style:none; padding:0; color:var(--cream);">
-            <li style="padding:12px 0; border-bottom:1px solid rgba(255,255,255,0.1); font-size:15px;">&#9989;&ensp; Comunidad tiene acceso anticipado 48h + precio de lanzamiento</li>
-            <li style="padding:12px 0; border-bottom:1px solid rgba(255,255,255,0.1); font-size:15px;">&#9989;&ensp; Apertura pública: Plan Base + Plan Plus para todos</li>
-            <li style="padding:12px 0; border-bottom:1px solid rgba(255,255,255,0.1); font-size:15px;">&#9989;&ensp; Testimonios reales de las testers en anuncios y web</li>
-            <li style="padding:12px 0; border-bottom:1px solid rgba(255,255,255,0.1); font-size:15px;">&#9989;&ensp; Escalar los anuncios ganadores</li>
-            <li style="padding:12px 0; font-size:15px;">&#9989;&ensp; Activar partnerships (fase de crecimiento)</li>
-          </ul>
-        </div>
+    </div>
+    <div class="card" style="border-left:4px solid var(--olive);">
+      <h3>Newsletter (loamclub.es)</h3>
+      <p style="font-size:14px; color:var(--light-olive);">El canal de mayor alcance. Captación vía Lead Form de Meta.</p>
+      <h4 style="margin-top:20px;">Secuencia automática de bienvenida</h4>
+      <div style="font-size:14px; line-height:2.2;">
+        <p><span class="pill pill-olive" style="font-size:10px; padding:2px 8px;">Día 0</span> Bienvenida + quién es Lorena + qué va a recibir</p>
+        <p><span class="pill pill-olive" style="font-size:10px; padding:2px 8px;">Día 2</span> Ejercicio aplicable de 5 min (demostrar valor)</p>
+        <p><span class="pill pill-olive" style="font-size:10px; padding:2px 8px;">Día 5</span> &ldquo;Lo que mis 200K seguidoras me piden cada día&rdquo;</p>
+        <p><span class="pill pill-olive" style="font-size:10px; padding:2px 8px;">Día 8</span> Invitación a la comunidad de WhatsApp</p>
+        <p><span class="pill pill-gold" style="font-size:10px; padding:2px 8px;">Día 12</span> Cuando se revele: presentación de LOAM Club</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============================================ -->
-<!-- 08 KPIs -->
-<!-- ============================================ -->
+<!-- ======== 08 CONTENT EVOLUTION ======== -->
 <section class="page">
   <div class="page-num">08</div>
-  <div class="label">Los números que importan</div>
-  <h1>KPIs: cómo sabemos<br>si funciona</h1>
-  <p class="lead">Estos son los porcentajes que hay que vigilar. Si un número baja de lo esperado, hay que arreglarlo antes de seguir gastando.</p>
+  <div class="label">Evolución del contenido</div>
+  <h1>Qué publica @loamclub<br>en cada fase</h1>
+  <p class="lead">El contenido de la cuenta de LOAM no es igual los 90 días. Evoluciona con la revelación.</p>
 
-  <table style="margin-top:48px;">
-    <thead>
-      <tr>
-        <th>Paso</th>
-        <th>Objetivo</th>
-        <th>Qué significa en simple</th>
-      </tr>
-    </thead>
+  <table style="margin-top:40px;">
+    <thead><tr><th>Fase</th><th>Mix de contenido</th><th>Lo que nunca dice</th></tr></thead>
     <tbody>
       <tr>
-        <td>Comentario &rarr; DM</td>
-        <td><strong>&gt;20%</strong></td>
-        <td>De cada 100 comentarios, al menos 20 abren el DM</td>
+        <td><strong>Fase 1</strong><br><span style="font-size:12px; color:var(--light-olive);">Días 1-30</span></td>
+        <td>
+          <strong>70%</strong> Valor (vídeos avatar a cámara con CTA)<br>
+          <strong>30%</strong> Pistas de misterio (&ldquo;algo viene&rdquo;)
+        </td>
+        <td style="color:var(--red);">Curso, plataforma, membresía, alumnas, precio</td>
       </tr>
       <tr>
-        <td>DM &rarr; WhatsApp</td>
-        <td><strong>&gt;35%</strong></td>
-        <td>De quienes reciben el DM, al menos 35 entran a la comunidad</td>
+        <td><strong>Fase 2</strong><br><span style="font-size:12px; color:var(--light-olive);">Días 31-60</span></td>
+        <td>
+          <strong>50%</strong> Valor con conexión a &ldquo;lo que viene&rdquo;<br>
+          <strong>30%</strong> Cuenta atrás y hype para el webinar<br>
+          <strong>20%</strong> Crecimiento comunidad
+        </td>
+        <td style="color:var(--red);">Precio, detalles del producto, &ldquo;compra&rdquo;</td>
       </tr>
       <tr>
-        <td>Visita web &rarr; Newsletter</td>
-        <td><strong>&gt;25%</strong></td>
-        <td>De quienes llegan a loamclub.es, al menos 25 dejan su email</td>
+        <td><strong>Fase 3</strong><br><span style="font-size:12px; color:var(--light-olive);">Días 61-75</span></td>
+        <td>
+          <strong>40%</strong> Webinars (recordatorios, resúmenes, reacciones)<br>
+          <strong>30%</strong> Prueba social de las testers<br>
+          <strong>30%</strong> Valor + &ldquo;esto es lo que pasa dentro&rdquo;
+        </td>
+        <td style="color:var(--green);">Ya puede decir todo. LOAM se ha revelado.</td>
       </tr>
       <tr>
-        <td>Show-up directos</td>
-        <td><strong>&gt;35%</strong></td>
-        <td>De quienes están en la comunidad, al menos 35 asisten a los directos</td>
+        <td><strong>Fase 4</strong><br><span style="font-size:12px; color:var(--light-olive);">Días 76-90</span></td>
+        <td>
+          <strong>40%</strong> Testimonios y resultados<br>
+          <strong>30%</strong> CTA directo a suscripción<br>
+          <strong>30%</strong> Valor (teasers de lo que hay dentro)
+        </td>
+        <td style="color:var(--green);">Venta abierta. Todo vale.</td>
       </tr>
-      <tr>
-        <td>Comunidad/newsletter &rarr; Suscripción</td>
-        <td><strong>5-10%</strong></td>
-        <td>De toda la gente captada, entre 5 y 10 de cada 100 se suscriben</td>
+      <tr style="background:rgba(91,102,68,0.04);">
+        <td><strong>Evergreen</strong><br><span style="font-size:12px; color:var(--light-olive);">Post-lanzamiento</span></td>
+        <td>
+          <strong>50%</strong> Valor (teasers de contenido interno)<br>
+          <strong>30%</strong> Prueba social (testimonios de alumnas)<br>
+          <strong>20%</strong> CTA
+        </td>
+        <td style="color:var(--green);">Modo crucero. No quemar la audiencia.</td>
       </tr>
     </tbody>
   </table>
+</section>
 
+<!-- ======== 09 KPIs ======== -->
+<section class="page">
+  <div class="page-num">09</div>
+  <div class="label">Los números que importan</div>
+  <h1>KPIs por fase</h1>
+  <table style="margin-top:48px;">
+    <thead><tr><th>Métrica</th><th>Objetivo</th><th>En simple</th></tr></thead>
+    <tbody>
+      <tr><td>Comentario &rarr; DM</td><td><strong>&gt;20%</strong></td><td>De 100 comentarios, 20 abren el DM</td></tr>
+      <tr><td>DM &rarr; WhatsApp</td><td><strong>&gt;35%</strong></td><td>De quienes reciben DM, 35 entran a la comunidad</td></tr>
+      <tr><td>Visita web &rarr; Newsletter</td><td><strong>&gt;25%</strong></td><td>De quienes llegan a loamclub.es, 25 dejan email</td></tr>
+      <tr><td>Asistencia webinars</td><td><strong>&gt;40%</strong></td><td>De inscritas, 40 asisten al directo</td></tr>
+      <tr><td>Comunidad &rarr; Suscripción</td><td><strong>5-10%</strong></td><td>De toda la gente captada, 5-10 se suscriben</td></tr>
+    </tbody>
+  </table>
   <div class="grid-3" style="margin-top:40px;">
     <div class="card" style="text-align:center;">
-      <div class="fee-sub">Mix de ventas objetivo</div>
+      <div class="fee-sub">Mix de ventas</div>
       <div style="margin:16px 0;"><span style="font-size:40px; font-family:'Playfair Display',Georgia,serif; color:var(--olive);">70/30</span></div>
-      <div class="fee-sub">70% Plan Base / 30% Plan Plus</div>
+      <div class="fee-sub">70% Base / 30% Plus</div>
     </div>
     <div class="card" style="text-align:center;">
-      <div class="fee-sub">Ticket medio objetivo</div>
+      <div class="fee-sub">Ticket medio</div>
       <div style="margin:16px 0;"><span style="font-size:40px; font-family:'Playfair Display',Georgia,serif; color:var(--olive);">~117 &euro;</span></div>
       <div class="fee-sub">(90&euro;&times;0.7) + (180&euro;&times;0.3)</div>
     </div>
     <div class="card" style="text-align:center;">
-      <div class="fee-sub">Coste adquisición máximo</div>
+      <div class="fee-sub">CAC máximo</div>
       <div style="margin:16px 0;"><span style="font-size:40px; font-family:'Playfair Display',Georgia,serif; color:var(--olive);">&le;45 &euro;</span></div>
-      <div class="fee-sub">CAC blended objetivo</div>
+      <div class="fee-sub">Blended (orgánico + ads)</div>
     </div>
   </div>
 </section>
 
-<!-- ============================================ -->
-<!-- 09 RISKS -->
-<!-- ============================================ -->
+<!-- ======== 10 RISKS ======== -->
 <section class="page">
-  <div class="page-num">09</div>
+  <div class="page-num">10</div>
   <div class="label">Qué puede salir mal</div>
-  <h1>Riesgos y cómo los evitamos</h1>
-
+  <h1>Riesgos y soluciones</h1>
   <div class="grid-2" style="margin-top:48px;">
     <div class="card" style="border-left:4px solid var(--red);">
-      <h4 style="color:var(--red);">Riesgo</h4>
       <h3>Saturar la agenda de Lorena</h3>
-      <p style="font-size:15px;">Si se venden demasiados Plan Plus, Lorena no puede atender todas las sesiones.</p>
-      <div style="margin-top:16px; padding:16px; background:rgba(39,174,96,0.06); border-radius:8px; border-left:3px solid var(--green);">
-        <p style="font-size:14px; margin:0; color:var(--green);"><strong>Solución:</strong> Cupos semanales fijos (máx. 20 sesiones/semana) y lista de espera.</p>
-      </div>
+      <div style="margin-top:12px; padding:12px; background:rgba(39,174,96,0.06); border-radius:8px;"><p style="font-size:14px; margin:0; color:var(--green);"><strong>Solución:</strong> Cupos fijos (máx. 20 sesiones/semana) + lista de espera.</p></div>
     </div>
     <div class="card" style="border-left:4px solid var(--red);">
-      <h4 style="color:var(--red);">Riesgo</h4>
-      <h3>Devaluar la marca con descuentos</h3>
-      <p style="font-size:15px;">Descuentos del 50% hacen que las alumnas esperen siempre a la rebaja.</p>
-      <div style="margin-top:16px; padding:16px; background:rgba(39,174,96,0.06); border-radius:8px; border-left:3px solid var(--green);">
-        <p style="font-size:14px; margin:0; color:var(--green);"><strong>Solución:</strong> Solo bonus reales o máximo 15-20% por tiempo limitado.</p>
-      </div>
+      <h3>Devaluar marca con descuentos</h3>
+      <div style="margin-top:12px; padding:12px; background:rgba(39,174,96,0.06); border-radius:8px;"><p style="font-size:14px; margin:0; color:var(--green);"><strong>Solución:</strong> El descuento real es el semestral/anual. Promociones puntuales máx. 15-20%.</p></div>
     </div>
     <div class="card" style="border-left:4px solid var(--red);">
-      <h4 style="color:var(--red);">Riesgo</h4>
-      <h3>Construir sin validar</h3>
-      <p style="font-size:15px;">Gastar meses desarrollando algo que nadie quiere comprar.</p>
-      <div style="margin-top:16px; padding:16px; background:rgba(39,174,96,0.06); border-radius:8px; border-left:3px solid var(--green);">
-        <p style="font-size:14px; margin:0; color:var(--green);"><strong>Solución:</strong> Preventa y beta antes del lanzamiento completo. Validar con dinero real.</p>
-      </div>
+      <h3>Revelar demasiado pronto</h3>
+      <div style="margin-top:12px; padding:12px; background:rgba(39,174,96,0.06); border-radius:8px;"><p style="font-size:14px; margin:0; color:var(--green);"><strong>Solución:</strong> Nadie dice &ldquo;curso&rdquo; ni &ldquo;membresía&rdquo; hasta el webinar. Disciplina total.</p></div>
     </div>
     <div class="card" style="border-left:4px solid var(--red);">
-      <h4 style="color:var(--red);">Riesgo</h4>
       <h3>Depender solo de orgánico</h3>
-      <p style="font-size:15px;">Si solo confiamos en posts, el crecimiento es lento e impredecible.</p>
-      <div style="margin-top:16px; padding:16px; background:rgba(39,174,96,0.06); border-radius:8px; border-left:3px solid var(--green);">
-        <p style="font-size:14px; margin:0; color:var(--green);"><strong>Solución:</strong> Combinar Ads + comunidad + newsletter + partnerships.</p>
-      </div>
+      <div style="margin-top:12px; padding:12px; background:rgba(39,174,96,0.06); border-radius:8px;"><p style="font-size:14px; margin:0; color:var(--green);"><strong>Solución:</strong> Ads como acelerador (no motor). Orgánico hace el trabajo pesado, ads amplían el alcance.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ============================================ -->
-<!-- 10 PARTNERSHIPS -->
-<!-- ============================================ -->
+<!-- ======== 11 PARTNERSHIPS ======== -->
 <section class="page" style="min-height:auto; padding-bottom:120px;">
-  <div class="page-num">10</div>
-  <div class="label">Fase 2 &mdash; Crecimiento</div>
-  <h1>Partnerships estratégicos</h1>
-  <p class="lead">Una vez validado el producto, escalamos con colaboraciones. Esto viene después del lanzamiento, no antes.</p>
-
-  <div class="grid-2" style="margin-top:40px;">
-    <div>
-      <div class="card" style="margin-bottom:24px;">
-        <span class="icon">&#128105;&#8205;&#128187;</span>
-        <h3>Microcreadoras de bienestar</h3>
-        <p style="font-size:14px;">Perfiles de 5K-50K seguidores en bienestar, relaciones y psicología.</p>
-      </div>
-      <div class="card" style="margin-bottom:24px;">
-        <span class="icon">&#127897;</span>
-        <h3>Podcasts y newsletters</h3>
-        <p style="font-size:14px;">Podcasts de psicología y newsletters de desarrollo personal con audiencia femenina.</p>
-      </div>
-      <div class="card">
-        <span class="icon">&#128101;</span>
-        <h3>Comunidades privadas</h3>
-        <p style="font-size:14px;">Grupos de mujeres profesionales, círculos de crecimiento, espacios de networking femenino.</p>
-      </div>
+  <div class="page-num">11</div>
+  <div class="label">Post-lanzamiento</div>
+  <h1>Partnerships y crecimiento</h1>
+  <p class="lead">Solo después del lanzamiento, cuando los unit economics sean estables.</p>
+  <div class="grid-3" style="margin-top:40px;">
+    <div class="card">
+      <span class="icon">&#128105;&#8205;&#128187;</span>
+      <h3>Microcreadoras de bienestar</h3>
+      <p style="font-size:14px;">5K-50K seguidores. Collabs, directos conjuntos, menciones cruzadas.</p>
     </div>
-    <div>
-      <div class="card-olive" style="height:100%; display:flex; flex-direction:column; justify-content:center;">
-        <h4 style="color:var(--gold);">Modelo comercial</h4>
-        <h3 style="color:var(--cream); font-size:24px; margin-bottom:24px;">CPA por venta o revenue share del primer pago</h3>
-        <p style="color:rgba(247,245,240,0.7); font-size:15px;">No pagamos por adelantado. Solo pagamos cuando la colaboración genera una venta real. Riesgo cero para LOAM Club.</p>
-        <div style="margin-top:24px; padding:16px; background:rgba(253,223,89,0.1); border-radius:8px;">
-          <p style="font-size:14px; margin:0; color:var(--gold);"><strong>Importante:</strong> Solo activar cuando los unit economics sean estables (CAC &le; 45 &euro;, conversión &ge; 5%).</p>
-        </div>
-      </div>
+    <div class="card">
+      <span class="icon">&#127897;</span>
+      <h3>Podcasts y newsletters</h3>
+      <p style="font-size:14px;">Psicología y desarrollo personal con audiencia femenina.</p>
     </div>
+    <div class="card">
+      <span class="icon">&#128101;</span>
+      <h3>Comunidades privadas</h3>
+      <p style="font-size:14px;">Grupos de mujeres profesionales y círculos de crecimiento.</p>
+    </div>
+  </div>
+  <div style="margin-top:32px; padding:24px; background:var(--olive); border-radius:12px; color:var(--cream);">
+    <p style="font-size:15px; color:var(--cream); max-width:none; margin:0;"><strong style="color:var(--gold);">Modelo:</strong> CPA por venta o revenue share del primer pago. No pagamos por adelantado. Solo cuando genera venta real. <strong style="color:var(--gold);">Activar cuando CAC &le; 45 &euro; y conversión &ge; 5%.</strong></p>
   </div>
 </section>
 
