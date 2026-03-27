@@ -22,7 +22,6 @@
   * { margin:0; padding:0; box-sizing:border-box; }
   body { font-family:'Arial Nova',Arial,Helvetica,sans-serif; background:var(--cream); color:var(--black); -webkit-font-smoothing:antialiased; }
 
-  /* HEADER */
   .site-header { position:fixed; top:0; left:0; right:0; z-index:100; background:var(--black); border-bottom:1px solid rgba(255,255,255,0.08); }
   .header-inner { max-width:1200px; margin:0 auto; padding:0 40px; height:56px; display:flex; align-items:center; justify-content:space-between; }
   .header-logo { font-family:'Playfair Display',Georgia,serif; font-size:16px; color:var(--cream); letter-spacing:0.08em; text-decoration:none; }
@@ -32,8 +31,7 @@
   .header-nav a:hover { color:var(--cream); background:rgba(255,255,255,0.06); }
   .header-nav a.active { color:var(--gold); background:rgba(253,223,89,0.1); }
 
-  .page { min-height:100vh; padding:80px 60px; padding-top:136px; position:relative; border-bottom:1px solid var(--faint-border); }
-  .page:first-of-type { padding-top:136px; }
+  .page { min-height:100vh; padding:136px 60px 80px; position:relative; border-bottom:1px solid var(--faint-border); }
   .page-num { position:absolute; top:86px; right:60px; font-size:11px; letter-spacing:3px; color:var(--light-olive); font-weight:700; }
   .label { font-size:11px; letter-spacing:4px; text-transform:uppercase; color:var(--olive); margin-bottom:12px; font-weight:700; }
 
@@ -71,7 +69,6 @@
   .pill-purple { background:rgba(142,68,173,0.1); color:var(--purple); }
 
   .icon { font-size:28px; margin-bottom:16px; display:block; }
-
   .fee-highlight { font-size:32px; font-family:'Playfair Display',Georgia,serif; font-weight:600; color:var(--olive); }
   .fee-sub { font-size:13px; color:var(--light-olive); margin-top:4px; }
 
@@ -84,17 +81,8 @@
   .timeline-dot { position:absolute; left:-40px; top:4px; width:28px; height:28px; border-radius:50%; background:var(--olive); color:var(--cream); display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; }
   .timeline-dot.active { background:var(--gold); color:var(--black); }
 
-  .funnel { display:flex; flex-direction:column; gap:0; margin-top:32px; }
-  .funnel-step { padding:24px 32px; text-align:center; font-weight:700; font-size:15px; position:relative; }
-  .funnel-step:first-child { border-radius:12px 12px 0 0; }
-  .funnel-step:last-child { border-radius:0 0 12px 12px; }
+  .funnel-step { padding:24px 32px; text-align:center; font-weight:700; font-size:15px; }
   .funnel-arrow { text-align:center; font-size:20px; color:var(--light-olive); padding:4px 0; }
-
-  .avatar-card { border-radius:12px; padding:28px; border:1px solid var(--faint-border); background:var(--white); }
-  .avatar-card .avatar-emoji { font-size:40px; margin-bottom:12px; }
-  .avatar-card h3 { margin-bottom:8px; }
-  .avatar-card .dolor { font-size:14px; color:var(--red); margin-bottom:8px; font-weight:600; }
-  .avatar-card .promesa { font-size:14px; color:var(--green); font-weight:600; }
 
   .hook-bubble { background:var(--white); border:1px solid var(--faint-border); border-radius:16px; padding:20px 24px; font-size:15px; font-style:italic; line-height:1.6; margin:8px 0; position:relative; }
   .hook-bubble::before { content:'\201C'; font-size:40px; font-family:'Playfair Display',Georgia,serif; color:var(--olive); opacity:0.3; position:absolute; top:8px; left:12px; }
@@ -107,7 +95,7 @@
   .texture-grain { position:absolute; inset:0; opacity:0.04; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E"); pointer-events:none; mix-blend-mode:multiply; }
 
   @media (max-width:768px) {
-    .page { padding:48px 24px; padding-top:104px; }
+    .page { padding:104px 24px 48px; }
     h1 { font-size:36px; }
     h2 { font-size:26px; }
     .grid-2, .grid-3, .grid-4 { grid-template-columns:1fr; }
@@ -120,7 +108,6 @@
 </head>
 <body>
 
-<!-- HEADER -->
 <header class="site-header">
   <div class="header-inner">
     <a href="index.html" class="header-logo">LOAM CL<i>U</i>B</a>
@@ -131,7 +118,9 @@
   </div>
 </header>
 
-<!-- PAGE 1: Cover -->
+<!-- ============================================ -->
+<!-- 01 COVER -->
+<!-- ============================================ -->
 <section class="page" style="display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; background:var(--olive); color:var(--cream); min-height:100vh; padding-top:56px;">
   <div class="texture-grain"></div>
   <div class="page-num" style="color:rgba(255,255,255,0.3);">01</div>
@@ -147,18 +136,21 @@
     <span class="pill pill-gold">90 días</span>
     <span class="pill" style="background:rgba(255,255,255,0.1); color:var(--cream);">4 fases</span>
     <span class="pill" style="background:rgba(255,255,255,0.1); color:var(--cream);">5 avatares</span>
+    <span class="pill" style="background:rgba(255,255,255,0.1); color:var(--cream);">Modelo evergreen</span>
   </div>
 </section>
 
-<!-- PAGE 2: The Offer -->
+<!-- ============================================ -->
+<!-- 02 THE OFFER -->
+<!-- ============================================ -->
 <section class="page">
   <div class="page-num">02</div>
   <div class="label">Lo que vendemos</div>
-  <h1>Dos planes, un objetivo</h1>
-  <p class="lead">LOAM Club ofrece formación psicológica aplicada (no contenido motivacional genérico). Menos teoría suelta, más protocolos aplicables en la vida real.</p>
+  <h1>Dos planes, siempre abiertos</h1>
+  <p class="lead">LOAM Club es una membresía mensual de formación psicológica aplicada. No es un curso cerrado. La suscripción está siempre abierta &mdash; no hay ventanas artificiales de &ldquo;últimas plazas&rdquo;.</p>
 
   <div class="grid-2" style="margin-top:48px;">
-    <div class="card" style="border:2px solid var(--olive); position:relative;">
+    <div class="card" style="border:2px solid var(--olive);">
       <span class="pill pill-olive" style="margin-bottom:20px;">Plan Base</span>
       <div style="font-size:56px; font-family:'Playfair Display',Georgia,serif; font-weight:400; margin:16px 0;">90 &euro;<span style="font-size:18px; color:var(--light-olive);">/mes</span></div>
       <div class="divider"></div>
@@ -172,7 +164,7 @@
       </div>
     </div>
 
-    <div class="card-black" style="position:relative;">
+    <div class="card-black">
       <span class="pill pill-gold" style="margin-bottom:20px;">Plan Plus</span>
       <div style="font-size:56px; font-family:'Playfair Display',Georgia,serif; font-weight:400; margin:16px 0; color:var(--cream);">180 &euro;<span style="font-size:18px; color:var(--light-olive);">/mes</span></div>
       <div class="divider" style="background:var(--gold);"></div>
@@ -185,33 +177,29 @@
         <p style="font-size:14px; margin:0; color:var(--gold);"><strong>Para quién:</strong> Quien además quiere acompañamiento directo con una psicóloga.</p>
       </div>
       <div style="margin-top:16px; padding:12px 16px; background:rgba(192,57,43,0.15); border-radius:8px;">
-        <p style="font-size:13px; margin:0; color:#e74c3c;"><strong>Plazas limitadas:</strong> Máximo 20 sesiones/semana según agenda de Lorena.</p>
+        <p style="font-size:13px; margin:0; color:#e74c3c;"><strong>Plazas limitadas de verdad:</strong> Máximo 20 sesiones/semana según agenda de Lorena. Esta es la única urgencia real.</p>
       </div>
     </div>
   </div>
 
   <div style="margin-top:48px; padding:24px; background:var(--white); border:1px solid var(--faint-border); border-radius:12px;">
-    <h4>Estrategia de precios</h4>
+    <h4>Reglas de precio</h4>
     <div class="grid-3" style="margin-top:16px;">
-      <div>
-        <p style="font-size:14px;"><strong>Entrada principal:</strong> Plan Base 90 &euro; como oferta de menor fricción.</p>
-      </div>
-      <div>
-        <p style="font-size:14px;"><strong>Upsell:</strong> Plan Plus 180 &euro; para perfiles con mayor urgencia.</p>
-      </div>
-      <div>
-        <p style="font-size:14px;"><strong>Descuentos:</strong> Nunca 50%. Máximo 15-20% por tiempo limitado o con bonus real.</p>
-      </div>
+      <div><p style="font-size:14px;"><strong>Entrada:</strong> Plan Base 90 &euro; como primera opción de menor fricción.</p></div>
+      <div><p style="font-size:14px;"><strong>Upsell:</strong> Plan Plus 180 &euro; para quien necesita acompañamiento directo.</p></div>
+      <div><p style="font-size:14px;"><strong>Descuentos:</strong> Nunca 50%. Máximo 15-20% por tiempo limitado o con bonus real. No liquidar.</p></div>
     </div>
   </div>
 </section>
 
-<!-- PAGE 3: Avatars -->
+<!-- ============================================ -->
+<!-- 03 AVATARS -->
+<!-- ============================================ -->
 <section class="page">
   <div class="page-num">03</div>
   <div class="label">A quién nos dirigimos</div>
   <h1>5 avatares, 5 dolores reales</h1>
-  <p class="lead">Cada avatar tiene su dolor específico, sus vídeos y su palabra clave. Lorena habla directo a cámara en cada uno. El CTA siempre es: <strong>&ldquo;Comenta [PALABRA] y te envío el enlace para unirte a la comunidad.&rdquo;</strong></p>
+  <p class="lead">Cada avatar tiene su dolor, sus vídeos y su palabra clave. Lorena habla directo a cámara en cada uno.</p>
 
   <!-- Avatar A -->
   <div class="card" style="margin-top:48px; border-left:4px solid var(--olive); padding:40px;">
@@ -229,25 +217,25 @@
     <div class="divider"></div>
     <div class="grid-2" style="margin-top:16px;">
       <div>
-        <div class="dolor" style="font-size:15px; margin-bottom:16px;">Dolor: Mente acelerada, fatiga emocional, no puede desconectar aunque quiera</div>
-        <div class="promesa" style="font-size:15px;">Promesa: Protocolo semanal para regular la activación y recuperar el foco</div>
+        <div style="font-size:15px; color:var(--red); font-weight:600; margin-bottom:16px;">Dolor: Mente acelerada, fatiga emocional, no puede desconectar</div>
+        <div style="font-size:15px; color:var(--green); font-weight:600;">Promesa: Protocolo semanal para regular la activación y recuperar el foco</div>
       </div>
       <div>
-        <p style="font-size:12px; color:var(--light-olive); margin-bottom:8px; font-weight:700;">HOOKS PARA LOS VÍDEOS:</p>
+        <p style="font-size:12px; color:var(--light-olive); margin-bottom:8px; font-weight:700;">HOOKS:</p>
         <div class="hook-bubble"><p>Tu problema no es falta de disciplina; es sobrecarga del sistema nervioso.</p></div>
         <div class="hook-bubble"><p>Si rindes fuera pero te rompes por dentro, esto es para ti.</p></div>
       </div>
     </div>
     <div style="margin-top:24px; padding:20px; background:rgba(91,102,68,0.04); border-radius:8px;">
-      <h4>Ejemplos de vídeos para este avatar</h4>
+      <h4>Vídeos para este avatar</h4>
       <div class="grid-2" style="margin-top:8px; gap:16px;">
         <div style="padding:16px; background:var(--white); border-radius:8px; border:1px solid var(--faint-border);">
-          <span class="pill pill-olive" style="font-size:10px; padding:3px 10px; margin-bottom:8px;">Vídeo 1</span>
-          <p style="font-size:14px; margin:8px 0 0;"><strong>&ldquo;Por qué te cuesta tanto parar&rdquo;</strong> &mdash; Lorena explica qué pasa en tu cuerpo cuando llevas meses sin desconectar de verdad. El sistema nervioso se queda en modo alerta y tú confundes productividad con supervivencia.</p>
+          <span class="pill pill-olive" style="font-size:10px; padding:3px 10px;">Vídeo 1</span>
+          <p style="font-size:14px; margin:8px 0 0;"><strong>&ldquo;Por qué te cuesta tanto parar&rdquo;</strong> &mdash; Qué pasa en tu cuerpo cuando llevas meses sin desconectar. El sistema nervioso en modo alerta. Confundes productividad con supervivencia.</p>
         </div>
         <div style="padding:16px; background:var(--white); border-radius:8px; border:1px solid var(--faint-border);">
-          <span class="pill pill-olive" style="font-size:10px; padding:3px 10px; margin-bottom:8px;">Vídeo 2</span>
-          <p style="font-size:14px; margin:8px 0 0;"><strong>&ldquo;El ejercicio de los 90 segundos&rdquo;</strong> &mdash; Una técnica rápida para cuando sientes que la cabeza no para. Lorena la enseña en directo y cierra con: &ldquo;Comenta CALMA y te mando el enlace a la comunidad donde comparto más herramientas como esta.&rdquo;</p>
+          <span class="pill pill-olive" style="font-size:10px; padding:3px 10px;">Vídeo 2</span>
+          <p style="font-size:14px; margin:8px 0 0;"><strong>&ldquo;El ejercicio de los 90 segundos&rdquo;</strong> &mdash; Técnica rápida para cuando la cabeza no para. Lorena la enseña en directo.</p>
         </div>
       </div>
     </div>
@@ -269,25 +257,25 @@
     <div class="divider" style="background:var(--gold);"></div>
     <div class="grid-2" style="margin-top:16px;">
       <div>
-        <div class="dolor" style="font-size:15px; margin-bottom:16px;">Dolor: No sabe poner límites sin sentirse mala persona o egoísta</div>
-        <div class="promesa" style="font-size:15px;">Promesa: Sistema práctico para decir no sin romper vínculos sanos</div>
+        <div style="font-size:15px; color:var(--red); font-weight:600; margin-bottom:16px;">Dolor: No sabe poner límites sin sentirse mala persona</div>
+        <div style="font-size:15px; color:var(--green); font-weight:600;">Promesa: Sistema práctico para decir no sin romper vínculos sanos</div>
       </div>
       <div>
-        <p style="font-size:12px; color:var(--light-olive); margin-bottom:8px; font-weight:700;">HOOKS PARA LOS VÍDEOS:</p>
+        <p style="font-size:12px; color:var(--light-olive); margin-bottom:8px; font-weight:700;">HOOKS:</p>
         <div class="hook-bubble"><p>Decir sí por culpa también es abandonarte.</p></div>
         <div class="hook-bubble"><p>Poner límites no te hace egoísta; te hace estable.</p></div>
       </div>
     </div>
     <div style="margin-top:24px; padding:20px; background:rgba(253,223,89,0.06); border-radius:8px;">
-      <h4>Ejemplos de vídeos para este avatar</h4>
+      <h4>Vídeos para este avatar</h4>
       <div class="grid-2" style="margin-top:8px; gap:16px;">
         <div style="padding:16px; background:var(--white); border-radius:8px; border:1px solid var(--faint-border);">
-          <span class="pill pill-gold" style="font-size:10px; padding:3px 10px; margin-bottom:8px;">Vídeo 1</span>
-          <p style="font-size:14px; margin:8px 0 0;"><strong>&ldquo;La frase que te ayuda a decir no sin culpa&rdquo;</strong> &mdash; Lorena da una fórmula concreta que se puede usar hoy mismo con la familia, pareja o trabajo. Algo que se pueda repetir literalmente.</p>
+          <span class="pill pill-gold" style="font-size:10px; padding:3px 10px;">Vídeo 1</span>
+          <p style="font-size:14px; margin:8px 0 0;"><strong>&ldquo;La frase que te ayuda a decir no sin culpa&rdquo;</strong> &mdash; Fórmula concreta para usar hoy con familia, pareja o trabajo.</p>
         </div>
         <div style="padding:16px; background:var(--white); border-radius:8px; border:1px solid var(--faint-border);">
-          <span class="pill pill-gold" style="font-size:10px; padding:3px 10px; margin-bottom:8px;">Vídeo 2</span>
-          <p style="font-size:14px; margin:8px 0 0;"><strong>&ldquo;Por qué te sientes culpable cuando priorizas&rdquo;</strong> &mdash; Explica el patrón psicológico detrás de la complacencia y por qué no es generosidad, es miedo al rechazo. Cierra con: &ldquo;Comenta LÍMITES.&rdquo;</p>
+          <span class="pill pill-gold" style="font-size:10px; padding:3px 10px;">Vídeo 2</span>
+          <p style="font-size:14px; margin:8px 0 0;"><strong>&ldquo;Por qué te sientes culpable cuando priorizas&rdquo;</strong> &mdash; El patrón detrás de la complacencia: no es generosidad, es miedo al rechazo.</p>
         </div>
       </div>
     </div>
@@ -309,25 +297,25 @@
     <div class="divider" style="background:var(--black);"></div>
     <div class="grid-2" style="margin-top:16px;">
       <div>
-        <div class="dolor" style="font-size:15px; margin-bottom:16px;">Dolor: Depende de la aprobación externa para sentirse suficiente</div>
-        <div class="promesa" style="font-size:15px;">Promesa: Reconstrucción de autoconcepto con ejercicios aplicados</div>
+        <div style="font-size:15px; color:var(--red); font-weight:600; margin-bottom:16px;">Dolor: Depende de la aprobación externa para sentirse suficiente</div>
+        <div style="font-size:15px; color:var(--green); font-weight:600;">Promesa: Reconstrucción de autoconcepto con ejercicios aplicados</div>
       </div>
       <div>
-        <p style="font-size:12px; color:var(--light-olive); margin-bottom:8px; font-weight:700;">HOOKS PARA LOS VÍDEOS:</p>
+        <p style="font-size:12px; color:var(--light-olive); margin-bottom:8px; font-weight:700;">HOOKS:</p>
         <div class="hook-bubble"><p>Tu valor no puede depender del feedback del día.</p></div>
         <div class="hook-bubble"><p>La autoexigencia a veces no es ambición, es miedo.</p></div>
       </div>
     </div>
     <div style="margin-top:24px; padding:20px; background:rgba(26,26,26,0.03); border-radius:8px;">
-      <h4>Ejemplos de vídeos para este avatar</h4>
+      <h4>Vídeos para este avatar</h4>
       <div class="grid-2" style="margin-top:8px; gap:16px;">
         <div style="padding:16px; background:var(--white); border-radius:8px; border:1px solid var(--faint-border);">
-          <span class="pill pill-black" style="font-size:10px; padding:3px 10px; margin-bottom:8px;">Vídeo 1</span>
-          <p style="font-size:14px; margin:8px 0 0;"><strong>&ldquo;El día que dejé de necesitar que me dijeran que lo estaba haciendo bien&rdquo;</strong> &mdash; Lorena cuenta una experiencia personal sobre validación externa y explica qué hay detrás de esa necesidad constante de aprobación.</p>
+          <span class="pill pill-black" style="font-size:10px; padding:3px 10px;">Vídeo 1</span>
+          <p style="font-size:14px; margin:8px 0 0;"><strong>&ldquo;El día que dejé de necesitar que me dijeran que lo estaba haciendo bien&rdquo;</strong> &mdash; Experiencia personal sobre validación externa.</p>
         </div>
         <div style="padding:16px; background:var(--white); border-radius:8px; border:1px solid var(--faint-border);">
-          <span class="pill pill-black" style="font-size:10px; padding:3px 10px; margin-bottom:8px;">Vídeo 2</span>
-          <p style="font-size:14px; margin:8px 0 0;"><strong>&ldquo;El test de los 3 espejos&rdquo;</strong> &mdash; Un ejercicio rápido para detectar si tu autoestima depende de lo que otros piensan. Cierra con: &ldquo;Comenta VALOR y te envío el enlace a la comunidad.&rdquo;</p>
+          <span class="pill pill-black" style="font-size:10px; padding:3px 10px;">Vídeo 2</span>
+          <p style="font-size:14px; margin:8px 0 0;"><strong>&ldquo;El test de los 3 espejos&rdquo;</strong> &mdash; Ejercicio rápido para detectar si tu autoestima depende de lo que otros piensan.</p>
         </div>
       </div>
     </div>
@@ -339,7 +327,7 @@
       <div>
         <span class="pill pill-blue" style="font-size:11px;">Avatar D</span>
         <h2 style="margin-top:8px; margin-bottom:4px;">Gestión emocional</h2>
-        <p style="font-size:14px; color:var(--light-olive);">Mujer que se siente desbordada por sus emociones, 22-36 años</p>
+        <p style="font-size:14px; color:var(--light-olive);">Mujer desbordada por sus emociones, 22-36 años</p>
       </div>
       <div style="text-align:right;">
         <div style="font-size:13px; color:var(--light-olive);">Palabra clave</div>
@@ -349,25 +337,25 @@
     <div class="divider" style="background:var(--blue);"></div>
     <div class="grid-2" style="margin-top:16px;">
       <div>
-        <div class="dolor" style="font-size:15px; margin-bottom:16px;">Dolor: Reacciona de forma desproporcionada, se arrepiente después, siente que sus emociones la controlan</div>
-        <div class="promesa" style="font-size:15px;">Promesa: Aprender a sentir sin que la emoción te secuestre</div>
+        <div style="font-size:15px; color:var(--red); font-weight:600; margin-bottom:16px;">Dolor: Reacciona desproporcionadamente, se arrepiente, siente que las emociones la controlan</div>
+        <div style="font-size:15px; color:var(--green); font-weight:600;">Promesa: Aprender a sentir sin que la emoción te secuestre</div>
       </div>
       <div>
-        <p style="font-size:12px; color:var(--light-olive); margin-bottom:8px; font-weight:700;">HOOKS PARA LOS VÍDEOS:</p>
+        <p style="font-size:12px; color:var(--light-olive); margin-bottom:8px; font-weight:700;">HOOKS:</p>
         <div class="hook-bubble"><p>No eres &ldquo;demasiado emocional&rdquo;. Nadie te enseñó qué hacer con lo que sientes.</p></div>
         <div class="hook-bubble"><p>Explotar no es ser intensa. Es no tener herramientas.</p></div>
       </div>
     </div>
     <div style="margin-top:24px; padding:20px; background:rgba(41,128,185,0.04); border-radius:8px;">
-      <h4>Ejemplos de vídeos para este avatar</h4>
+      <h4>Vídeos para este avatar</h4>
       <div class="grid-2" style="margin-top:8px; gap:16px;">
         <div style="padding:16px; background:var(--white); border-radius:8px; border:1px solid var(--faint-border);">
-          <span class="pill pill-blue" style="font-size:10px; padding:3px 10px; margin-bottom:8px;">Vídeo 1</span>
-          <p style="font-size:14px; margin:8px 0 0;"><strong>&ldquo;Qué pasa en tu cerebro cuando explotas&rdquo;</strong> &mdash; Lorena explica el secuestro amigdalar de forma sencilla: por qué dices cosas que no quieres decir y por qué después te sientes fatal. No eres mala persona, tu cerebro se puso en modo defensa.</p>
+          <span class="pill pill-blue" style="font-size:10px; padding:3px 10px;">Vídeo 1</span>
+          <p style="font-size:14px; margin:8px 0 0;"><strong>&ldquo;Qué pasa en tu cerebro cuando explotas&rdquo;</strong> &mdash; El secuestro amigdalar explicado fácil. Por qué dices cosas que no quieres.</p>
         </div>
         <div style="padding:16px; background:var(--white); border-radius:8px; border:1px solid var(--faint-border);">
-          <span class="pill pill-blue" style="font-size:10px; padding:3px 10px; margin-bottom:8px;">Vídeo 2</span>
-          <p style="font-size:14px; margin:8px 0 0;"><strong>&ldquo;La técnica RAIN para cuando estás a punto de estallar&rdquo;</strong> &mdash; Reconocer, Aceptar, Investigar, No identificarse. Un protocolo de 2 minutos para usar en caliente. Cierra con: &ldquo;Comenta SENTIR y te mando el enlace a la comunidad.&rdquo;</p>
+          <span class="pill pill-blue" style="font-size:10px; padding:3px 10px;">Vídeo 2</span>
+          <p style="font-size:14px; margin:8px 0 0;"><strong>&ldquo;La técnica RAIN para cuando estás a punto de estallar&rdquo;</strong> &mdash; Reconocer, Aceptar, Investigar, No identificarse. 2 minutos.</p>
         </div>
       </div>
     </div>
@@ -389,145 +377,215 @@
     <div class="divider" style="background:var(--purple);"></div>
     <div class="grid-2" style="margin-top:16px;">
       <div>
-        <div class="dolor" style="font-size:15px; margin-bottom:16px;">Dolor: Agotada de ser la fuerte, la que resuelve, la que nunca pide ayuda. Siente que no tiene derecho a parar</div>
-        <div class="promesa" style="font-size:15px;">Promesa: Permiso y estructura para ponerte primero sin culpa</div>
+        <div style="font-size:15px; color:var(--red); font-weight:600; margin-bottom:16px;">Dolor: Agotada de ser la fuerte, no se permite parar, no pide ayuda</div>
+        <div style="font-size:15px; color:var(--green); font-weight:600;">Promesa: Permiso y estructura para ponerte primero sin culpa</div>
       </div>
       <div>
-        <p style="font-size:12px; color:var(--light-olive); margin-bottom:8px; font-weight:700;">HOOKS PARA LOS VÍDEOS:</p>
+        <p style="font-size:12px; color:var(--light-olive); margin-bottom:8px; font-weight:700;">HOOKS:</p>
         <div class="hook-bubble"><p>Cuidar de todos y olvidarte de ti no es generosidad. Es un patrón que te está rompiendo.</p></div>
         <div class="hook-bubble"><p>No necesitas un viaje a Bali. Necesitas dejar de ser la última de tu propia lista.</p></div>
       </div>
     </div>
     <div style="margin-top:24px; padding:20px; background:rgba(142,68,173,0.04); border-radius:8px;">
-      <h4>Ejemplos de vídeos para este avatar</h4>
+      <h4>Vídeos para este avatar</h4>
       <div class="grid-2" style="margin-top:8px; gap:16px;">
         <div style="padding:16px; background:var(--white); border-radius:8px; border:1px solid var(--faint-border);">
-          <span class="pill pill-purple" style="font-size:10px; padding:3px 10px; margin-bottom:8px;">Vídeo 1</span>
-          <p style="font-size:14px; margin:8px 0 0;"><strong>&ldquo;El síndrome de la mujer fuerte&rdquo;</strong> &mdash; Lorena explica por qué muchas mujeres sienten que pedir ayuda es debilidad. El coste real de &ldquo;poder con todo&rdquo;: agotamiento crónico, irritabilidad, desconexión emocional.</p>
+          <span class="pill pill-purple" style="font-size:10px; padding:3px 10px;">Vídeo 1</span>
+          <p style="font-size:14px; margin:8px 0 0;"><strong>&ldquo;El síndrome de la mujer fuerte&rdquo;</strong> &mdash; Por qué pedir ayuda se siente como debilidad. El coste real de &ldquo;poder con todo&rdquo;.</p>
         </div>
         <div style="padding:16px; background:var(--white); border-radius:8px; border:1px solid var(--faint-border);">
-          <span class="pill pill-purple" style="font-size:10px; padding:3px 10px; margin-bottom:8px;">Vídeo 2</span>
-          <p style="font-size:14px; margin:8px 0 0;"><strong>&ldquo;5 señales de que necesitas parar ya&rdquo;</strong> &mdash; Señales físicas y emocionales que ignoramos. Lorena las nombra una a una y normaliza que parar no es rendirse. Cierra con: &ldquo;Comenta CUIDARME y te envío el enlace para unirte a la comunidad.&rdquo;</p>
+          <span class="pill pill-purple" style="font-size:10px; padding:3px 10px;">Vídeo 2</span>
+          <p style="font-size:14px; margin:8px 0 0;"><strong>&ldquo;5 señales de que necesitas parar ya&rdquo;</strong> &mdash; Señales físicas y emocionales que ignoramos. Lorena las nombra y normaliza parar.</p>
         </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Rules -->
-  <div style="margin-top:48px; padding:24px; background:var(--olive); border-radius:12px; color:var(--cream);">
-    <h4 style="color:var(--gold);">Reglas para todos los vídeos</h4>
-    <div class="grid-2" style="margin-top:16px; gap:24px;">
-      <div>
-        <p style="font-size:15px; color:var(--cream);"><strong style="color:var(--gold);">Siempre:</strong> Lorena habla directo a cámara. Cada vídeo toca UN dolor concreto y da algo útil (no solo teaser). Al final, CTA a comentar la palabra clave.</p>
-      </div>
-      <div>
-        <p style="font-size:15px; color:var(--cream);"><strong style="color:var(--gold);">Al comentar reciben por DM:</strong><br>1. Enlace a la comunidad de WhatsApp<br>2. Enlace a loamclub.es para suscribirse a la newsletter</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PAGE 4: Funnel -->
+<!-- ============================================ -->
+<!-- 04 THE FUNNEL — THE BIG PICTURE -->
+<!-- ============================================ -->
 <section class="page">
   <div class="page-num">04</div>
-  <div class="label">Cómo captamos alumnas</div>
-  <h1>El embudo paso a paso</h1>
-  <p class="lead">Así funciona el recorrido desde que alguien ve un reel hasta que se convierte en alumna. Cada paso tiene un objetivo claro.</p>
+  <div class="label">Cómo funciona todo</div>
+  <h1>El embudo: de desconocida<br>a alumna</h1>
+  <p class="lead">No todo el mundo está en el mismo punto. La persona que te ve por primera vez necesita un paso diferente que la que ya te sigue. Por eso hay <strong>tres tipos de campaña</strong> según la temperatura del público.</p>
+
+  <div class="grid-3" style="margin-top:48px;">
+    <!-- Cold -->
+    <div class="card" style="border-top:4px solid var(--blue);">
+      <div style="text-align:center; margin-bottom:20px;">
+        <div style="font-size:40px;">&#129398;</div>
+        <span class="pill pill-blue" style="font-size:11px;">Público frío</span>
+      </div>
+      <h3>Primera vez que te ve</h3>
+      <p style="font-size:14px;">No te conoce. Pedirle que entre a un grupo de WhatsApp es demasiado. Solo le pedimos su <strong>email</strong>.</p>
+      <div class="divider"></div>
+      <h4>El anuncio</h4>
+      <p style="font-size:14px;">Mismo vídeo de avatar, pero el CTA es:</p>
+      <div style="padding:16px; background:rgba(41,128,185,0.06); border-radius:8px; font-size:14px; text-align:center;">
+        <strong>&ldquo;Entra en loamclub.es &mdash; link en bio&rdquo;</strong>
+      </div>
+      <h4 style="margin-top:20px;">Qué pasa</h4>
+      <p style="font-size:14px;">Llega a la web &rarr; se suscribe a la <strong>newsletter</strong> &rarr; empieza a recibir contenido de valor por email. Paso suave, sin compromiso.</p>
+    </div>
+
+    <!-- Warm -->
+    <div class="card" style="border-top:4px solid var(--gold);">
+      <div style="text-align:center; margin-bottom:20px;">
+        <div style="font-size:40px;">&#128293;</div>
+        <span class="pill pill-gold" style="font-size:11px;">Público templado</span>
+      </div>
+      <h3>Ya interactuó contigo</h3>
+      <p style="font-size:14px;">Te sigue, te ha visto, ha dado like. Está lista para un paso más personal: entrar a la <strong>comunidad</strong>.</p>
+      <div class="divider" style="background:var(--gold);"></div>
+      <h4>El anuncio</h4>
+      <p style="font-size:14px;">Mismo vídeo de avatar, pero el CTA es:</p>
+      <div style="padding:16px; background:rgba(253,223,89,0.12); border-radius:8px; font-size:14px; text-align:center;">
+        <strong>&ldquo;Comenta [PALABRA] y te envío el enlace&rdquo;</strong>
+      </div>
+      <h4 style="margin-top:20px;">Qué pasa</h4>
+      <p style="font-size:14px;">Comenta &rarr; ManyChat envía DM con enlace a la <strong>comunidad de WhatsApp</strong> + enlace a la web (newsletter). Doble captura.</p>
+    </div>
+
+    <!-- Hot -->
+    <div class="card" style="border-top:4px solid var(--red);">
+      <div style="text-align:center; margin-bottom:20px;">
+        <div style="font-size:40px;">&#128165;</div>
+        <span class="pill pill-red" style="font-size:11px;">Público caliente</span>
+      </div>
+      <h3>Ya está en la comunidad</h3>
+      <p style="font-size:14px;">Está en WhatsApp o en la newsletter. Ya sabe quién es Lorena. Solo necesita el <strong>empujón final</strong>.</p>
+      <div class="divider" style="background:var(--red);"></div>
+      <h4>El anuncio</h4>
+      <p style="font-size:14px;">Testimonios, resultados, recordatorios:</p>
+      <div style="padding:16px; background:rgba(192,57,43,0.06); border-radius:8px; font-size:14px; text-align:center;">
+        <strong>Enlace directo a la suscripción en loamclub.es</strong>
+      </div>
+      <h4 style="margin-top:20px;">Qué pasa</h4>
+      <p style="font-size:14px;">Ve el anuncio &rarr; hace clic &rarr; llega directamente al <strong>checkout</strong>. Sin pasos intermedios.</p>
+    </div>
+  </div>
+
+  <div style="margin-top:48px; padding:24px; background:var(--olive); border-radius:12px; color:var(--cream);">
+    <h4 style="color:var(--gold);">La lógica es simple</h4>
+    <p style="font-size:18px; color:var(--cream); max-width:none; text-align:center; margin:16px 0 0;">
+      A más frío el público, más suave el CTA. &ensp;
+      <span style="color:var(--gold);">Frío &rarr; email</span> &ensp;|&ensp;
+      <span style="color:var(--gold);">Templado &rarr; comunidad</span> &ensp;|&ensp;
+      <span style="color:var(--gold);">Caliente &rarr; suscripción</span>
+    </p>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- 05 COMMUNITY + DIRECTOS -->
+<!-- ============================================ -->
+<section class="page">
+  <div class="page-num">05</div>
+  <div class="label">El corazón de la estrategia</div>
+  <h1>La comunidad de WhatsApp<br>y los directos</h1>
+  <p class="lead">La comunidad no es una secuencia de 7 días que se acaba. Es un espacio permanente donde la gente entra y se queda. Aquí es donde LOAM Club cobra vida antes de que nadie se suscriba.</p>
 
   <div class="grid-2" style="margin-top:48px;">
     <div>
-      <div class="funnel">
-        <div class="funnel-step" style="background:var(--olive); color:var(--cream); border-radius:12px 12px 0 0;">
-          &#127909;&ensp; Reel o Story de un avatar<br><span style="font-size:13px; font-weight:400; opacity:0.8;">Lorena habla de un dolor concreto &rarr; &ldquo;Comenta [PALABRA]&rdquo;</span>
-        </div>
-        <div class="funnel-arrow">&darr;</div>
-        <div class="funnel-step" style="background:rgba(91,102,68,0.8); color:var(--cream);">
-          &#129302;&ensp; ManyChat responde por DM<br><span style="font-size:13px; font-weight:400; opacity:0.8;">Enlace a la comunidad de WhatsApp + enlace a loamclub.es (newsletter)</span>
-        </div>
-        <div class="funnel-arrow">&darr;</div>
-        <div class="funnel-step" style="background:rgba(91,102,68,0.6); color:var(--cream);">
-          &#128172;&ensp; Comunidad de WhatsApp<br><span style="font-size:13px; font-weight:400; opacity:0.8;">Tips exclusivos + contenido antes que en redes + prueba social</span>
-        </div>
-        <div class="funnel-arrow">&darr;</div>
-        <div class="funnel-step" style="background:rgba(91,102,68,0.4); color:var(--black);">
-          &#127891;&ensp; Masterclass gratuita<br><span style="font-size:13px; font-weight:400;">Contenido real de valor + oferta al final</span>
-        </div>
-        <div class="funnel-arrow">&darr;</div>
-        <div class="funnel-step" style="background:var(--gold); color:var(--black); border-radius:0 0 12px 12px;">
-          &#128176;&ensp; Compra: Plan 90 &euro; o 180 &euro;<br><span style="font-size:13px; font-weight:400;">Ventana de 48-72 horas</span>
-        </div>
-      </div>
-    </div>
-
-    <div>
-      <h3>Qué reciben por DM al comentar</h3>
-      <div class="card" style="margin-bottom:24px; border-left:4px solid var(--olive);">
-        <p style="font-size:14px; color:var(--light-olive); margin-bottom:12px;">Ejemplo de mensaje automático:</p>
-        <div style="padding:20px; background:rgba(91,102,68,0.04); border-radius:8px; font-size:15px; line-height:1.8;">
-          <p style="margin:0;">&ldquo;Hola &#128150; Gracias por tu interés. Te dejo dos cosas:</p>
-          <p style="margin:8px 0;"><strong>1.</strong> El enlace para unirte a la <strong>comunidad de LOAM Club</strong> en WhatsApp, donde compartimos tips y contenido exclusivo antes que en redes: [enlace]</p>
-          <p style="margin:0;"><strong>2.</strong> La web de LOAM Club donde puedes suscribirte a la <strong>newsletter</strong> para estar al día de todo: [loamclub.es]&rdquo;</p>
-        </div>
-        <p style="font-size:13px; color:var(--light-olive); margin-top:12px; margin-bottom:0;">Si no hace clic en 6h &rarr; segundo DM recordatorio. Si aún no &rarr; tercer DM pidiendo email.</p>
-      </div>
-
-      <h3>La comunidad de WhatsApp</h3>
-      <div class="card" style="border-left:4px solid var(--gold);">
-        <p style="font-size:14px; color:var(--light-olive); margin-bottom:12px;">El club interno donde pasan las cosas primero:</p>
-        <ul style="list-style:none; padding:0; font-size:14px; line-height:2.4;">
+      <div class="card" style="border-left:4px solid var(--gold); height:100%;">
+        <h3>Qué es la comunidad</h3>
+        <ul style="list-style:none; padding:0; font-size:15px; line-height:2.4;">
           <li>&#127775;&ensp; <strong>Tips exclusivos</strong> que no se publican en redes</li>
           <li>&#128227;&ensp; <strong>Primicias</strong> &mdash; todo lo de LOAM sale aquí antes</li>
           <li>&#129309;&ensp; <strong>Comunidad</strong> entre mujeres con inquietudes similares</li>
-          <li>&#127891;&ensp; <strong>Invitaciones</strong> a masterclass y eventos</li>
-          <li>&#128176;&ensp; <strong>Acceso anticipado</strong> cuando se abran plazas</li>
+          <li>&#128172;&ensp; <strong>Preguntas</strong> &mdash; pueden preguntar lo que quieran</li>
+          <li>&#127891;&ensp; <strong>Invitaciones</strong> a directos y eventos</li>
+          <li>&#128176;&ensp; <strong>Acceso anticipado</strong> a plazas del Plan Plus</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="card" style="border-left:4px solid var(--olive); height:100%;">
+        <h3>Cadencia semanal</h3>
+        <p style="font-size:14px; color:var(--light-olive); margin-bottom:16px;">No hay secuencia que se acabe. Esto es continuo:</p>
+        <div style="padding:16px; background:rgba(91,102,68,0.04); border-radius:8px; margin-bottom:12px;">
+          <span class="pill pill-olive" style="font-size:10px; padding:3px 10px;">Lunes</span>
+          <p style="font-size:14px; margin:8px 0 0;">Tip o reflexión corta de Lorena (texto o audio de 1 min)</p>
+        </div>
+        <div style="padding:16px; background:rgba(91,102,68,0.04); border-radius:8px; margin-bottom:12px;">
+          <span class="pill pill-olive" style="font-size:10px; padding:3px 10px;">Miércoles</span>
+          <p style="font-size:14px; margin:8px 0 0;">Adelanto de lo que viene en LOAM Club esa semana (teaser del vídeo)</p>
+        </div>
+        <div style="padding:16px; background:rgba(91,102,68,0.04); border-radius:8px;">
+          <span class="pill pill-gold" style="font-size:10px; padding:3px 10px;">Viernes</span>
+          <p style="font-size:14px; margin:8px 0 0;">Pregunta abierta o ejercicio rápido para el fin de semana</p>
+        </div>
+        <p style="font-size:13px; color:var(--light-olive); margin-top:16px; margin-bottom:0;">+ Invitaciones a directos, testimonios de alumnas, recordatorios suaves de suscripción cuando toque.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-black" style="margin-top:40px;">
+    <h4 style="color:var(--gold);">2 directos al mes</h4>
+    <div class="grid-2" style="margin-top:16px;">
+      <div>
+        <h3 style="color:var(--cream);">Por qué 2 y no 1</h3>
+        <p style="font-size:15px; color:rgba(247,245,240,0.7);">Se hacen en <strong style="color:var(--cream);">diferentes días y horas</strong> para que quien no pueda en uno se meta en el otro. No es repetir el mismo contenido &mdash; son dos sesiones distintas.</p>
+      </div>
+      <div>
+        <h3 style="color:var(--cream);">Qué pasa en cada directo</h3>
+        <ul style="list-style:none; padding:0; font-size:14px; line-height:2.2; color:rgba(247,245,240,0.7);">
+          <li>&#127891;&ensp; Contenido real de valor (no teaser)</li>
+          <li>&#128172;&ensp; Espacio para preguntas abiertas</li>
+          <li>&#128176;&ensp; Se menciona la suscripción de forma natural, sin presión</li>
+          <li>&#128226;&ensp; Se anuncian en la comunidad de WhatsApp + newsletter</li>
         </ul>
       </div>
     </div>
   </div>
-
-  <div style="margin-top:40px; padding:24px; background:var(--black); border-radius:12px; color:var(--cream);">
-    <h4 style="color:var(--gold);">Palabras clave por avatar (configurar en ManyChat)</h4>
-    <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:16px;">
-      <span class="pill pill-olive">CALMA &rarr; Avatar A</span>
-      <span class="pill pill-gold">LÍMITES &rarr; Avatar B</span>
-      <span class="pill pill-black" style="background:var(--white); color:var(--black);">VALOR &rarr; Avatar C</span>
-      <span class="pill pill-blue">SENTIR &rarr; Avatar D</span>
-      <span class="pill pill-purple">CUIDARME &rarr; Avatar E</span>
-    </div>
-    <p style="font-size:13px; color:rgba(247,245,240,0.5); margin-top:12px; margin-bottom:0;">Todas las palabras activan el mismo flujo de DM. La palabra nos sirve para saber qué avatar enganchó más.</p>
-  </div>
 </section>
 
-<!-- PAGE 5: Meta Ads -->
+<!-- ============================================ -->
+<!-- 06 META ADS -->
+<!-- ============================================ -->
 <section class="page">
-  <div class="page-num">05</div>
+  <div class="page-num">06</div>
   <div class="label">Publicidad de pago</div>
-  <h1>Meta Ads: cómo gastamos<br>el presupuesto</h1>
-  <p class="lead">Anuncios en Instagram y Facebook. Empezamos en España, después abrimos LATAM según resultados.</p>
+  <h1>Meta Ads: cómo repartimos<br>el presupuesto</h1>
+  <p class="lead">Anuncios en Instagram y Facebook. Los mismos 10 vídeos (5 avatares &times; 2) se usan en las tres capas de temperatura.</p>
 
-  <div class="grid-2" style="margin-top:40px;">
-    <div class="card" style="border-top:4px solid var(--olive);">
-      <h4>Prospecting (captar gente nueva)</h4>
-      <div style="font-size:48px; font-family:'Playfair Display',Georgia,serif; color:var(--olive); margin:16px 0;">70%</div>
-      <p style="font-size:14px;">del presupuesto</p>
-      <div class="divider"></div>
-      <ul style="font-size:14px; line-height:2; padding-left:16px;">
-        <li>5 conjuntos de anuncios (1 por avatar)</li>
-        <li>2 anuncios por conjunto (los 2 vídeos)</li>
-        <li>Objetivo: que comenten la palabra y entren a la comunidad de WhatsApp</li>
+  <div class="grid-3" style="margin-top:40px;">
+    <div class="card" style="border-top:4px solid var(--blue);">
+      <h4 style="color:var(--blue);">Prospecting frío</h4>
+      <div style="font-size:40px; font-family:'Playfair Display',Georgia,serif; color:var(--olive); margin:12px 0;">50%</div>
+      <p style="font-size:13px; color:var(--light-olive);">del presupuesto</p>
+      <div class="divider" style="background:var(--blue);"></div>
+      <ul style="font-size:13px; line-height:2; padding-left:16px;">
+        <li>5 conjuntos (1 por avatar)</li>
+        <li>2 anuncios por conjunto</li>
+        <li>CTA: &ldquo;Link en bio&rdquo; &rarr; newsletter</li>
+        <li>Público: intereses amplios, lookalikes</li>
       </ul>
     </div>
-
     <div class="card" style="border-top:4px solid var(--gold);">
-      <h4>Retargeting (gente que ya nos conoce)</h4>
-      <div style="font-size:48px; font-family:'Playfair Display',Georgia,serif; color:var(--olive); margin:16px 0;">30%</div>
-      <p style="font-size:14px;">del presupuesto</p>
-      <div class="divider"></div>
-      <ul style="font-size:14px; line-height:2; padding-left:16px;">
-        <li>Gente que interactuó en Instagram</li>
-        <li>Quienes vieron +50% de un vídeo</li>
-        <li>Visitantes de la landing</li>
-        <li>Leads que aún no compraron</li>
+      <h4 style="color:var(--olive);">Prospecting templado</h4>
+      <div style="font-size:40px; font-family:'Playfair Display',Georgia,serif; color:var(--olive); margin:12px 0;">30%</div>
+      <p style="font-size:13px; color:var(--light-olive);">del presupuesto</p>
+      <div class="divider" style="background:var(--gold);"></div>
+      <ul style="font-size:13px; line-height:2; padding-left:16px;">
+        <li>Mismos vídeos, diferente CTA</li>
+        <li>CTA: &ldquo;Comenta [PALABRA]&rdquo;</li>
+        <li>Público: engagers IG, viewers 50%+</li>
+        <li>Objetivo: comunidad WhatsApp</li>
+      </ul>
+    </div>
+    <div class="card" style="border-top:4px solid var(--red);">
+      <h4 style="color:var(--red);">Retargeting caliente</h4>
+      <div style="font-size:40px; font-family:'Playfair Display',Georgia,serif; color:var(--olive); margin:12px 0;">20%</div>
+      <p style="font-size:13px; color:var(--light-olive);">del presupuesto</p>
+      <div class="divider" style="background:var(--red);"></div>
+      <ul style="font-size:13px; line-height:2; padding-left:16px;">
+        <li>Testimonios + resultados</li>
+        <li>CTA: enlace directo a suscripción</li>
+        <li>Público: comunidad, newsletter, visitantes web</li>
+        <li>Objetivo: conversión directa</li>
       </ul>
     </div>
   </div>
@@ -550,35 +608,27 @@
     </div>
   </div>
 
-  <div style="margin-top:40px;">
-    <h4>Configuración técnica necesaria</h4>
-    <div class="grid-4" style="margin-top:16px;">
-      <div class="card" style="text-align:center; padding:20px;">
-        <span class="icon">&#128736;</span>
-        <p style="font-size:14px; margin:0;"><strong>Business Manager</strong><br>Cuenta única</p>
-      </div>
-      <div class="card" style="text-align:center; padding:20px;">
-        <span class="icon">&#128200;</span>
-        <p style="font-size:14px; margin:0;"><strong>Pixel + CAPI</strong><br>Tracking configurado</p>
-      </div>
-      <div class="card" style="text-align:center; padding:20px;">
-        <span class="icon">&#127991;</span>
-        <p style="font-size:14px; margin:0;"><strong>UTMs</strong><br>En todos los anuncios</p>
-      </div>
-      <div class="card" style="text-align:center; padding:20px;">
-        <span class="icon">&#127466;&#127480;</span>
-        <p style="font-size:14px; margin:0;"><strong>Primero España</strong><br>LATAM después</p>
-      </div>
+  <div style="margin-top:40px; padding:24px; background:var(--black); border-radius:12px; color:var(--cream);">
+    <h4 style="color:var(--gold);">Palabras clave en ManyChat</h4>
+    <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:16px;">
+      <span class="pill pill-olive">CALMA</span>
+      <span class="pill pill-gold">LÍMITES</span>
+      <span class="pill" style="background:var(--white); color:var(--black);">VALOR</span>
+      <span class="pill pill-blue">SENTIR</span>
+      <span class="pill pill-purple">CUIDARME</span>
     </div>
+    <p style="font-size:13px; color:rgba(247,245,240,0.5); margin-top:12px; margin-bottom:0;">Todas activan el mismo flujo de DM (enlace WhatsApp + enlace web). La palabra nos dice qué avatar engancha más.</p>
   </div>
 </section>
 
-<!-- PAGE 6: 90 Day Timeline -->
+<!-- ============================================ -->
+<!-- 07 TIMELINE 90 DAYS -->
+<!-- ============================================ -->
 <section class="page">
-  <div class="page-num">06</div>
+  <div class="page-num">07</div>
   <div class="label">El calendario</div>
   <h1>Plan de 90 días</h1>
-  <p class="lead">Todo el lanzamiento dividido en 4 fases. Cada fase tiene un objetivo claro y unas tareas concretas.</p>
+  <p class="lead">Todo el lanzamiento en 4 fases. Cada fase tiene un objetivo claro y tareas concretas.</p>
 
   <div style="margin-top:48px;">
     <div class="timeline">
@@ -593,16 +643,17 @@
             </div>
             <div style="font-size:32px; font-family:'Playfair Display',Georgia,serif; font-weight:600;">Días 1-15</div>
           </div>
+          <p style="font-size:14px; margin:8px 0 16px;">Objetivo: tener todo listo para empezar a captar. Nada de improvisar después.</p>
           <div class="divider" style="background:var(--black); margin:16px 0;"></div>
           <ul class="checklist">
             <li>Landing loamclub.es con newsletter activa</li>
             <li>Pixel + tracking configurados</li>
-            <li>ManyChat con 5 palabras clave (CALMA, LÍMITES, VALOR, SENTIR, CUIDARME)</li>
+            <li>ManyChat con 5 palabras clave configuradas</li>
             <li>Comunidad de WhatsApp abierta (permanente)</li>
             <li>10 creativos grabados (5 avatares &times; 2 vídeos)</li>
-            <li>Campañas de Meta Ads configuradas</li>
-            <li>Primer directo programado para dentro de 10-14 días</li>
-            <li>Segundo directo en día/hora diferente al primero</li>
+            <li>3 campañas de Meta Ads configuradas (fría, templada, caliente)</li>
+            <li>Primer directo programado</li>
+            <li>Segundo directo programado (diferente día/hora)</li>
             <li>Cupo mensual del Plan Plus definido</li>
           </ul>
         </div>
@@ -619,13 +670,15 @@
             </div>
             <div style="font-size:32px; font-family:'Playfair Display',Georgia,serif; font-weight:600; color:var(--olive);">Días 16-45</div>
           </div>
+          <p style="font-size:14px; margin:8px 0 16px;">Objetivo: meter gente en la comunidad y en la newsletter. Ver qué avatar funciona mejor. Primeras ventas.</p>
           <div class="divider"></div>
           <ul class="checklist">
-            <li>Anuncios activos + contenido orgánico diario</li>
-            <li>2 directos realizados (diferentes días/horas)</li>
-            <li>Comunidad de WhatsApp con cadencia semanal activa</li>
-            <li>Primeras ventas reales</li>
-            <li>Validar qué mensajes y qué avatar funcionan mejor</li>
+            <li>Anuncios activos en las 3 capas (frío, templado, caliente)</li>
+            <li>Contenido orgánico diario en Instagram</li>
+            <li>2 directos realizados</li>
+            <li>Cadencia semanal de la comunidad WhatsApp activa (L-M-V)</li>
+            <li>Primeras suscripciones reales</li>
+            <li>Medir: qué avatar engancha más, qué CTA convierte mejor</li>
           </ul>
         </div>
       </div>
@@ -641,12 +694,14 @@
             </div>
             <div style="font-size:32px; font-family:'Playfair Display',Georgia,serif; font-weight:600; color:var(--olive);">Días 46-75</div>
           </div>
+          <p style="font-size:14px; margin:8px 0 16px;">Objetivo: las primeras alumnas ya están dentro. Capturar resultados reales para usarlos en la capa caliente de los anuncios.</p>
           <div class="divider"></div>
           <ul class="checklist">
             <li>Cohorte beta con las primeras alumnas</li>
             <li>Captura de testimonios y resultados reales</li>
-            <li>Ajustar la oferta según feedback</li>
-            <li>Pulir la comunicación con lo aprendido</li>
+            <li>Usar esos testimonios en retargeting caliente</li>
+            <li>Ajustar la comunicación según lo aprendido</li>
+            <li>Pausar los anuncios/avatares que no funcionan, doblar los que sí</li>
           </ul>
         </div>
       </div>
@@ -662,11 +717,13 @@
             </div>
             <div style="font-size:32px; font-family:'Playfair Display',Georgia,serif; font-weight:600; color:var(--gold);">Días 76-90</div>
           </div>
+          <p style="font-size:14px; color:rgba(247,245,240,0.7); margin:8px 0 16px;">Objetivo: lanzamiento público a toda la base acumulada. La máquina ya está probada.</p>
           <div class="divider" style="background:var(--gold);"></div>
           <ul style="list-style:none; padding:0; color:var(--cream);">
-            <li style="padding:12px 0; border-bottom:1px solid rgba(255,255,255,0.1); font-size:15px;">&#9989;&ensp; Lanzamiento oficial con toda la base de leads</li>
-            <li style="padding:12px 0; border-bottom:1px solid rgba(255,255,255,0.1); font-size:15px;">&#9989;&ensp; Precio de lanzamiento temporal como incentivo</li>
-            <li style="padding:12px 0; font-size:15px;">&#9989;&ensp; Escalar los anuncios que mejor funcionaron</li>
+            <li style="padding:12px 0; border-bottom:1px solid rgba(255,255,255,0.1); font-size:15px;">&#9989;&ensp; Lanzamiento oficial a newsletter + comunidad + redes</li>
+            <li style="padding:12px 0; border-bottom:1px solid rgba(255,255,255,0.1); font-size:15px;">&#9989;&ensp; Precio de lanzamiento temporal como incentivo real</li>
+            <li style="padding:12px 0; border-bottom:1px solid rgba(255,255,255,0.1); font-size:15px;">&#9989;&ensp; Escalar los anuncios ganadores</li>
+            <li style="padding:12px 0; font-size:15px;">&#9989;&ensp; Activar partnerships (fase 2 de crecimiento)</li>
           </ul>
         </div>
       </div>
@@ -674,86 +731,76 @@
   </div>
 </section>
 
-<!-- PAGE 7: KPIs -->
+<!-- ============================================ -->
+<!-- 08 KPIs -->
+<!-- ============================================ -->
 <section class="page">
-  <div class="page-num">07</div>
+  <div class="page-num">08</div>
   <div class="label">Los números que importan</div>
   <h1>KPIs: cómo sabemos<br>si funciona</h1>
-  <p class="lead">Estos son los porcentajes que tenemos que vigilar. Si un número baja de lo esperado, hay que arreglarlo antes de seguir gastando.</p>
+  <p class="lead">Estos son los porcentajes que hay que vigilar. Si un número baja de lo esperado, hay que arreglarlo antes de seguir gastando.</p>
 
-  <div style="margin-top:48px;">
-    <table>
-      <thead>
-        <tr>
-          <th>Paso del embudo</th>
-          <th>Métrica</th>
-          <th>Objetivo</th>
-          <th>Qué significa</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Comentario &rarr; DM</td>
-          <td><strong>&gt;20%</strong></td>
-          <td><span class="pill pill-green" style="font-size:11px;">Mínimo</span></td>
-          <td>De cada 100 comentarios, al menos 20 reciben y abren el DM</td>
-        </tr>
-        <tr>
-          <td>DM &rarr; WhatsApp</td>
-          <td><strong>&gt;35%</strong></td>
-          <td><span class="pill pill-green" style="font-size:11px;">Mínimo</span></td>
-          <td>De quienes reciben el DM, al menos 35 entran al grupo</td>
-        </tr>
-        <tr>
-          <td>WhatsApp &rarr; Email</td>
-          <td><strong>&gt;60%</strong></td>
-          <td><span class="pill pill-green" style="font-size:11px;">Mínimo</span></td>
-          <td>De quienes están en el grupo, al menos 60 dejan su email</td>
-        </tr>
-        <tr>
-          <td>Show-up directos</td>
-          <td><strong>&gt;35%</strong></td>
-          <td><span class="pill pill-olive" style="font-size:11px;">Objetivo</span></td>
-          <td>De quienes están en la comunidad, al menos 35 asisten a los directos</td>
-        </tr>
-        <tr>
-          <td>Comunidad &rarr; Suscripción</td>
-          <td><strong>5-10%</strong></td>
-          <td><span class="pill pill-gold" style="font-size:11px;">Conversión</span></td>
-          <td>De quienes están en la comunidad, entre 5 y 10 se suscriben</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <table style="margin-top:48px;">
+    <thead>
+      <tr>
+        <th>Paso</th>
+        <th>Objetivo</th>
+        <th>Qué significa en simple</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Comentario &rarr; DM</td>
+        <td><strong>&gt;20%</strong></td>
+        <td>De cada 100 comentarios, al menos 20 abren el DM</td>
+      </tr>
+      <tr>
+        <td>DM &rarr; WhatsApp</td>
+        <td><strong>&gt;35%</strong></td>
+        <td>De quienes reciben el DM, al menos 35 entran a la comunidad</td>
+      </tr>
+      <tr>
+        <td>Visita web &rarr; Newsletter</td>
+        <td><strong>&gt;25%</strong></td>
+        <td>De quienes llegan a loamclub.es, al menos 25 dejan su email</td>
+      </tr>
+      <tr>
+        <td>Show-up directos</td>
+        <td><strong>&gt;35%</strong></td>
+        <td>De quienes están en la comunidad, al menos 35 asisten a los directos</td>
+      </tr>
+      <tr>
+        <td>Comunidad/newsletter &rarr; Suscripción</td>
+        <td><strong>5-10%</strong></td>
+        <td>De toda la gente captada, entre 5 y 10 de cada 100 se suscriben</td>
+      </tr>
+    </tbody>
+  </table>
 
   <div class="grid-3" style="margin-top:40px;">
     <div class="card" style="text-align:center;">
       <div class="fee-sub">Mix de ventas objetivo</div>
-      <div style="margin:16px 0;">
-        <span style="font-size:40px; font-family:'Playfair Display',Georgia,serif; color:var(--olive);">70/30</span>
-      </div>
+      <div style="margin:16px 0;"><span style="font-size:40px; font-family:'Playfair Display',Georgia,serif; color:var(--olive);">70/30</span></div>
       <div class="fee-sub">70% Plan Base / 30% Plan Plus</div>
     </div>
     <div class="card" style="text-align:center;">
       <div class="fee-sub">Ticket medio objetivo</div>
-      <div style="margin:16px 0;">
-        <span style="font-size:40px; font-family:'Playfair Display',Georgia,serif; color:var(--olive);">~117 &euro;</span>
-      </div>
+      <div style="margin:16px 0;"><span style="font-size:40px; font-family:'Playfair Display',Georgia,serif; color:var(--olive);">~117 &euro;</span></div>
       <div class="fee-sub">(90&euro;&times;0.7) + (180&euro;&times;0.3)</div>
     </div>
     <div class="card" style="text-align:center;">
       <div class="fee-sub">Coste adquisición máximo</div>
-      <div style="margin:16px 0;">
-        <span style="font-size:40px; font-family:'Playfair Display',Georgia,serif; color:var(--olive);">&le;45 &euro;</span>
-      </div>
+      <div style="margin:16px 0;"><span style="font-size:40px; font-family:'Playfair Display',Georgia,serif; color:var(--olive);">&le;45 &euro;</span></div>
       <div class="fee-sub">CAC blended objetivo</div>
     </div>
   </div>
 </section>
 
-<!-- PAGE 8: Risks -->
+<!-- ============================================ -->
+<!-- 09 RISKS -->
+<!-- ============================================ -->
 <section class="page">
-  <div class="page-num">08</div>
+  <div class="page-num">09</div>
   <div class="label">Qué puede salir mal</div>
   <h1>Riesgos y cómo los evitamos</h1>
 
@@ -761,23 +808,23 @@
     <div class="card" style="border-left:4px solid var(--red);">
       <h4 style="color:var(--red);">Riesgo</h4>
       <h3>Saturar la agenda de Lorena</h3>
-      <p style="font-size:15px;">Si se venden demasiados Plan Plus, Lorena no puede atender todas las sesiones. Eso genera mala experiencia.</p>
+      <p style="font-size:15px;">Si se venden demasiados Plan Plus, Lorena no puede atender todas las sesiones.</p>
       <div style="margin-top:16px; padding:16px; background:rgba(39,174,96,0.06); border-radius:8px; border-left:3px solid var(--green);">
-        <p style="font-size:14px; margin:0; color:var(--green);"><strong>Solución:</strong> Cupos semanales fijos (máx. 20 sesiones/semana) y lista de espera cuando se llenen.</p>
+        <p style="font-size:14px; margin:0; color:var(--green);"><strong>Solución:</strong> Cupos semanales fijos (máx. 20 sesiones/semana) y lista de espera.</p>
       </div>
     </div>
     <div class="card" style="border-left:4px solid var(--red);">
       <h4 style="color:var(--red);">Riesgo</h4>
       <h3>Devaluar la marca con descuentos</h3>
-      <p style="font-size:15px;">Si hacemos descuentos del 50%, las alumnas esperarán siempre a la rebaja. Eso mata el precio real.</p>
+      <p style="font-size:15px;">Descuentos del 50% hacen que las alumnas esperen siempre a la rebaja.</p>
       <div style="margin-top:16px; padding:16px; background:rgba(39,174,96,0.06); border-radius:8px; border-left:3px solid var(--green);">
-        <p style="font-size:14px; margin:0; color:var(--green);"><strong>Solución:</strong> Solo bonus reales o máximo 15-20% por tiempo limitado. Nunca liquidación.</p>
+        <p style="font-size:14px; margin:0; color:var(--green);"><strong>Solución:</strong> Solo bonus reales o máximo 15-20% por tiempo limitado.</p>
       </div>
     </div>
     <div class="card" style="border-left:4px solid var(--red);">
       <h4 style="color:var(--red);">Riesgo</h4>
       <h3>Construir sin validar</h3>
-      <p style="font-size:15px;">Gastar meses desarrollando algo que nadie quiere comprar. Hay que cobrar antes de tener todo perfecto.</p>
+      <p style="font-size:15px;">Gastar meses desarrollando algo que nadie quiere comprar.</p>
       <div style="margin-top:16px; padding:16px; background:rgba(39,174,96,0.06); border-radius:8px; border-left:3px solid var(--green);">
         <p style="font-size:14px; margin:0; color:var(--green);"><strong>Solución:</strong> Preventa y beta antes del lanzamiento completo. Validar con dinero real.</p>
       </div>
@@ -785,18 +832,20 @@
     <div class="card" style="border-left:4px solid var(--red);">
       <h4 style="color:var(--red);">Riesgo</h4>
       <h3>Depender solo de orgánico</h3>
-      <p style="font-size:15px;">Si solo confiamos en posts orgánicos, el crecimiento será lento e impredecible.</p>
+      <p style="font-size:15px;">Si solo confiamos en posts, el crecimiento es lento e impredecible.</p>
       <div style="margin-top:16px; padding:16px; background:rgba(39,174,96,0.06); border-radius:8px; border-left:3px solid var(--green);">
-        <p style="font-size:14px; margin:0; color:var(--green);"><strong>Solución:</strong> Combinar Ads + CRM + partnerships desde el inicio. Nunca un solo canal.</p>
+        <p style="font-size:14px; margin:0; color:var(--green);"><strong>Solución:</strong> Combinar Ads + comunidad + newsletter + partnerships.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PAGE 9: Partnerships -->
+<!-- ============================================ -->
+<!-- 10 PARTNERSHIPS -->
+<!-- ============================================ -->
 <section class="page" style="min-height:auto; padding-bottom:120px;">
-  <div class="page-num">09</div>
-  <div class="label">Fase 2 - Crecimiento</div>
+  <div class="page-num">10</div>
+  <div class="label">Fase 2 &mdash; Crecimiento</div>
   <h1>Partnerships estratégicos</h1>
   <p class="lead">Una vez validado el producto, escalamos con colaboraciones. Esto viene después del lanzamiento, no antes.</p>
 
@@ -805,7 +854,7 @@
       <div class="card" style="margin-bottom:24px;">
         <span class="icon">&#128105;&#8205;&#128187;</span>
         <h3>Microcreadoras de bienestar</h3>
-        <p style="font-size:14px;">Perfiles de 5K-50K seguidores en el nicho de bienestar, relaciones y psicología.</p>
+        <p style="font-size:14px;">Perfiles de 5K-50K seguidores en bienestar, relaciones y psicología.</p>
       </div>
       <div class="card" style="margin-bottom:24px;">
         <span class="icon">&#127897;</span>
@@ -822,9 +871,9 @@
       <div class="card-olive" style="height:100%; display:flex; flex-direction:column; justify-content:center;">
         <h4 style="color:var(--gold);">Modelo comercial</h4>
         <h3 style="color:var(--cream); font-size:24px; margin-bottom:24px;">CPA por venta o revenue share del primer pago</h3>
-        <p style="color:rgba(247,245,240,0.7); font-size:15px;">No pagamos por adelantado. Solo pagamos cuando la colaboración genera una venta real. Así el riesgo es cero para LOAM Club y la creadora tiene incentivo real para promocionar bien.</p>
+        <p style="color:rgba(247,245,240,0.7); font-size:15px;">No pagamos por adelantado. Solo pagamos cuando la colaboración genera una venta real. Riesgo cero para LOAM Club.</p>
         <div style="margin-top:24px; padding:16px; background:rgba(253,223,89,0.1); border-radius:8px;">
-          <p style="font-size:14px; margin:0; color:var(--gold);"><strong>Importante:</strong> Solo activar partnerships cuando los unit economics sean estables (CAC &le; 45 &euro;, conversión &ge; 5%).</p>
+          <p style="font-size:14px; margin:0; color:var(--gold);"><strong>Importante:</strong> Solo activar cuando los unit economics sean estables (CAC &le; 45 &euro;, conversión &ge; 5%).</p>
         </div>
       </div>
     </div>
